@@ -1,0 +1,220 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "initiatives": "Our Initiatives",
+    "healing": "Natural Healing",
+    "education": "Education",
+    "volunteer": "Volunteer",
+    "shop": "Products",
+    "blog": "Blog",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Reviving India's Ecological and Cultural Heritage",
+    "subtitle": "Lakshya Paryawaran and Jankalyan Sanstha (Go Mandir)",
+    "description": "Through indigenous cow conservation, natural healing, and sustainable rural development, we blend traditional Indian wisdom with sustainable innovation.",
+    "cta": "Join Us",
+    "ctaSecondary": "Learn More",
+    "ctaTertiary": "Shop Products",
+    "ctaVolunteer": "Volunteer"
+  },
+  "stats": {
+    "landRevived": "1000+ acres of land revived",
+    "bullsDistributed": "197 Tharparkar bulls distributed", 
+    "womenTrained": "1000+ rural women trained",
+    "waterTable": "Water table raised by 290 feet"
+  },
+  "about": {
+    "title": "Who We Are",
+    "subtitle": "Guardians of Bharatiya Parampara",
+    "description": "Lakshya Paryawaran and Jankalyan Sanstha is a grassroots organization dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment. Founded to revive Bharatiya parampara through self-reliant practices, we blend traditional knowledge with sustainable innovation to serve communities and protect nature.",
+    "vision": "Our Vision",
+    "visionText": "To restore balance between human life, nature, and culture by promoting cow-centric, eco-friendly, and self-sustaining rural models.",
+    "mission": "Our Mission",
+    "missionPoints": [
+      "Protect and promote indigenous cow breeds",
+      "Revive Panchgavya-based natural health practices", 
+      "Train rural communities in herbal wellness and zero-cost farming",
+      "Conserve water, forests, and biodiversity",
+      "Create models of swadeshi economy through cow-based enterprises"
+    ]
+  },
+  "initiatives": {
+    "title": "Our Initiatives",
+    "subtitle": "Transforming Lives Through Traditional Wisdom",
+    "goMandir": {
+      "title": "Go Mandir",
+      "description": "A sanctuary for native cows and a center for cultural, ecological, and economic revival. Water table raised from 410ft to 120ft, thousands of acres revived, chemical-free agriculture, women's empowerment."
+    },
+    "healthcare": {
+      "title": "Self-Reliant Healthcare Training",
+      "description": "Equipping rural families and women with acupressure, naturopathy, and Panchgavya chikitsa skills for community wellness."
+    },
+    "agriculture": {
+      "title": "Sustainable Agriculture",
+      "description": "Promoting poison-free farming using cow dung, urine, and local soil microbes for healthy food production."
+    },
+    "conservation": {
+      "title": "Forest and Wildlife Conservation",
+      "description": "Reviving habitats and protecting biodiversity in crisis-affected regions through natural restoration methods."
+    },
+    "water": {
+      "title": "Water Rejuvenation Projects",
+      "description": "Transforming dry lands into water-rich ecosystems through traditional water conservation techniques."
+    }
+  },
+  "healing": {
+    "title": "Natural Healing",
+    "subtitle": "Ancient Wisdom for Modern Wellness",
+    "naturopathy": {
+      "title": "Prakratik Chikitsa (Naturopathy)",
+      "description": "Ancient therapies using earth, water, fire, air, and ether. Personalized treatments, yoga, mud therapy, hydrotherapy, and diet-based interventions."
+    },
+    "panchgavya": {
+      "title": "Panchgavya Chikitsa",
+      "description": "Holistic healing using cow-derived elements (milk, curd, ghee, urine, dung). Consultations, therapies, and training available."
+    },
+    "benefits": "Benefits of Natural Healing",
+    "benefitsList": [
+      "Chemical-free treatment methods",
+      "Strengthens natural immunity",
+      "Addresses root causes of illness",
+      "Promotes overall well-being",
+      "Cost-effective healthcare solutions"
+    ]
+  },
+  "education": {
+    "title": "Education & Courses",
+    "subtitle": "Learning Traditional Wisdom",
+    "collaboration": "Academic Collaboration",
+    "collaborationText": "In partnership with Dr. Sarvapalli Radhakrishnan Rajasthan Ayurved University, we offer certified courses in Panchgavya-based health, native cattle preservation, and cow-based entrepreneurship.",
+    "courses": {
+      "panchgavya": "Diploma in Panchgavya Chikitsa",
+      "naturopathy": "Naturopathy and Sustainable Living",
+      "entrepreneurship": "Rural Entrepreneurship"
+    }
+  },
+  "volunteer": {
+    "title": "Volunteer & Join Us",
+    "subtitle": "Be Part of the Change",
+    "description": "Experience spiritual joy and hands-on learning while serving cows, learning natural therapies, farming sustainably, or contributing to rural development.",
+    "opportunities": "Volunteer Opportunities",
+    "opportunitiesList": [
+      "Serve cows and learn animal care",
+      "Learn natural therapies and healing",
+      "Practice sustainable farming techniques",
+      "Contribute to rural development projects",
+      "Teach and share knowledge with communities"
+    ],
+    "howToJoin": "How to Join",
+    "joinSteps": [
+      "Fill out volunteer application form",
+      "Choose your area of interest",
+      "Participate in orientation program",
+      "Start your service journey"
+    ]
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Pure, Natural, and Traditional",
+    "dairy": {
+      "title": "Dairy Products",
+      "description": "A2 milk, ghee, buttermilk, paneer—pure, chemical-free, and traditionally prepared from our indigenous cows."
+    },
+    "herbal": {
+      "title": "Herbal Soaps",
+      "description": "Handcrafted using cow dung ash, cow urine distillate, neem, tulsi, hibiscus, and multani mitti. Skin-friendly, eco-safe, and supports local women's groups."
+    },
+    "panchgavya": {
+      "title": "Panchgavya Products",
+      "description": "Natural wellness products based on Vedic wisdom, promoting health and spiritual well-being."
+    }
+  },
+  "impact": {
+    "title": "Our Impact",
+    "subtitle": "Transforming Communities",
+    "achievements": "Key Achievements",
+    "achievementsList": [
+      "Water table revival: 410ft to 120ft",
+      "197 Tharparkar bulls distributed",
+      "1000+ rural women trained in natural healing",
+      "Thousands of acres of grazing and forest land restored",
+      "Chemical-free farming model adopted by local farmers"
+    ],
+    "testimonials": "What People Say",
+    "testimonial1": "Our village is greener, healthier, and more self-reliant thanks to Go Mandir.",
+    "testimonial2": "Panchgavya therapies have transformed our health and reduced medical expenses."
+  },
+  "blog": {
+    "title": "Latest Insights",
+    "subtitle": "Stories from the Field",
+    "readMore": "Read More",
+    "share": "Share this article",
+    "relatedArticles": "Related Articles"
+  },
+  "contact": {
+    "title": "Connect With Us",
+    "subtitle": "Visit Our Go Mandir Campus",
+    "address": "Address",
+    "addressText": "Go Mandir Campus\nRural Area, Rajasthan\nIndia",
+    "phone": "Phone",
+    "email": "Email",
+    "form": {
+      "title": "Send us a Message",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "subject": "Subject",
+      "selectSubject": "Select a topic",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your inquiry...",
+      "consent": "I agree to the privacy policy and terms of service",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Thank you! Your message has been sent successfully.",
+      "subjects": {
+        "volunteer": "Volunteer Inquiry",
+        "healing": "Natural Healing Consultation",
+        "education": "Education & Courses",
+        "partnership": "Partnership Opportunity",
+        "products": "Product Inquiry",
+        "other": "Other"
+      },
+      "errors": {
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailRequired": "Email address is required",
+        "emailInvalid": "Please enter a valid email address",
+        "subjectRequired": "Please select a subject",
+        "messageRequired": "Message is required"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Reviving Heritage, Nurturing Future",
+    "quickLinks": "Quick Links",
+    "initiatives": "Our Initiatives",
+    "contact": "Contact Info",
+    "social": "Follow Us",
+    "newsletter": "Newsletter",
+    "newsletterText": "Stay updated with our latest news and events",
+    "subscribe": "Subscribe",
+    "copyright": "© 2025 Lakshya Paryawaran and Jankalyan Sanstha. All rights reserved."
+  },
+  "common": {
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try Again",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "getStarted": "Get Started"
+  }
+}
