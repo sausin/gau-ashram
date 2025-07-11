@@ -20,11 +20,32 @@
     "ctaTertiary": "Shop Products",
     "ctaVolunteer": "Volunteer"
   },
+  "home": {
+    "sustainableFarmingAlt": "Traditional sustainable farming practices",
+    "yearsOfService": "25+",
+    "yearsOfServiceLabel": "Years of Service",
+    "villageRepresentativeAlt": "Village representative",
+    "villageRepresentative": "Village Representative",
+    "ruralRajasthan": "Rural Rajasthan",
+    "communityMemberAlt": "Community member",
+    "communityMember": "Community Member",
+    "goMandirBeneficiary": "Go Mandir Beneficiary",
+    "joinMission": "Join Our Mission",
+    "joinMissionDescription": "Be part of the movement to revive India's ecological and cultural heritage through sustainable practices and traditional wisdom."
+  },
   "stats": {
     "landRevived": "1000+ acres of land revived",
     "bullsDistributed": "197 Tharparkar bulls distributed", 
     "womenTrained": "1000+ rural women trained",
-    "waterTable": "Water table raised by 290 feet"
+    "waterTable": "Water table raised by 290 feet",
+    "waterTableValue": "410→120ft",
+    "waterTableLabel": "Water Table Revival",
+    "bullsValue": "197",
+    "bullsLabel": "Tharparkar Bulls",
+    "womenValue": "1000+",
+    "womenLabel": "Women Trained",
+    "acresValue": "1000+",
+    "acresLabel": "Acres Restored"
   },
   "about": {
     "title": "Who We Are",
@@ -39,31 +60,109 @@
       "Train rural communities in herbal wellness and zero-cost farming",
       "Conserve water, forests, and biodiversity",
       "Create models of swadeshi economy through cow-based enterprises"
-    ]
+    ],
+    "architectureAlt": "Traditional Indian architecture and heritage",
+    "coreValues": "Our Core Values",
+    "coreValuesDescription": "Guiding principles that shape our approach to ecological restoration and community empowerment",
+    "traditionalWisdom": "Traditional Wisdom",
+    "traditionalWisdomDesc": "Preserving and applying ancient knowledge systems for modern challenges",
+    "compassionateService": "Compassionate Service", 
+    "compassionateServiceDesc": "Serving all beings with love, respect, and dedication to their wellbeing",
+    "sustainableInnovation": "Sustainable Innovation",
+    "sustainableInnovationDesc": "Blending traditional practices with modern solutions for lasting impact",
+    "ourLeadership": "Our Leadership",
+    "leadershipDescription": "Dedicated individuals committed to reviving India's ecological and cultural heritage",
+    "team": {
+      "founder": {
+        "name": "Founder & Director",
+        "position": "Spiritual Leader",
+        "description": "Visionary leader dedicated to reviving traditional Indian values and sustainable living practices"
+      },
+      "priya": {
+        "name": "Dr. Priya Sharma",
+        "position": "Head of Natural Healing",
+        "description": "Expert in Ayurveda and Panchgavya therapy with 15+ years of experience in traditional medicine"
+      },
+      "ramesh": {
+        "name": "Shri Ramesh Kumar",
+        "position": "Agricultural Coordinator",
+        "description": "Specialist in sustainable farming and cow-based agriculture with deep knowledge of traditional methods"
+      }
+    }
   },
   "initiatives": {
     "title": "Our Initiatives",
     "subtitle": "Transforming Lives Through Traditional Wisdom",
     "goMandir": {
       "title": "Go Mandir",
-      "description": "A sanctuary for native cows and a center for cultural, ecological, and economic revival. Water table raised from 410ft to 120ft, thousands of acres revived, chemical-free agriculture, women's empowerment."
+      "description": "A sanctuary for native cows and a center for cultural, ecological, and economic revival. Water table raised from 410ft to 120ft, thousands of acres revived, chemical-free agriculture, women's empowerment.",
+      "features": [
+        "Sanctuary for 500+ indigenous cows",
+        "Water table raised from 410ft to 120ft",
+        "Thousands of acres of land restored",
+        "Chemical-free agriculture practices",
+        "Women empowerment programs"
+      ]
     },
     "healthcare": {
       "title": "Self-Reliant Healthcare Training",
-      "description": "Equipping rural families and women with acupressure, naturopathy, and Panchgavya chikitsa skills for community wellness."
+      "description": "Equipping rural families and women with acupressure, naturopathy, and Panchgavya chikitsa skills for community wellness.",
+      "features": [
+        "Acupressure training for rural families",
+        "Naturopathy workshops and consultations",
+        "Panchgavya therapy certification",
+        "Community health camps",
+        "Traditional healing knowledge preservation"
+      ]
     },
     "agriculture": {
       "title": "Sustainable Agriculture",
-      "description": "Promoting poison-free farming using cow dung, urine, and local soil microbes for healthy food production."
+      "description": "Promoting poison-free farming using cow dung, urine, and local soil microbes for healthy food production.",
+      "features": [
+        "Zero-cost farming techniques",
+        "Cow-based organic fertilizers",
+        "Soil microbe enhancement",
+        "Crop rotation and companion planting",
+        "Farmer training and support"
+      ]
     },
     "conservation": {
       "title": "Forest and Wildlife Conservation",
-      "description": "Reviving habitats and protecting biodiversity in crisis-affected regions through natural restoration methods."
+      "description": "Reviving habitats and protecting biodiversity in crisis-affected regions through natural restoration methods.",
+      "features": [
+        "Habitat restoration projects",
+        "Wildlife corridor development",
+        "Native species protection",
+        "Biodiversity monitoring",
+        "Community conservation education"
+      ]
     },
     "water": {
       "title": "Water Rejuvenation Projects",
-      "description": "Transforming dry lands into water-rich ecosystems through traditional water conservation techniques."
-    }
+      "description": "Transforming dry lands into water-rich ecosystems through traditional water conservation techniques.",
+      "features": [
+        "Traditional water harvesting",
+        "Groundwater recharge systems", 
+        "Watershed management",
+        "Drought-resistant landscaping",
+        "Community water stewardship"
+      ]
+    },
+    "impactTitle": "Initiative Impact",
+    "impact": {
+      "waterTableLabel": "Water Table Rise",
+      "waterTableDesc": "Dramatic improvement",
+      "acresLabel": "Acres Restored", 
+      "acresDesc": "Land regeneration",
+      "bullsLabel": "Bulls Distributed",
+      "bullsDesc": "Tharparkar breed",
+      "womenLabel": "Women Trained",
+      "womenDesc": "In natural healing"
+    },
+    "supportTitle": "Support Our Initiatives",
+    "supportDescription": "Join us in creating sustainable change through traditional wisdom and innovative practices.",
+    "volunteerWithUs": "Volunteer With Us",
+    "partnerWithUs": "Partner With Us"
   },
   "healing": {
     "title": "Natural Healing",
@@ -83,7 +182,57 @@
       "Addresses root causes of illness",
       "Promotes overall well-being",
       "Cost-effective healthcare solutions"
-    ]
+    ],
+    "benefitsTitles": [
+      "Chemical-Free",
+      "Natural Immunity", 
+      "Root Cause",
+      "Overall Wellbeing",
+      "Cost-Effective"
+    ],
+    "benefitsDescription": "Experience the transformative power of natural healing methods",
+    "naturopathyAlt": "Natural healing therapy",
+    "treatmentMethods": "Treatment Methods",
+    "mudTherapy": "Mud therapy and earth treatments",
+    "hydrotherapy": "Hydrotherapy and water healing",
+    "yogaBreathing": "Yoga and breathing exercises",
+    "dietaryTherapy": "Dietary therapy and fasting",
+    "panchgavyaAlt": "Panchgavya products and therapy",
+    "fiveSacredElements": "Five Sacred Elements",
+    "cowMilk": "Cow Milk",
+    "cowCurd": "Cow Curd",
+    "cowGhee": "Cow Ghee",
+    "cowUrine": "Cow Urine",
+    "cowDung": "Cow Dung",
+    "bookConsultationTitle": "Book Your Healing Consultation",
+    "consultationDescription": "Experience personalized natural healing treatments guided by our experienced practitioners",
+    "scheduleConsultation": "Schedule Consultation",
+    "learnTechniques": "Learn Healing Techniques",
+    "trainingPrograms": "Healing Training Programs",
+    "trainingDescription": "Learn traditional healing methods and become a certified practitioner",
+    "duration": "Duration",
+    "level": "Level",
+    "enrollNow": "Enroll Now",
+    "programs": {
+      "basic": {
+        "title": "Basic Naturopathy",
+        "description": "Learn fundamental principles of natural healing using the five elements",
+        "duration": "3 months",
+        "level": "Beginner"
+      },
+      "panchgavya": {
+        "title": "Panchgavya Therapy",
+        "description": "Master the art of cow-based healing and wellness practices",
+        "duration": "6 months",
+        "level": "Intermediate"
+      },
+      "advanced": {
+        "title": "Advanced Healing",
+        "description": "Comprehensive training in traditional healing methods and consultation",
+        "duration": "1 year",
+        "level": "Advanced"
+      }
+    }
   },
   "education": {
     "title": "Education & Courses",
@@ -150,9 +299,16 @@
   "blog": {
     "title": "Latest Insights",
     "subtitle": "Stories from the Field",
+    "featuredArticle": "Featured Article",
+    "recentArticles": "Recent Articles",
+    "stayUpdated": "Stay Updated",
+    "newsletterDescription": "Subscribe to our newsletter to receive the latest insights, research findings, and stories from the field.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
     "readMore": "Read More",
     "share": "Share this article",
-    "relatedArticles": "Related Articles"
+    "relatedArticles": "Related Articles",
+    "postNotFound": "Blog post not found"
   },
   "contact": {
     "title": "Connect With Us",
@@ -198,13 +354,17 @@
     }
   },
   "footer": {
+    "organizationName": "Lakshya Sanstha",
     "tagline": "Reviving Heritage, Nurturing Future",
+    "description": "Dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment through traditional wisdom and sustainable innovation.",
     "quickLinks": "Quick Links",
     "initiatives": "Our Initiatives",
     "contact": "Contact Info",
+    "email": "info@lakshyasanstha.org",
     "social": "Follow Us",
     "newsletter": "Newsletter",
     "newsletterText": "Stay updated with our latest news and events",
+    "emailPlaceholder": "Enter email",
     "subscribe": "Subscribe",
     "copyright": "© 2025 Lakshya Paryawaran and Jankalyan Sanstha. All rights reserved."
   },

@@ -17,12 +17,14 @@
     <!-- About Content -->
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Story Content from Markdown -->
+        <div v-if="storyContent" class="mb-20">
+          <ContentRenderer content-path="about/story" />
+        </div>
+        
+        <!-- Original grid layout with vision -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 class="text-3xl font-serif font-bold text-primary-800 mb-6">Our Story</h2>
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-              {{ t('about.description') }}
-            </p>
             <div class="bg-primary-50 rounded-lg p-6">
               <h3 class="text-xl font-semibold text-primary-800 mb-4">{{ t('about.vision') }}</h3>
               <p class="text-gray-700 leading-relaxed">{{ t('about.visionText') }}</p>
@@ -31,15 +33,20 @@
           <div class="relative">
             <img
               src="https://images.pexels.com/photos/8828756/pexels-photo-8828756.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Traditional Indian architecture and heritage"
+              :alt="t('about.architectureAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"
             />
           </div>
         </div>
 
-        <!-- Mission Points -->
-        <div class="bg-white rounded-xl shadow-lg p-8">
+        <!-- Mission Content from Markdown -->
+        <div v-if="missionContent" class="bg-white rounded-xl shadow-lg p-8">
+          <ContentRenderer content-path="about/mission" />
+        </div>
+        
+        <!-- Fallback to JSON mission points if markdown not available -->
+        <div v-else class="bg-white rounded-xl shadow-lg p-8">
           <h3 class="text-2xl font-serif font-bold text-primary-800 mb-8 text-center">
             {{ t('about.mission') }}
           </h3>
@@ -66,10 +73,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
-            Our Core Values
+            {{ t('about.coreValues') }}
           </h2>
           <p class="text-xl text-primary-100 max-w-2xl mx-auto">
-            Guiding principles that shape our approach to ecological restoration and community empowerment
+            {{ t('about.coreValuesDescription') }}
           </p>
         </div>
 
@@ -80,8 +87,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-4">Traditional Wisdom</h3>
-            <p class="text-primary-100">Preserving and applying ancient knowledge systems for modern challenges</p>
+            <h3 class="text-xl font-semibold mb-4">{{ t('about.traditionalWisdom') }}</h3>
+            <p class="text-primary-100">{{ t('about.traditionalWisdomDesc') }}</p>
           </div>
           
           <div class="text-center">
@@ -90,8 +97,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-4">Compassionate Service</h3>
-            <p class="text-primary-100">Serving all beings with love, respect, and dedication to their wellbeing</p>
+            <h3 class="text-xl font-semibold mb-4">{{ t('about.compassionateService') }}</h3>
+            <p class="text-primary-100">{{ t('about.compassionateServiceDesc') }}</p>
           </div>
           
           <div class="text-center">
@@ -100,8 +107,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
               </svg>
             </div>
-            <h3 class="text-xl font-semibold mb-4">Sustainable Innovation</h3>
-            <p class="text-primary-100">Blending traditional practices with modern solutions for lasting impact</p>
+            <h3 class="text-xl font-semibold mb-4">{{ t('about.sustainableInnovation') }}</h3>
+            <p class="text-primary-100">{{ t('about.sustainableInnovationDesc') }}</p>
           </div>
         </div>
       </div>
@@ -112,10 +119,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-primary-800 mb-4">
-            Our Leadership
+            {{ t('about.ourLeadership') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Dedicated individuals committed to reviving India's ecological and cultural heritage
+            {{ t('about.leadershipDescription') }}
           </p>
         </div>
 
@@ -142,29 +149,35 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
+import { useContent } from '../composables/useContent'
+import ContentRenderer from '../components/ui/ContentRenderer.vue'
 
 const { t } = useI18n()
+const { getContent } = useContent()
+
+const storyContent = computed(() => getContent('about/story'))
+const missionContent = computed(() => getContent('about/mission'))
 
 const missionPoints = computed(() => t('about.missionPoints'))
 
-const teamMembers = [
+const teamMembers = computed(() => [
   {
-    name: 'Founder & Director',
-    position: 'Spiritual Leader',
-    description: 'Visionary leader dedicated to reviving traditional Indian values and sustainable living practices',
+    name: t('about.team.founder.name'),
+    position: t('about.team.founder.position'),
+    description: t('about.team.founder.description'),
     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
   },
   {
-    name: 'Dr. Priya Sharma',
-    position: 'Head of Natural Healing',
-    description: 'Expert in Ayurveda and Panchgavya therapy with 15+ years of experience in traditional medicine',
+    name: t('about.team.priya.name'),
+    position: t('about.team.priya.position'),
+    description: t('about.team.priya.description'),
     image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
   },
   {
-    name: 'Shri Ramesh Kumar',
-    position: 'Agricultural Coordinator',
-    description: 'Specialist in sustainable farming and cow-based agriculture with deep knowledge of traditional methods',
+    name: t('about.team.ramesh.name'),
+    position: t('about.team.ramesh.position'),
+    description: t('about.team.ramesh.description'),
     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
   }
-]
+])
 </script>

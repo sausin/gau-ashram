@@ -37,15 +37,15 @@
           <div class="relative">
             <img
               src="https://images.pexels.com/photos/12892080/pexels-photo-12892080.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Traditional sustainable farming practices"
+              :alt="t('home.sustainableFarmingAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"
             />
             <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-primary-500 rounded-full flex items-center justify-center shadow-xl">
-              <span class="text-white font-bold text-2xl">25+</span>
+              <span class="text-white font-bold text-2xl">{{ t('home.yearsOfService') }}</span>
             </div>
             <div class="absolute -bottom-2 -right-2 text-primary-700 font-semibold text-sm">
-              Years of Service
+              {{ t('home.yearsOfServiceLabel') }}
             </div>
           </div>
         </div>
@@ -96,34 +96,41 @@
       </div>
     </section>
 
-    <!-- Impact Section -->
+    <!-- Impact Section with Content -->
     <section class="py-20 bg-primary-800 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
-            {{ t('impact.title') }}
-          </h2>
-          <p class="text-xl text-primary-100 max-w-2xl mx-auto">
-            {{ t('impact.subtitle') }}
-          </p>
+        <div v-if="impactContent" class="prose prose-lg prose-invert max-w-none">
+          <ContentRenderer content-path="home/impact" />
         </div>
+        
+        <!-- Fallback to original stats if markdown not available -->
+        <div v-else>
+          <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
+              {{ t('impact.title') }}
+            </h2>
+            <p class="text-xl text-primary-100 max-w-2xl mx-auto">
+              {{ t('impact.subtitle') }}
+            </p>
+          </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-16">
-          <div class="transform hover:scale-105 transition-transform duration-300">
-            <div class="text-4xl font-bold mb-2">410→120ft</div>
-            <div class="text-primary-200">Water Table Revival</div>
-          </div>
-          <div class="transform hover:scale-105 transition-transform duration-300">
-            <div class="text-4xl font-bold mb-2">197</div>
-            <div class="text-primary-200">Tharparkar Bulls</div>
-          </div>
-          <div class="transform hover:scale-105 transition-transform duration-300">
-            <div class="text-4xl font-bold mb-2">1000+</div>
-            <div class="text-primary-200">Women Trained</div>
-          </div>
-          <div class="transform hover:scale-105 transition-transform duration-300">
-            <div class="text-4xl font-bold mb-2">1000+</div>
-            <div class="text-primary-200">Acres Restored</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-16">
+            <div class="transform hover:scale-105 transition-transform duration-300">
+              <div class="text-4xl font-bold mb-2">{{ t('stats.waterTableValue') }}</div>
+              <div class="text-primary-200">{{ t('stats.waterTableLabel') }}</div>
+            </div>
+            <div class="transform hover:scale-105 transition-transform duration-300">
+              <div class="text-4xl font-bold mb-2">{{ t('stats.bullsValue') }}</div>
+              <div class="text-primary-200">{{ t('stats.bullsLabel') }}</div>
+            </div>
+            <div class="transform hover:scale-105 transition-transform duration-300">
+              <div class="text-4xl font-bold mb-2">{{ t('stats.womenValue') }}</div>
+              <div class="text-primary-200">{{ t('stats.womenLabel') }}</div>
+            </div>
+            <div class="transform hover:scale-105 transition-transform duration-300">
+              <div class="text-4xl font-bold mb-2">{{ t('stats.acresValue') }}</div>
+              <div class="text-primary-200">{{ t('stats.acresLabel') }}</div>
+            </div>
           </div>
         </div>
 
@@ -136,12 +143,12 @@
             <div class="flex items-center">
               <img
                 src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Village representative"
+:alt="t('home.villageRepresentativeAlt')"
                 class="w-12 h-12 rounded-full mr-4"
               />
               <div>
-                <p class="font-semibold">Village Representative</p>
-                <p class="text-primary-200 text-sm">Rural Rajasthan</p>
+                <p class="font-semibold">{{ t('home.villageRepresentative') }}</p>
+                <p class="text-primary-200 text-sm">{{ t('home.ruralRajasthan') }}</p>
               </div>
             </div>
           </div>
@@ -153,12 +160,12 @@
             <div class="flex items-center">
               <img
                 src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                alt="Community member"
+:alt="t('home.communityMemberAlt')"
                 class="w-12 h-12 rounded-full mr-4"
               />
               <div>
-                <p class="font-semibold">Community Member</p>
-                <p class="text-primary-200 text-sm">Go Mandir Beneficiary</p>
+                <p class="font-semibold">{{ t('home.communityMember') }}</p>
+                <p class="text-primary-200 text-sm">{{ t('home.goMandirBeneficiary') }}</p>
               </div>
             </div>
           </div>
@@ -170,10 +177,10 @@
     <section class="py-20 bg-gradient-to-r from-secondary-500 to-secondary-600">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
-          Join Our Mission
+          {{ t('home.joinMission') }}
         </h2>
         <p class="text-xl text-secondary-100 mb-8 max-w-2xl mx-auto">
-          Be part of the movement to revive India's ecological and cultural heritage through sustainable practices and traditional wisdom.
+          {{ t('home.joinMissionDescription') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <router-link
@@ -195,11 +202,16 @@
 </template>
 
 <script setup lang="ts">
-import { h } from 'vue'
+import { h, computed } from 'vue'
 import HeroSection from '../components/ui/HeroSection.vue'
+import ContentRenderer from '../components/ui/ContentRenderer.vue'
 import { useI18n } from '../composables/useI18n'
+import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
+const { getContent } = useContent()
+
+const impactContent = computed(() => getContent('home/impact'))
 
 // Simple icon components using raw SVG
 const HomeIcon = () => h('svg', {

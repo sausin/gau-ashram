@@ -17,8 +17,8 @@
     <!-- Featured Article -->
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-16">
-          <h2 class="text-2xl font-semibold text-primary-800 mb-8">Featured Article</h2>
+        <div v-if="featuredArticle" class="mb-16">
+          <h2 class="text-2xl font-semibold text-primary-800 mb-8">{{ t('blog.featuredArticle') }}</h2>
           <div class="bg-white rounded-xl shadow-lg overflow-hidden">
             <div class="md:flex">
               <div class="md:w-1/2">
@@ -57,12 +57,12 @@
                       <p class="text-sm text-gray-500">{{ featuredArticle.author.title }}</p>
                     </div>
                   </div>
-                  <a
-                    href="#"
+                  <router-link
+                    :to="`/blog/${featuredArticle.slug}`"
                     class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300"
                   >
                     {{ t('blog.readMore') }}
-                  </a>
+                  </router-link>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@
 
         <!-- Articles Grid -->
         <div>
-          <h2 class="text-2xl font-semibold text-primary-800 mb-8">Recent Articles</h2>
+          <h2 class="text-2xl font-semibold text-primary-800 mb-8">{{ t('blog.recentArticles') }}</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <article
               v-for="article in articles"
@@ -110,12 +110,12 @@
                     />
                     <span class="text-sm font-medium text-gray-700">{{ article.author.name }}</span>
                   </div>
-                  <a
-                    href="#"
+                  <router-link
+                    :to="`/blog/${article.slug}`"
                     class="text-primary-600 hover:text-primary-700 font-semibold text-sm transition-colors duration-300"
                   >
                     {{ t('blog.readMore') }}
-                  </a>
+                  </router-link>
                 </div>
               </div>
             </article>
@@ -124,18 +124,18 @@
 
         <!-- Newsletter Signup -->
         <div class="mt-20 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-8 text-center text-white">
-          <h3 class="text-2xl font-serif font-bold mb-4">Stay Updated</h3>
+          <h3 class="text-2xl font-serif font-bold mb-4">{{ t('blog.stayUpdated') }}</h3>
           <p class="mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter to receive the latest insights, research findings, and stories from the field.
+            {{ t('blog.newsletterDescription') }}
           </p>
           <div class="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
             <input
               type="email"
-              placeholder="Enter your email"
+              :placeholder="t('blog.emailPlaceholder')"
               class="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300"
             />
             <button class="bg-white text-primary-700 hover:bg-primary-50 px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
-              Subscribe
+              {{ t('blog.subscribe') }}
             </button>
           </div>
         </div>
@@ -145,109 +145,39 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
+import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
+const { getBlogPosts } = useContent()
 
-const featuredArticle = {
-  id: 1,
-  title: 'The Future of Gir Cattle Conservation in Climate Change Era',
-  excerpt: 'Exploring how traditional breeding practices combined with modern technology can help preserve our indigenous breeds while adapting to changing environmental conditions.',
-  image: 'https://images.pexels.com/photos/4207707/pexels-photo-4207707.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-  date: 'March 15, 2025',
-  readTime: 8,
-  category: 'Research',
-  author: {
-    name: 'Dr. Rajesh Sharma',
-    title: 'Director & Chief Researcher',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-  }
-}
+// Get all blog posts sorted by date (newest first)
+const allPosts = computed(() => {
+  const posts = getBlogPosts()
+  return posts.map((post, index) => {
+    // Create slug from title for routing
+    const slug = post.metadata.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `post-${index + 1}`
+    
+    return {
+      id: index + 1,
+      slug,
+      title: post.metadata.title || '',
+      excerpt: post.metadata.excerpt || post.metadata.description || '',
+      image: post.metadata.titleImage || 'https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      date: post.metadata.date ? new Date(post.metadata.date).toLocaleDateString() : '',
+      readTime: post.metadata.readTime || 5,
+      category: post.metadata.category || 'General',
+      author: typeof post.metadata.author === 'string' 
+        ? { name: post.metadata.author, title: '', image: '' }
+        : post.metadata.author || { name: 'Author', title: '', image: '' }
+    }
+  })
+})
 
-const articles = [
-  {
-    id: 2,
-    title: 'Traditional Ayurvedic Practices in Modern Cattle Care',
-    excerpt: 'How ancient wisdom continues to inform our approach to maintaining the health and well-being of our Gir cattle.',
-    image: 'https://images.pexels.com/photos/8827680/pexels-photo-8827680.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'March 10, 2025',
-    readTime: 6,
-    category: 'Healthcare',
-    author: {
-      name: 'Dr. Priya Patel',
-      title: 'Head of Conservation',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  },
-  {
-    id: 3,
-    title: 'Success Story: Farmer Ramesh\'s Journey with Gir Cattle',
-    excerpt: 'A local farmer shares his experience of transitioning to Gir cattle farming and the positive impact on his livelihood.',
-    image: 'https://images.pexels.com/photos/12892080/pexels-photo-12892080.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'March 5, 2025',
-    readTime: 5,
-    category: 'Community',
-    author: {
-      name: 'Mr. Anil Kumar',
-      title: 'Community Outreach',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  },
-  {
-    id: 4,
-    title: 'Nutritional Benefits of A2 Milk from Gir Cows',
-    excerpt: 'Understanding the unique nutritional profile of A2 milk and its health benefits for consumers.',
-    image: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'February 28, 2025',
-    readTime: 7,
-    category: 'Nutrition',
-    author: {
-      name: 'Dr. Rajesh Sharma',
-      title: 'Director & Chief Researcher',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  },
-  {
-    id: 5,
-    title: 'Preserving Indigenous Knowledge: Oral Traditions in Cattle Farming',
-    excerpt: 'Documenting and preserving the rich oral traditions and indigenous knowledge systems related to cattle care.',
-    image: 'https://images.pexels.com/photos/8828756/pexels-photo-8828756.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'February 25, 2025',
-    readTime: 6,
-    category: 'Heritage',
-    author: {
-      name: 'Dr. Priya Patel',
-      title: 'Head of Conservation',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  },
-  {
-    id: 6,
-    title: 'Innovation in Breeding: Genetic Markers and Selection',
-    excerpt: 'Latest advances in genetic marker technology and how they\'re revolutionizing our breeding programs.',
-    image: 'https://images.pexels.com/photos/4466492/pexels-photo-4466492.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'February 20, 2025',
-    readTime: 8,
-    category: 'Research',
-    author: {
-      name: 'Dr. Rajesh Sharma',
-      title: 'Director & Chief Researcher',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  },
-  {
-    id: 7,
-    title: 'Building Sustainable Dairy Cooperatives in Rural Rajasthan',
-    excerpt: 'How we\'re empowering local communities through cooperative dairy farming initiatives.',
-    image: 'https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-    date: 'February 15, 2025',
-    readTime: 5,
-    category: 'Community',
-    author: {
-      name: 'Mr. Anil Kumar',
-      title: 'Community Outreach',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-    }
-  }
-]
+// Featured article is the first (newest) post
+const featuredArticle = computed(() => allPosts.value[0] || null)
+
+// Recent articles are the rest (excluding featured)
+const articles = computed(() => allPosts.value.slice(1))
 </script>

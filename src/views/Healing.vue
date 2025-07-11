@@ -18,53 +18,43 @@
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <!-- Naturopathy -->
+          <!-- Naturopathy with Content -->
           <div class="space-y-6">
-            <div class="flex items-center space-x-4 mb-6">
-              <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
-                </svg>
-              </div>
-              <h2 class="text-3xl font-serif font-bold text-primary-800">
-                {{ t('healing.naturopathy.title') }}
-              </h2>
+            <div class="prose prose-lg max-w-none">
+              <ContentRenderer content-path="healing/naturopathy" />
             </div>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              {{ t('healing.naturopathy.description') }}
-            </p>
             <img
               src="https://images.pexels.com/photos/8827680/pexels-photo-8827680.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Natural healing therapy"
+              :alt="t('healing.naturopathyAlt')"
               class="rounded-lg shadow-lg w-full"
               loading="lazy"
             />
             <div class="bg-primary-50 rounded-lg p-6">
-              <h3 class="text-xl font-semibold text-primary-800 mb-4">Treatment Methods</h3>
+              <h3 class="text-xl font-semibold text-primary-800 mb-4">{{ t('healing.treatmentMethods') }}</h3>
               <ul class="space-y-2">
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Mud therapy and earth treatments</span>
+                  <span class="text-gray-700">{{ t('healing.mudTherapy') }}</span>
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Hydrotherapy and water healing</span>
+                  <span class="text-gray-700">{{ t('healing.hydrotherapy') }}</span>
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Yoga and breathing exercises</span>
+                  <span class="text-gray-700">{{ t('healing.yogaBreathing') }}</span>
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Dietary therapy and fasting</span>
+                  <span class="text-gray-700">{{ t('healing.dietaryTherapy') }}</span>
                 </li>
               </ul>
             </div>
@@ -87,42 +77,42 @@
             </p>
             <img
               src="https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-              alt="Panchgavya products and therapy"
+              :alt="t('healing.panchgavyaAlt')"
               class="rounded-lg shadow-lg w-full"
               loading="lazy"
             />
             <div class="bg-secondary-50 rounded-lg p-6">
-              <h3 class="text-xl font-semibold text-primary-800 mb-4">Five Sacred Elements</h3>
+              <h3 class="text-xl font-semibold text-primary-800 mb-4">{{ t('healing.fiveSacredElements') }}</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="flex items-center space-x-3">
                   <div class="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center">
                     <span class="text-secondary-700 font-semibold text-sm">1</span>
                   </div>
-                  <span class="text-gray-700">Cow Milk</span>
+                  <span class="text-gray-700">{{ t('healing.cowMilk') }}</span>
                 </div>
                 <div class="flex items-center space-x-3">
                   <div class="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center">
                     <span class="text-secondary-700 font-semibold text-sm">2</span>
                   </div>
-                  <span class="text-gray-700">Cow Curd</span>
+                  <span class="text-gray-700">{{ t('healing.cowCurd') }}</span>
                 </div>
                 <div class="flex items-center space-x-3">
                   <div class="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center">
                     <span class="text-secondary-700 font-semibold text-sm">3</span>
                   </div>
-                  <span class="text-gray-700">Cow Ghee</span>
+                  <span class="text-gray-700">{{ t('healing.cowGhee') }}</span>
                 </div>
                 <div class="flex items-center space-x-3">
                   <div class="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center">
                     <span class="text-secondary-700 font-semibold text-sm">4</span>
                   </div>
-                  <span class="text-gray-700">Cow Urine</span>
+                  <span class="text-gray-700">{{ t('healing.cowUrine') }}</span>
                 </div>
                 <div class="flex items-center space-x-3 sm:col-span-2">
                   <div class="w-8 h-8 bg-secondary-200 rounded-full flex items-center justify-center">
                     <span class="text-secondary-700 font-semibold text-sm">5</span>
                   </div>
-                  <span class="text-gray-700">Cow Dung</span>
+                  <span class="text-gray-700">{{ t('healing.cowDung') }}</span>
                 </div>
               </div>
             </div>
@@ -139,7 +129,7 @@
             {{ t('healing.benefits') }}
           </h2>
           <p class="text-xl text-primary-100 max-w-2xl mx-auto">
-            Experience the transformative power of natural healing methods
+            {{ t('healing.benefitsDescription') }}
           </p>
         </div>
 
@@ -162,10 +152,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white text-center">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-6">
-            Book Your Healing Consultation
+{{ t('healing.bookConsultationTitle') }}
           </h2>
           <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Experience personalized natural healing treatments guided by our experienced practitioners
+{{ t('healing.consultationDescription') }}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -174,7 +164,7 @@
               class="bg-white text-primary-700 hover:bg-primary-50 border-white"
               @click="$router.push('/contact')"
             >
-              Schedule Consultation
+{{ t('healing.scheduleConsultation') }}
             </Button>
             <Button
               variant="outline"
@@ -182,7 +172,7 @@
               class="border-white text-white hover:bg-white hover:text-primary-700"
               @click="$router.push('/education')"
             >
-              Learn Healing Techniques
+{{ t('healing.learnTechniques') }}
             </Button>
           </div>
         </div>
@@ -194,10 +184,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-primary-800 mb-4">
-            Healing Training Programs
+{{ t('healing.trainingPrograms') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Learn traditional healing methods and become a certified practitioner
+{{ t('healing.trainingDescription') }}
           </p>
         </div>
 
@@ -218,16 +208,16 @@
               <p class="text-gray-600">{{ program.description }}</p>
               <div class="space-y-2">
                 <div class="flex justify-between text-sm">
-                  <span class="text-gray-500">Duration:</span>
+                  <span class="text-gray-500">{{ t('healing.duration') }}:</span>
                   <span class="font-medium">{{ program.duration }}</span>
                 </div>
                 <div class="flex justify-between text-sm">
-                  <span class="text-gray-500">Level:</span>
+                  <span class="text-gray-500">{{ t('healing.level') }}:</span>
                   <span class="font-medium">{{ program.level }}</span>
                 </div>
               </div>
               <Button variant="primary" size="sm" class="w-full">
-                Enroll Now
+{{ t('healing.enrollNow') }}
               </Button>
             </div>
           </Card>
@@ -242,32 +232,35 @@ import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import Button from '../components/ui/Button.vue'
 import Card from '../components/ui/Card.vue'
+import ContentRenderer from '../components/ui/ContentRenderer.vue'
+import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
+const { getContent } = useContent()
 
 const benefits = computed(() => t('healing.benefitsList').map((benefit, index) => ({
-  title: ['Chemical-Free', 'Natural Immunity', 'Root Cause', 'Overall Wellbeing', 'Cost-Effective'][index],
+  title: t('healing.benefitsTitles')[index],
   description: benefit
 })))
 
-const trainingPrograms = [
+const trainingPrograms = computed(() => [
   {
-    title: 'Basic Naturopathy',
-    description: 'Learn fundamental principles of natural healing using the five elements',
-    duration: '3 months',
-    level: 'Beginner'
+    title: t('healing.programs.basic.title'),
+    description: t('healing.programs.basic.description'),
+    duration: t('healing.programs.basic.duration'),
+    level: t('healing.programs.basic.level')
   },
   {
-    title: 'Panchgavya Therapy',
-    description: 'Master the art of cow-based healing and wellness practices',
-    duration: '6 months',
-    level: 'Intermediate'
+    title: t('healing.programs.panchgavya.title'),
+    description: t('healing.programs.panchgavya.description'),
+    duration: t('healing.programs.panchgavya.duration'),
+    level: t('healing.programs.panchgavya.level')
   },
   {
-    title: 'Advanced Healing',
-    description: 'Comprehensive training in traditional healing methods and consultation',
-    duration: '1 year',
-    level: 'Advanced'
+    title: t('healing.programs.advanced.title'),
+    description: t('healing.programs.advanced.description'),
+    duration: t('healing.programs.advanced.duration'),
+    level: t('healing.programs.advanced.level')
   }
-]
+])
 </script>

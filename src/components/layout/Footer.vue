@@ -9,12 +9,12 @@
               <span class="text-white font-bold text-xl">🐄</span>
             </div>
             <div>
-              <h3 class="text-2xl font-serif font-bold">Lakshya Sanstha</h3>
+              <h3 class="text-2xl font-serif font-bold">{{ t('footer.organizationName') }}</h3>
               <p class="text-primary-200 text-sm">{{ t('footer.tagline') }}</p>
             </div>
           </div>
           <p class="text-primary-100 leading-relaxed mb-6 max-w-md">
-            Dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment through traditional wisdom and sustainable innovation.
+            {{ t('footer.description') }}
           </p>
           <div class="flex space-x-4">
             <a href="#" class="text-primary-200 hover:text-white transition-colors duration-300" aria-label="Facebook">
@@ -82,16 +82,16 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
               <div class="text-sm">
-                <p>Go Mandir Campus</p>
-                <p>Rural Area, Rajasthan</p>
-                <p>India</p>
+                <p>{{ t('contact.addressText').split('\n')[0] }}</p>
+                <p>{{ t('contact.addressText').split('\n')[1] }}</p>
+                <p>{{ t('contact.addressText').split('\n')[2] }}</p>
               </div>
             </div>
             <div class="flex items-center space-x-2">
               <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              <span class="text-sm">info@lakshyasanstha.org</span>
+              <span class="text-sm">{{ t('footer.email') }}</span>
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <div class="flex">
               <input
                 type="email"
-                placeholder="Enter email"
+:placeholder="t('footer.emailPlaceholder')"
                 class="flex-1 px-3 py-2 text-sm bg-primary-800 border border-primary-700 rounded-l-md text-white placeholder-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
               <button class="px-4 py-2 bg-secondary-600 hover:bg-secondary-700 text-white text-sm rounded-r-md transition-colors duration-300">
