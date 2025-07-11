@@ -2,15 +2,15 @@
 title: "पंचगव्य एक वर्षीय पाठ्यक्रम"
 description: "पंचगव्य चिकित्सा के सिद्धांतों और व्यावहारिक अनुप्रयोग की संपूर्ण शिक्षा"
 excerpt: "12 माह का व्यापक पाठ्यक्रम जो पंचगव्य चिकित्सा के सभी पहलुओं को कवर करता है - औषधि निर्माण से लेकर गौशाला प्रबंधन तक"
-image: "https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+image: "/panchgavya-release2.jpeg"
 duration: "12 माह"
 semesters: 2
 level: "शुरुआती से मध्यम"
 type: "चिकित्सीय एवं प्रायोगिक"
 instructor: 
-  name: "डॉ. राजेश शर्मा"
+  name: "राकेश निहाल"
   title: "पंचगव्य चिकित्सा विशेषज्ञ"
-  image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+  image: "/rakesh.jpg"
 startDate: "2025-03-01"
 category: "स्वास्थ्य चिकित्सा"
 tags: ["पंचगव्य", "चिकित्सा", "गौशाला", "आयुर्वेद"]

@@ -4,14 +4,12 @@
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <router-link to="/" class="flex items-center space-x-3 group">
-            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center group-hover:shadow-lg transition-all duration-300">
-              <span class="text-white font-bold text-lg">🐄</span>
-            </div>
-            <div class="hidden sm:block">
-              <h1 class="text-xl font-serif font-bold text-primary-800">Gau Samwardhan Ashram</h1>
-              <p class="text-xs text-primary-600 -mt-1">Gau Mandir</p>
-            </div>
+          <router-link to="/" class="flex items-center group">
+            <img 
+              src="/logo.webp" 
+              alt="Gau Samwardhan Ashram - Go Mandir"
+              class="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+            />
           </router-link>
         </div>
 

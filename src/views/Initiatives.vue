@@ -209,11 +209,11 @@ const detailedInitiatives = computed(() => [
   {
     key: 'goMandir',
     icon: HomeIcon,
-    image: 'https://images.pexels.com/photos/4207707/pexels-photo-4207707.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'gau-background.jpg',
     features: [
       'Sanctuary for 500+ indigenous cows',
       'Water table raised from 410ft to 120ft',
-      'Thousands of acres of land restored',
+      'Hundreds of acres of land restored',
       'Chemical-free agriculture practices',
       'Women empowerment programs'
     ]
@@ -221,7 +221,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'healthcare',
     icon: HeartIcon,
-    image: 'https://images.pexels.com/photos/8827680/pexels-photo-8827680.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'medical-camp.jpeg',
     features: [
       'Acupressure training for rural families',
       'Naturopathy workshops and consultations',
@@ -233,7 +233,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'agriculture',
     icon: SeedlingIcon,
-    image: 'https://images.pexels.com/photos/12892080/pexels-photo-12892080.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'plantation2.jpeg',
     features: [
       'Zero-cost farming techniques',
       'Cow-based organic fertilizers',
@@ -245,7 +245,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'conservation',
     icon: ShieldIcon,
-    image: 'https://images.pexels.com/photos/8828756/pexels-photo-8828756.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'seed-distribution.jpeg',
     features: [
       'Habitat restoration projects',
       'Wildlife corridor development',
@@ -257,7 +257,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'water',
     icon: DropletIcon,
-    image: 'https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+    image: 'rainwater-harvesting.jpeg',
     features: [
       'Traditional water harvesting',
       'Groundwater recharge systems',

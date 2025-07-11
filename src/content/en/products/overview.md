@@ -5,7 +5,7 @@ subtitle: "Where Tradition Meets Purity"
 
 ## Supporting Sustainability Through Conscious Choices
 
-Every product from Gau Mandir carries the essence of our mission—to revive traditional practices, support indigenous cows, and create sustainable livelihoods. When you choose our products, you join a movement that values purity, tradition, and ecological balance.
+Every product from Go Mandir carries the essence of our mission—to revive traditional practices, support indigenous cows, and create sustainable livelihoods. When you choose our products, you join a movement that values purity, tradition, and ecological balance.
 
 ### Our Product Philosophy
 
@@ -129,7 +129,7 @@ Products for daily worship and wellness routines.
 ### How to Order
 
 #### Visit Our Campus Store
-Experience products firsthand at our Gau Mandir campus
+Experience products firsthand at our Go Mandir campus
 - Open all days: 8 AM - 6 PM
 - Free campus tour with purchase
 - Meet the cows and artisans
@@ -168,7 +168,7 @@ Your support helps us:
 
 ### Testimonials
 
-> "The A2 ghee from Gau Mandir has transformed our family's health. We can feel the difference in taste and digestion." - *Sharma Family, Jaipur*
+> "The A2 ghee from Go Mandir has transformed our family's health. We can feel the difference in taste and digestion." - *Sharma Family, Jaipur*
 
 > "I've tried many herbal soaps, but these are exceptional. My skin problems disappeared within weeks." - *Dr. Meera, Dermatologist*
 

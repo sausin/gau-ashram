@@ -1,7 +1,7 @@
 ---
 title: "Water Conservation Success: From 410ft to 120ft"
 description: "How traditional water harvesting methods transformed our region's water table"
-excerpt: "When we first arrived at our Gau Mandir campus, the land was parched, and the water table had dropped to an alarming 410 feet. Learn how traditional water harvesting methods helped us achieve a remarkable transformation."
+excerpt: "When we first arrived at our Go Mandir campus, the land was parched, and the water table had dropped to an alarming 410 feet. Learn how traditional water harvesting methods helped us achieve a remarkable transformation."
 titleImage: "https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
 author: 
   name: "Dr. Ramesh Kumar"
@@ -15,7 +15,7 @@ tags: ["water conservation", "success story", "traditional methods"]
 
 # Water Conservation Success: From 410ft to 120ft
 
-When we first arrived at our Gau Mandir campus, the land was parched, and the water table had dropped to an alarming 410 feet. Local farmers were struggling with bore wells that had run dry, and many had given up hope of reviving their agricultural practices.
+When we first arrived at our Go Mandir campus, the land was parched, and the water table had dropped to an alarming 410 feet. Local farmers were struggling with bore wells that had run dry, and many had given up hope of reviving their agricultural practices.
 
 ## The Challenge
 

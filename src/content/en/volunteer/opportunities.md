@@ -5,7 +5,7 @@ subtitle: "Be the Change You Wish to See"
 
 ## Join Our Mission of Transformation
 
-Volunteering at Gau Mandir is more than service—it's a transformative journey that connects you with nature, traditional wisdom, and purposeful living. Whether you can spare a weekend or several months, your contribution makes a real difference.
+Volunteering at Go Mandir is more than service—it's a transformative journey that connects you with nature, traditional wisdom, and purposeful living. Whether you can spare a weekend or several months, your contribution makes a real difference.
 
 ### Volunteer Programs
 
@@ -157,7 +157,7 @@ Team-building programs for companies:
 
 ### Volunteer Testimonials
 
-> "My month at Gau Mandir changed my perspective on life. I came to serve but received so much more—peace, purpose, and practical skills." - *Priya, Software Engineer*
+> "My month at Go Mandir changed my perspective on life. I came to serve but received so much more—peace, purpose, and practical skills." - *Priya, Software Engineer*
 
 > "Working with the cows taught me patience and unconditional love. The early mornings in the goshala are my most cherished memories." - *James, UK Volunteer*
 

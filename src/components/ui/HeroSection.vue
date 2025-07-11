@@ -3,7 +3,7 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img
-        src="https://images.pexels.com/photos/4207707/pexels-photo-4207707.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop"
+        src="/gau-background.jpg"
         alt="Indigenous cows in natural setting"
         class="w-full h-full object-cover"
         loading="eager"
@@ -56,12 +56,6 @@
             class="border-2 border-white text-white hover:bg-white hover:text-primary-800 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
           >
             {{ t('hero.ctaSecondary') }}
-          </router-link>
-          <router-link
-            to="/shop"
-            class="bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-          >
-            {{ t('hero.ctaTertiary') }}
           </router-link>
         </div>
       </div>

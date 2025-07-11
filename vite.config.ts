@@ -38,6 +38,37 @@ export default defineConfig({
       },
     }),
     sitemap({ hostname: 'https://gauasharam.org' }),
-    VitePWA({ registerType: 'autoUpdate' })
+    VitePWA({ 
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}']
+      },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      manifest: {
+        name: 'Gau Samwardhan Ashram and Jankalyan Sanstha',
+        short_name: 'Go Mandir',
+        description: 'Ecological restoration, indigenous cow conservation, natural healing, and rural empowerment',
+        theme_color: '#065f46',
+        background_color: '#ffffff',
+        display: 'standalone',
+        icons: [
+          {
+            src: 'logo.webp',
+            sizes: '811x245',
+            type: 'image/webp'
+          },
+          {
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-512x512.png', 
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
+    })
   ],
 })

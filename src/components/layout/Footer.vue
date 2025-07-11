@@ -5,13 +5,11 @@
         <!-- Logo & Description -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-4">
-            <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-              <span class="text-white font-bold text-xl">🐄</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-serif font-bold">{{ t('footer.organizationName') }}</h3>
-              <p class="text-primary-200 text-sm">{{ t('footer.tagline') }}</p>
-            </div>
+            <img 
+              src="/logo.webp" 
+              alt="Gau Samwardhan Ashram - Go Mandir"
+              class="h-16 w-auto bg-white rounded-lg p-2"
+            />
           </div>
           <p class="text-primary-100 leading-relaxed mb-6 max-w-md">
             {{ t('footer.description') }}

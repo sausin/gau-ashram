@@ -54,7 +54,7 @@
           </div>
           <div class="relative">
             <img
-              src="https://images.pexels.com/photos/8828756/pexels-photo-8828756.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              src="/panchgavya-release.jpeg"
               alt="Traditional education and learning"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"
@@ -299,7 +299,6 @@ import { h, computed, ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
 import Button from '../components/ui/Button.vue'
-import Card from '../components/ui/Card.vue'
 
 const { t } = useI18n()
 const { getCourses } = useContent()
@@ -319,33 +318,7 @@ const BookIcon = () => h('svg', {
   })
 ])
 
-const HeartIcon = () => h('svg', {
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  class: 'w-8 h-8'
-}, [
-  h('path', {
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-    strokeWidth: '2',
-    d: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-  })
-])
 
-const BriefcaseIcon = () => h('svg', {
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  class: 'w-8 h-8'
-}, [
-  h('path', {
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-    strokeWidth: '2',
-    d: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V8m8 0V6a2 2 0 00-2-2H10a2 2 0 00-2 2v2'
-  })
-])
 
 const HandIcon = () => h('svg', {
   fill: 'none',

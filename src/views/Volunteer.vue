@@ -57,7 +57,7 @@
           </div>
           <div class="relative">
             <img
-              src="https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              src="/volunteer.jpg"
               alt="Volunteers working together"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

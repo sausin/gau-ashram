@@ -14,7 +14,7 @@ Our journey began with a simple observation: the disconnect between modern life 
 
 ## Our Approach
 
-We believe in the power of indigenous knowledge systems, particularly the role of native cattle breeds in maintaining ecological balance. Our work centers around the **Gau Mandir** concept - not just as a shelter for cows, but as a hub for:
+We believe in the power of indigenous knowledge systems, particularly the role of native cattle breeds in maintaining ecological balance. Our work centers around the **Go Mandir** concept - not just as a shelter for cows, but as a hub for:
 
 - **Ecological restoration** through natural farming methods
 - **Community empowerment** through skill development

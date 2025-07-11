@@ -2,16 +2,16 @@
 title: "Panchgavya One-Year Course"
 description: "Comprehensive education in Panchgavya therapy principles and practical applications"
 excerpt: "A 12-month comprehensive course covering all aspects of Panchgavya therapy - from medicine preparation to Gaushala management"
-image: "https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+image: "/panchgavya-release2.jpeg"
 duration: "12 months"
 semesters: 2
 level: "Beginner to Intermediate"
 type: "Therapeutic and Practical"
 instructor: 
-  name: "Dr. Rajesh Sharma"
+  name: "Rakesh Nihal"
   title: "Panchgavya Therapy Expert"
-  image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-startDate: "2025-03-01"
+  image: "/rakesh.jpg"
+startDate: "2025-07-01"
 category: "Health Therapy"
 tags: ["panchgavya", "therapy", "gaushala", "ayurveda"]
 ---
