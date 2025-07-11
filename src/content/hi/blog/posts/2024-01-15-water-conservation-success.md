@@ -2,11 +2,11 @@
 title: "जल संरक्षण की सफलता: 410 फीट से 120 फीट तक"
 description: "पारंपरिक जल संचयन विधियों ने कैसे हमारे क्षेत्र के जल स्तर को बदल दिया"
 excerpt: "जब हम पहली बार अपने गो मंदिर परिसर में पहुंचे, तो भूमि सूखी थी, और जल स्तर चिंताजनक 410 फीट तक गिर गया था। जानें कि कैसे पारंपरिक जल संचयन विधियों ने हमें एक अद्भुत परिवर्तन हासिल करने में मदद की।"
-titleImage: "https://images.pexels.com/photos/4468081/pexels-photo-4468081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+titleImage: "/rainwater-harvesting.jpeg"
 author: 
-  name: "डॉ. रमेश कुमार"
+  name: "राकेश निहाल"
   title: "कृषि समन्वयक"
-  image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+  image: "/rakesh.jpg"
 date: "2024-01-15"
 readTime: 6
 category: "जल संरक्षण"

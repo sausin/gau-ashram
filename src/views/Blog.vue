@@ -121,9 +121,55 @@
             </article>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Newsletter Signup -->
-        <div class="mt-20 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-8 text-center text-white">
+    <!-- YouTube Videos Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-serif font-bold text-primary-800 mb-12 text-center">
+          {{ t('blog.watchVideos') }}
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="video in youtubeVideos"
+            :key="video.id"
+            class="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg bg-gray-100"
+          >
+            <iframe
+              :src="`https://www.youtube.com/embed/${video.id}`"
+              :title="video.title"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="absolute top-0 left-0 w-full h-full"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+        
+        <!-- YouTube Channel Link -->
+        <div class="text-center mt-8">
+          <a
+            href="https://youtube.com/@rakeshnihaljodhpur3637"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-300"
+          >
+            <span>{{ t('blog.moreVideos') }}</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-8 text-center text-white">
           <h3 class="text-2xl font-serif font-bold mb-4">{{ t('blog.stayUpdated') }}</h3>
           <p class="mb-6 max-w-2xl mx-auto">
             {{ t('blog.newsletterDescription') }}
@@ -151,6 +197,17 @@ import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
 const { getBlogPosts } = useContent()
+
+// YouTube video IDs extracted from provided URLs
+const youtubeVideos = [
+  { id: 'Sbq0UNs5DMg', title: 'Video 1' },
+  { id: '7_pMQvayFLo', title: 'Video 2' },
+  { id: 'dx47EZ2_77Y', title: 'Video 3' },
+  { id: '4hmxG7yVmvI', title: 'Video 4' },
+  { id: 'zmZJs3jNhyM', title: 'Video 5' },
+  { id: 'omXWpf7dwEk', title: 'Video 6' }, // YouTube Shorts
+  { id: 'ZJVcZmjPqLc', title: 'Video 7' }
+]
 
 // Get all blog posts sorted by date (newest first)
 const allPosts = computed(() => {

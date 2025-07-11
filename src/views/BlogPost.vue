@@ -86,46 +86,94 @@
       </div>
     </article>
 
-    <!-- Related Articles -->
-    <section class="py-16 bg-gray-50">
+    <!-- Related Articles Carousel -->
+    <section v-if="relatedArticles.length > 1" class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-serif font-bold text-primary-800 mb-12 text-center">
           {{ t('blog.relatedArticles') }}
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card
-            v-for="relatedArticle in relatedArticles"
-            :key="relatedArticle.id"
-            :hover="true"
-            :image="relatedArticle.image"
-            :image-alt="relatedArticle.title"
-            @click="$router.push(`/blog/${relatedArticle.slug}`)"
-          >
-            <div class="space-y-3">
-              <div class="flex items-center text-sm text-gray-500">
-                <span>{{ relatedArticle.date }}</span>
-                <span class="mx-2">•</span>
-                <span>{{ relatedArticle.readTime }} min</span>
+        <div class="relative">
+          <!-- Carousel Container -->
+          <div class="overflow-hidden">
+            <div 
+              class="flex transition-transform duration-500 ease-in-out"
+              :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+            >
+              <div
+                v-for="relatedArticle in relatedArticles"
+                :key="relatedArticle.id"
+                class="w-full flex-shrink-0 px-4 md:w-1/3"
+              >
+                <Card
+                  :hover="true"
+                  :image="relatedArticle.image"
+                  :image-alt="relatedArticle.title"
+                  @click="$router.push(`/blog/${relatedArticle.slug}`)"
+                >
+                  <div class="space-y-3">
+                    <div class="flex items-center text-sm text-gray-500">
+                      <span>{{ relatedArticle.date }}</span>
+                      <span class="mx-2">•</span>
+                      <span>{{ relatedArticle.readTime }} min</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold text-primary-800 line-clamp-2">
+                      {{ relatedArticle.title }}
+                    </h3>
+                    
+                    <p class="text-gray-600 text-sm line-clamp-3">
+                      {{ relatedArticle.excerpt }}
+                    </p>
+                  </div>
+                </Card>
               </div>
-              
-              <h3 class="text-lg font-semibold text-primary-800 line-clamp-2">
-                {{ relatedArticle.title }}
-              </h3>
-              
-              <p class="text-gray-600 text-sm line-clamp-3">
-                {{ relatedArticle.excerpt }}
-              </p>
             </div>
-          </Card>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button
+            v-if="relatedArticles.length > 3"
+            @click="prevSlide"
+            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100 transition-colors duration-300"
+            aria-label="Previous articles"
+          >
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button
+            v-if="relatedArticles.length > 3"
+            @click="nextSlide"
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100 transition-colors duration-300"
+            aria-label="Next articles"
+          >
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          <!-- Indicators -->
+          <div v-if="relatedArticles.length > 3" class="flex justify-center space-x-2 mt-6">
+            <button
+              v-for="(_, index) in Math.ceil(relatedArticles.length / 3)"
+              :key="index"
+              @click="currentSlide = index * 3"
+              class="w-2 h-2 rounded-full transition-colors duration-300"
+              :class="currentSlide >= index * 3 && currentSlide < (index + 1) * 3 ? 'bg-primary-600' : 'bg-gray-300'"
+              :aria-label="`Go to slide ${index + 1}`"
+            />
+          </div>
         </div>
       </div>
     </section>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
@@ -140,6 +188,8 @@ const { getBlogPosts, getBlogPostByFilename } = useContent()
 const articleContent = ref<any>(null)
 const article = ref<any>(null)
 const currentFilename = ref<string>('')
+const currentSlide = ref(0)
+const carouselInterval = ref<number | null>(null)
 
 // Get blog post content
 const loadArticle = () => {
@@ -220,13 +270,58 @@ const sharePlatforms = computed(() => [
   }
 ])
 
+// Carousel navigation functions
+const nextSlide = () => {
+  if (currentSlide.value < relatedArticles.value.length - 3) {
+    currentSlide.value++
+  } else {
+    currentSlide.value = 0
+  }
+}
+
+const prevSlide = () => {
+  if (currentSlide.value > 0) {
+    currentSlide.value--
+  } else {
+    currentSlide.value = Math.max(0, relatedArticles.value.length - 3)
+  }
+}
+
+// Auto-play carousel
+const startCarousel = () => {
+  if (relatedArticles.value.length > 3) {
+    carouselInterval.value = window.setInterval(() => {
+      nextSlide()
+    }, 5000)
+  }
+}
+
+const stopCarousel = () => {
+  if (carouselInterval.value) {
+    clearInterval(carouselInterval.value)
+    carouselInterval.value = null
+  }
+}
+
 onMounted(() => {
   loadArticle()
+  startCarousel()
+})
+
+onUnmounted(() => {
+  stopCarousel()
 })
 
 // Watch for locale changes and reload the article
 watch(locale, () => {
   loadArticle()
+})
+
+// Restart carousel when related articles change
+watch(relatedArticles, () => {
+  stopCarousel()
+  currentSlide.value = 0
+  startCarousel()
 })
 </script>
 

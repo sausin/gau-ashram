@@ -248,7 +248,16 @@
     "title": "Volunteer & Join Us",
     "subtitle": "Be Part of the Change",
     "description": "Experience spiritual joy and hands-on learning while serving cows, learning natural therapies, farming sustainably, or contributing to rural development.",
+    "joinMission": "Join Our Mission",
+    "whyVolunteer": "Why Volunteer?",
+    "benefits": [
+      "Make a meaningful impact on rural communities",
+      "Learn traditional wisdom and sustainable practices",
+      "Experience spiritual growth and inner peace",
+      "Connect with like-minded individuals"
+    ],
     "opportunities": "Volunteer Opportunities",
+    "opportunitiesSubtitle": "Choose from various volunteer opportunities that match your interests and skills",
     "opportunitiesList": [
       "Serve cows and learn animal care",
       "Learn natural therapies and healing",
@@ -256,13 +265,116 @@
       "Contribute to rural development projects",
       "Teach and share knowledge with communities"
     ],
+    "opportunityTitles": [
+      "Cow Care",
+      "Natural Healing", 
+      "Sustainable Farming",
+      "Rural Development",
+      "Education"
+    ],
+    "durations": [
+      "2-4 weeks",
+      "1-3 months",
+      "3-6 months", 
+      "1-6 months",
+      "2-8 weeks"
+    ],
+    "commitments": [
+      "Full-time",
+      "Part-time",
+      "Flexible",
+      "Project-based",
+      "Seasonal"
+    ],
+    "applyNow": "Apply Now",
     "howToJoin": "How to Join",
+    "howToJoinSubtitle": "Simple steps to begin your volunteer journey with us",
     "joinSteps": [
       "Fill out volunteer application form",
-      "Choose your area of interest",
+      "Choose your area of interest", 
       "Participate in orientation program",
       "Start your service journey"
-    ]
+    ],
+    "joinStepTitles": [
+      "Apply",
+      "Interview",
+      "Orientation", 
+      "Start"
+    ],
+    "applicationTitle": "Start Your Volunteer Journey",
+    "applicationSubtitle": "Fill out the application form below and we'll get in touch with you soon",
+    "testimonialTitle": "Volunteer Stories",
+    "testimonialSubtitle": "Hear from our volunteers about their transformative experiences",
+    "testimonials": [
+      {
+        "name": "Priya Sharma",
+        "role": "Healthcare Volunteer",
+        "quote": "Working with the natural healing programs has been life-changing. I learned so much about traditional medicine and helped many people."
+      },
+      {
+        "name": "Rajesh Kumar", 
+        "role": "Agriculture Volunteer",
+        "quote": "The sustainable farming techniques I learned here have transformed my understanding of agriculture. It's amazing what we can achieve naturally."
+      },
+      {
+        "name": "Anita Patel",
+        "role": "Education Volunteer", 
+        "quote": "Teaching rural children and sharing knowledge has been incredibly rewarding. The community here is so welcoming and eager to learn."
+      }
+    ],
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "age": "Age",
+      "occupation": "Occupation",
+      "interests": "Areas of Interest",
+      "duration": "Preferred Duration",
+      "experience": "Relevant Experience",
+      "motivation": "Why do you want to volunteer with us?",
+      "consent": "I agree to the terms and conditions and privacy policy",
+      "submit": "Submit Application",
+      "submitting": "Submitting...",
+      "success": "Thank you! Your volunteer application has been submitted successfully. We'll contact you soon.",
+      "placeholders": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name", 
+        "email": "Enter your email address",
+        "phone": "Enter your phone number",
+        "age": "Enter your age",
+        "occupation": "Enter your occupation",
+        "experience": "Tell us about any relevant experience you have...",
+        "motivation": "Share your motivation for volunteering..."
+      },
+      "interestOptions": [
+        "Cow Care & Animal Welfare",
+        "Natural Healing & Therapy",
+        "Sustainable Farming",
+        "Education & Teaching",
+        "Construction & Maintenance",
+        "Administration & Management"
+      ],
+      "durationOptions": [
+        "Select duration",
+        "1-2 weeks",
+        "1 month", 
+        "2-3 months",
+        "6 months",
+        "1 year or more"
+      ],
+      "validation": {
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailRequired": "Email address is required",
+        "emailInvalid": "Please enter a valid email address",
+        "phoneRequired": "Phone number is required",
+        "ageRange": "Age must be between 18 and 80",
+        "interestsRequired": "Please select at least one area of interest",
+        "durationRequired": "Please select your preferred duration",
+        "motivationRequired": "Please share your motivation for volunteering"
+      }
+    }
   },
   "products": {
     "title": "Our Products",
@@ -307,7 +419,9 @@
     "readMore": "Read More",
     "share": "Share this article",
     "relatedArticles": "Related Articles",
-    "postNotFound": "Blog post not found"
+    "postNotFound": "Blog post not found",
+    "watchVideos": "Watch Our Videos",
+    "moreVideos": "View more videos on our YouTube channel"
   },
   "contact": {
     "title": "Connect With Us",

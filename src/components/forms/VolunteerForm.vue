@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
         <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
-          First Name *
+          {{ t('volunteer.form.firstName') }} *
         </label>
         <input
           id="firstName"
@@ -11,14 +11,14 @@
           type="text"
           required
           :class="inputClasses"
-          placeholder="Enter your first name"
+          :placeholder="t('volunteer.form.placeholders.firstName')"
         />
         <p v-if="errors.firstName" class="mt-1 text-sm text-red-600">{{ errors.firstName }}</p>
       </div>
       
       <div>
         <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
-          Last Name *
+          {{ t('volunteer.form.lastName') }} *
         </label>
         <input
           id="lastName"
@@ -26,7 +26,7 @@
           type="text"
           required
           :class="inputClasses"
-          placeholder="Enter your last name"
+          :placeholder="t('volunteer.form.placeholders.lastName')"
         />
         <p v-if="errors.lastName" class="mt-1 text-sm text-red-600">{{ errors.lastName }}</p>
       </div>
@@ -35,7 +35,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-          Email Address *
+          {{ t('volunteer.form.email') }} *
         </label>
         <input
           id="email"
@@ -43,14 +43,14 @@
           type="email"
           required
           :class="inputClasses"
-          placeholder="Enter your email address"
+          :placeholder="t('volunteer.form.placeholders.email')"
         />
         <p v-if="errors.email" class="mt-1 text-sm text-red-600">{{ errors.email }}</p>
       </div>
 
       <div>
         <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number *
+          {{ t('volunteer.form.phone') }} *
         </label>
         <input
           id="phone"
@@ -58,7 +58,7 @@
           type="tel"
           required
           :class="inputClasses"
-          placeholder="Enter your phone number"
+          :placeholder="t('volunteer.form.placeholders.phone')"
         />
         <p v-if="errors.phone" class="mt-1 text-sm text-red-600">{{ errors.phone }}</p>
       </div>
@@ -67,7 +67,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       <div>
         <label for="age" class="block text-sm font-medium text-gray-700 mb-2">
-          Age *
+          {{ t('volunteer.form.age') }} *
         </label>
         <input
           id="age"
@@ -77,28 +77,28 @@
           max="80"
           required
           :class="inputClasses"
-          placeholder="Enter your age"
+          :placeholder="t('volunteer.form.placeholders.age')"
         />
         <p v-if="errors.age" class="mt-1 text-sm text-red-600">{{ errors.age }}</p>
       </div>
 
       <div>
         <label for="occupation" class="block text-sm font-medium text-gray-700 mb-2">
-          Occupation
+          {{ t('volunteer.form.occupation') }}
         </label>
         <input
           id="occupation"
           v-model="form.occupation"
           type="text"
           :class="inputClasses"
-          placeholder="Enter your occupation"
+          :placeholder="t('volunteer.form.placeholders.occupation')"
         />
       </div>
     </div>
 
     <div>
       <label for="interests" class="block text-sm font-medium text-gray-700 mb-2">
-        Areas of Interest *
+        {{ t('volunteer.form.interests') }} *
       </label>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <label v-for="interest in interestOptions" :key="interest.value" class="flex items-center">
@@ -116,7 +116,7 @@
 
     <div>
       <label for="duration" class="block text-sm font-medium text-gray-700 mb-2">
-        Preferred Duration *
+        {{ t('volunteer.form.duration') }} *
       </label>
       <select
         id="duration"
@@ -124,32 +124,29 @@
         required
         :class="inputClasses"
       >
-        <option value="">Select duration</option>
-        <option value="1-2weeks">1-2 weeks</option>
-        <option value="1month">1 month</option>
-        <option value="2-3months">2-3 months</option>
-        <option value="6months">6 months</option>
-        <option value="1year">1 year or more</option>
+        <option v-for="(option, index) in durationOptions" :key="index" :value="durationValues[index] || ''">
+          {{ option }}
+        </option>
       </select>
       <p v-if="errors.duration" class="mt-1 text-sm text-red-600">{{ errors.duration }}</p>
     </div>
 
     <div>
       <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">
-        Relevant Experience
+        {{ t('volunteer.form.experience') }}
       </label>
       <textarea
         id="experience"
         v-model="form.experience"
         rows="3"
         :class="inputClasses + ' resize-none'"
-        placeholder="Tell us about any relevant experience you have..."
+        :placeholder="t('volunteer.form.placeholders.experience')"
       ></textarea>
     </div>
 
     <div>
       <label for="motivation" class="block text-sm font-medium text-gray-700 mb-2">
-        Why do you want to volunteer with us? *
+        {{ t('volunteer.form.motivation') }} *
       </label>
       <textarea
         id="motivation"
@@ -157,7 +154,7 @@
         rows="4"
         required
         :class="inputClasses + ' resize-none'"
-        placeholder="Share your motivation for volunteering..."
+        :placeholder="t('volunteer.form.placeholders.motivation')"
       ></textarea>
       <p v-if="errors.motivation" class="mt-1 text-sm text-red-600">{{ errors.motivation }}</p>
     </div>
@@ -171,18 +168,18 @@
         class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
       />
       <label for="consent" class="ml-2 block text-sm text-gray-700">
-        I agree to the terms and conditions and privacy policy *
+        {{ t('volunteer.form.consent') }} *
       </label>
     </div>
 
     <Button
       type="submit"
       :loading="isSubmitting"
-      loading-text="Submitting..."
+      :loading-text="t('volunteer.form.submitting')"
       size="lg"
       class="w-full"
     >
-      Submit Application
+      {{ t('volunteer.form.submit') }}
     </Button>
 
     <!-- Success Message -->
@@ -199,7 +196,7 @@
           <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
           </svg>
-          <p class="text-green-800 font-medium">Thank you! Your volunteer application has been submitted successfully. We'll contact you soon.</p>
+          <p class="text-green-800 font-medium">{{ t('volunteer.form.success') }}</p>
         </div>
       </div>
     </transition>
@@ -209,6 +206,9 @@
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
 import Button from '../ui/Button.vue'
+import { useI18n } from '../../composables/useI18n'
+
+const { t } = useI18n()
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
@@ -238,14 +238,14 @@ const errors = reactive({
   motivation: ''
 })
 
-const interestOptions = [
-  { value: 'cow-care', label: 'Cow Care & Animal Welfare' },
-  { value: 'healing', label: 'Natural Healing & Therapy' },
-  { value: 'farming', label: 'Sustainable Farming' },
-  { value: 'education', label: 'Education & Teaching' },
-  { value: 'construction', label: 'Construction & Maintenance' },
-  { value: 'administration', label: 'Administration & Management' }
-]
+const interestOptions = computed(() => {
+  const labels = t('volunteer.form.interestOptions') as unknown as string[]
+  const values = ['cow-care', 'healing', 'farming', 'education', 'construction', 'administration']
+  return labels.map((label, index) => ({ value: values[index], label }))
+})
+
+const durationOptions = computed(() => t('volunteer.form.durationOptions') as unknown as string[])
+const durationValues = ['', '1-2weeks', '1month', '2-3months', '6months', '1year']
 
 const inputClasses = computed(() => 
   'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-300'
@@ -260,45 +260,45 @@ const validateForm = () => {
   let isValid = true
 
   if (!form.firstName.trim()) {
-    errors.firstName = 'First name is required'
+    errors.firstName = t('volunteer.form.validation.firstNameRequired')
     isValid = false
   }
 
   if (!form.lastName.trim()) {
-    errors.lastName = 'Last name is required'
+    errors.lastName = t('volunteer.form.validation.lastNameRequired')
     isValid = false
   }
 
   if (!form.email.trim()) {
-    errors.email = 'Email address is required'
+    errors.email = t('volunteer.form.validation.emailRequired')
     isValid = false
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.email = 'Please enter a valid email address'
+    errors.email = t('volunteer.form.validation.emailInvalid')
     isValid = false
   }
 
   if (!form.phone.trim()) {
-    errors.phone = 'Phone number is required'
+    errors.phone = t('volunteer.form.validation.phoneRequired')
     isValid = false
   }
 
   if (!form.age || Number(form.age) < 18 || Number(form.age) > 80) {
-    errors.age = 'Age must be between 18 and 80'
+    errors.age = t('volunteer.form.validation.ageRange')
     isValid = false
   }
 
   if (form.interests.length === 0) {
-    errors.interests = 'Please select at least one area of interest'
+    errors.interests = t('volunteer.form.validation.interestsRequired')
     isValid = false
   }
 
   if (!form.duration) {
-    errors.duration = 'Please select your preferred duration'
+    errors.duration = t('volunteer.form.validation.durationRequired')
     isValid = false
   }
 
   if (!form.motivation.trim()) {
-    errors.motivation = 'Please share your motivation for volunteering'
+    errors.motivation = t('volunteer.form.validation.motivationRequired')
     isValid = false
   }
 

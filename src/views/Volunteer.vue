@@ -20,37 +20,37 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-3xl font-serif font-bold text-primary-800 mb-6">
-              Join Our Mission
+              {{ t('volunteer.joinMission') }}
             </h2>
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">
               {{ t('volunteer.description') }}
             </p>
             <div class="bg-primary-50 rounded-lg p-6">
-              <h3 class="text-xl font-semibold text-primary-800 mb-4">Why Volunteer?</h3>
+              <h3 class="text-xl font-semibold text-primary-800 mb-4">{{ t('volunteer.whyVolunteer') }}</h3>
               <ul class="space-y-3">
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Make a meaningful impact on rural communities</span>
+                  <span class="text-gray-700">{{ t('volunteer.benefits')[0] }}</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Learn traditional wisdom and sustainable practices</span>
+                  <span class="text-gray-700">{{ t('volunteer.benefits')[1] }}</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Experience spiritual growth and inner peace</span>
+                  <span class="text-gray-700">{{ t('volunteer.benefits')[2] }}</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-500 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Connect with like-minded individuals</span>
+                  <span class="text-gray-700">{{ t('volunteer.benefits')[3] }}</span>
                 </li>
               </ul>
             </div>
@@ -75,7 +75,7 @@
             {{ t('volunteer.opportunities') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Choose from various volunteer opportunities that match your interests and skills
+            {{ t('volunteer.opportunitiesSubtitle') }}
           </p>
         </div>
 
@@ -103,7 +103,7 @@
                 </div>
               </div>
               <Button variant="primary" size="sm" class="w-full">
-                Apply Now
+                {{ t('volunteer.applyNow') }}
               </Button>
             </div>
           </Card>
@@ -119,7 +119,7 @@
             {{ t('volunteer.howToJoin') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Simple steps to begin your volunteer journey with us
+            {{ t('volunteer.howToJoinSubtitle') }}
           </p>
         </div>
 
@@ -140,10 +140,10 @@
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
-            Start Your Volunteer Journey
+            {{ t('volunteer.applicationTitle') }}
           </h2>
           <p class="text-xl text-primary-100 max-w-2xl mx-auto">
-            Fill out the application form below and we'll get in touch with you soon
+            {{ t('volunteer.applicationSubtitle') }}
           </p>
         </div>
 
@@ -154,14 +154,15 @@
     </section>
 
     <!-- Testimonials -->
+    <!-- TODO: Enable testimonials section when ready
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-primary-800 mb-4">
-            Volunteer Stories
+            {{ t('volunteer.testimonialTitle') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Hear from our volunteers about their transformative experiences
+            {{ t('volunteer.testimonialSubtitle') }}
           </p>
         </div>
 
@@ -185,6 +186,7 @@
         </div>
       </div>
     </section>
+    -->
   </div>
 </template>
 
@@ -275,36 +277,28 @@ const AcademicCapIcon = () => h('svg', {
 ])
 
 const opportunities = computed(() => (t('volunteer.opportunitiesList') as unknown as string[]).map((opportunity: string, index: number) => ({
-  title: ['Cow Care', 'Natural Healing', 'Sustainable Farming', 'Rural Development', 'Education'][index],
+  title: (t('volunteer.opportunityTitles') as unknown as string[])[index],
   description: opportunity,
-  duration: ['2-4 weeks', '1-3 months', '3-6 months', '1-6 months', '2-8 weeks'][index],
-  commitment: ['Full-time', 'Part-time', 'Flexible', 'Project-based', 'Seasonal'][index],
+  duration: (t('volunteer.durations') as unknown as string[])[index],
+  commitment: (t('volunteer.commitments') as unknown as string[])[index],
   icon: [HeartIcon, BookIcon, SeedlingIcon, UsersIcon, AcademicCapIcon][index]
 })))
 
 const joinSteps = computed(() => (t('volunteer.joinSteps') as unknown as string[]).map((step: string, index: number) => ({
-  title: ['Apply', 'Interview', 'Orientation', 'Start'][index],
+  title: (t('volunteer.joinStepTitles') as unknown as string[])[index],
   description: step
 })))
 
-const testimonials = [
-  {
-    name: 'Priya Sharma',
-    role: 'Healthcare Volunteer',
-    quote: 'Working with the natural healing programs has been life-changing. I learned so much about traditional medicine and helped many people.',
-    image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-  },
-  {
-    name: 'Rajesh Kumar',
-    role: 'Agriculture Volunteer',
-    quote: 'The sustainable farming techniques I learned here have transformed my understanding of agriculture. It\'s amazing what we can achieve naturally.',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-  },
-  {
-    name: 'Anita Patel',
-    role: 'Education Volunteer',
-    quote: 'Teaching rural children and sharing knowledge has been incredibly rewarding. The community here is so welcoming and eager to learn.',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-  }
-]
+const testimonials = computed(() => {
+  const testimonialsData = t('volunteer.testimonials') as unknown as Array<{name: string, role: string, quote: string}>
+  const images = [
+    'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+    'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+    'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
+  ]
+  return testimonialsData.map((testimonial, index) => ({
+    ...testimonial,
+    image: images[index]
+  }))
+})
 </script>
