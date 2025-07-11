@@ -4,8 +4,8 @@ import About from '../views/About.vue'
 import Initiatives from '../views/Initiatives.vue'
 import Healing from '../views/Healing.vue'
 import Education from '../views/Education.vue'
+import CourseDetail from '../views/CourseDetail.vue'
 import Volunteer from '../views/Volunteer.vue'
-import Shop from '../views/Shop.vue'
 import Blog from '../views/Blog.vue'
 import BlogPost from '../views/BlogPost.vue'
 import Contact from '../views/Contact.vue'
@@ -52,19 +52,19 @@ const routes = [
     }
   },
   {
+    path: '/education/courses/:slug',
+    name: 'CourseDetail',
+    component: CourseDetail,
+    meta: {
+      title: 'Course Details - Lakshya Paryawaran and Jankalyan Sanstha'
+    }
+  },
+  {
     path: '/volunteer',
     name: 'Volunteer',
     component: Volunteer,
     meta: {
       title: 'Volunteer - Lakshya Paryawaran and Jankalyan Sanstha'
-    }
-  },
-  {
-    path: '/shop',
-    name: 'Shop',
-    component: Shop,
-    meta: {
-      title: 'Products - Lakshya Paryawaran and Jankalyan Sanstha'
     }
   },
   {

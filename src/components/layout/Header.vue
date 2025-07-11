@@ -98,7 +98,6 @@ const navigationItems = [
   { key: 'healing', path: '/healing' },
   { key: 'education', path: '/education' },
   { key: 'volunteer', path: '/volunteer' },
-  { key: 'shop', path: '/shop' },
   { key: 'blog', path: '/blog' }
 ]
 

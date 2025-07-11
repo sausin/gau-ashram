@@ -61,8 +61,8 @@
                 </div>
                 <div>
                   <h3 class="font-semibold text-primary-800 mb-1">{{ t('contact.email') }}</h3>
-                  <p class="text-gray-600">info@girheritage.org</p>
-                  <p class="text-gray-600">research@girheritage.org</p>
+                  <p class="text-gray-600">info@gauashram.org</p>
+                  <p class="text-gray-600">research@gauashram.org</p>
                 </div>
               </div>
             </div>

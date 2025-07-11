@@ -45,6 +45,12 @@ for (const [path, content] of Object.entries(contentModules)) {
     contentWithMeta.metadata.filename = filename
   }
   
+  // Extract filename for courses to enable cross-language matching
+  if (key.includes('/education/courses/')) {
+    const filename = path.split('/').pop()?.replace('.md', '') || ''
+    contentWithMeta.metadata.filename = filename
+  }
+  
   contentCache.set(key, contentWithMeta)
 }
 
@@ -94,6 +100,25 @@ export const useContent = () => {
       return dateB - dateA // Sort descending (newest first)
     })
   }
+
+  // Get all courses sorted by start date
+  const getCourses = (locale?: string): Content[] => {
+    const targetLocale = locale || currentLocale.value
+    const coursesPath = `${targetLocale}/education/courses/`
+    const courses: Content[] = []
+    
+    for (const [path, content] of contentCache.entries()) {
+      if (path.startsWith(coursesPath)) {
+        courses.push(content)
+      }
+    }
+    
+    return courses.sort((a, b) => {
+      const dateA = new Date(a.metadata.startDate || 0).getTime()
+      const dateB = new Date(b.metadata.startDate || 0).getTime()
+      return dateB - dateA // Sort descending (newest first)
+    })
+  }
   
   // Get a blog post by slug
   const getBlogPostBySlug = (slug: string, locale?: string): Content | null => {
@@ -109,6 +134,14 @@ export const useContent = () => {
     const posts = getBlogPosts(targetLocale)
     
     return posts.find(post => post.metadata.filename === filename) || null
+  }
+  
+  // Get a course by filename (works across languages)
+  const getCourseByFilename = (filename: string, locale?: string): Content | null => {
+    const targetLocale = locale || currentLocale.value
+    const fullPath = `${targetLocale}/education/courses/${filename}`
+    
+    return contentCache.get(fullPath) || null
   }
   
   // Extract slug from filename
@@ -128,8 +161,10 @@ export const useContent = () => {
     getContent,
     getContentBySection,
     getBlogPosts,
+    getCourses,
     getBlogPostBySlug,
     getBlogPostByFilename,
+    getCourseByFilename,
     createSlugFromFilename,
     hasContent,
     currentLocale

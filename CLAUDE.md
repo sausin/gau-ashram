@@ -105,3 +105,46 @@ Page content in markdown...
 ### Translation Guidelines
 
 **CRITICAL**: This is a bilingual website with English and Hindi translations. When adding or editing any translation keys in `/src/i18n/en.json`, you MUST also update the corresponding Hindi translations in `/src/i18n/hi.json`. The Hindi translations should always be kept in complete parity with the English translations to maintain the bilingual functionality of the website.
+
+### Course Implementation
+
+The courses system follows the same pattern as blogs for consistency:
+
+1. **Course Files**: Stored in `/src/content/{locale}/education/courses/*.md`
+   - Each course requires frontmatter with metadata (title, description, instructor, duration, etc.)
+   - **IMPORTANT**: Course filenames MUST be identical across languages (e.g., `2025-panchgavya.md` in both `en` and `hi` folders)
+   
+2. **Routing**: Courses are accessible at `/education/courses/{filename}`
+   - The filename (without .md extension) is used as the slug
+   - This ensures language switching works correctly
+
+3. **Course Carousel**: Integrated into the Education page
+   - Auto-plays every 5 seconds
+   - Shows course metadata from frontmatter
+   - Links to individual course detail pages
+
+4. **Multi-language Support**: 
+   - Uses filename-based routing like blogs
+   - Language switching preserves the current course
+   - Course content automatically switches based on selected language
+
+Example course frontmatter:
+```yaml
+---
+title: "Course Title"
+description: "Course description"
+excerpt: "Brief summary for carousel"
+image: "https://example.com/course-image.jpg"
+duration: "12 months"
+semesters: 2
+level: "Beginner to Intermediate"
+type: "Therapeutic and Practical"
+instructor: 
+  name: "Dr. Name"
+  title: "Expert Title"
+  image: "https://example.com/instructor.jpg"
+startDate: "2025-03-01"
+category: "Health Therapy"
+tags: ["tag1", "tag2", "tag3"]
+---
+```
