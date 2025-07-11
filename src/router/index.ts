@@ -16,7 +16,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Lakshya Paryawaran and Jankalyan Sanstha - Reviving India\'s Heritage'
+      title: 'Gau Samwardhan Ashram and Jankalyan Sanstha - Reviving India\'s Heritage'
     }
   },
   {
@@ -24,7 +24,7 @@ const routes = [
     name: 'About',
     component: About,
     meta: {
-      title: 'About Us - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'About Us - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -32,7 +32,7 @@ const routes = [
     name: 'Initiatives',
     component: Initiatives,
     meta: {
-      title: 'Our Initiatives - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Our Initiatives - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -40,7 +40,7 @@ const routes = [
     name: 'Healing',
     component: Healing,
     meta: {
-      title: 'Natural Healing - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Natural Healing - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -48,7 +48,7 @@ const routes = [
     name: 'Education',
     component: Education,
     meta: {
-      title: 'Education & Courses - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Education & Courses - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -56,7 +56,7 @@ const routes = [
     name: 'CourseDetail',
     component: CourseDetail,
     meta: {
-      title: 'Course Details - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Course Details - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -64,7 +64,7 @@ const routes = [
     name: 'Volunteer',
     component: Volunteer,
     meta: {
-      title: 'Volunteer - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Volunteer - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -72,7 +72,7 @@ const routes = [
     name: 'Blog',
     component: Blog,
     meta: {
-      title: 'Blog - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Blog - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -80,7 +80,7 @@ const routes = [
     name: 'BlogPost',
     component: BlogPost,
     meta: {
-      title: 'Blog Post - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Blog Post - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {
@@ -88,7 +88,7 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      title: 'Contact Us - Lakshya Paryawaran and Jankalyan Sanstha'
+      title: 'Contact Us - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   }
 ]

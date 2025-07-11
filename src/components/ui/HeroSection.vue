@@ -27,11 +27,11 @@
         <!-- Stats -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div class="text-2xl font-bold text-white">1000+</div>
+            <div class="text-2xl font-bold text-white">100+</div>
             <div class="text-sm text-gray-200">Acres Revived</div>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div class="text-2xl font-bold text-white">197</div>
+            <div class="text-2xl font-bold text-white">197+</div>
             <div class="text-sm text-gray-200">Bulls Distributed</div>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">

@@ -9,8 +9,8 @@
               <span class="text-white font-bold text-lg">🐄</span>
             </div>
             <div class="hidden sm:block">
-              <h1 class="text-xl font-serif font-bold text-primary-800">Lakshya Sanstha</h1>
-              <p class="text-xs text-primary-600 -mt-1">Go Mandir</p>
+              <h1 class="text-xl font-serif font-bold text-primary-800">Gau Samwardhan Ashram</h1>
+              <p class="text-xs text-primary-600 -mt-1">Gau Mandir</p>
             </div>
           </router-link>
         </div>

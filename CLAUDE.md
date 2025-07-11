@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Vue 3 + TypeScript + Vite web application for "Lakshya Paryawaran and Jankalyan Sanstha" - an environmental and public welfare organization focused on Gir cow heritage preservation in India. The site is multilingual (English and Hindi).
+This is a Vue 3 + TypeScript + Vite web application for "Gau Samwardhan Ashram and Jankalyan Sanstha" - an environmental and public welfare organization focused on Gir cow heritage preservation in India. The site is multilingual (English and Hindi).
 
 ## Essential Commands
 

@@ -12,7 +12,7 @@
   },
   "hero": {
     "title": "Reviving India's Ecological and Cultural Heritage",
-    "subtitle": "Lakshya Paryawaran and Jankalyan Sanstha (Go Mandir)",
+    "subtitle": "Gau Samwardhan Ashram and Jankalyan Sanstha (Gau Mandir)",
     "description": "Through indigenous cow conservation, natural healing, and sustainable rural development, we blend traditional Indian wisdom with sustainable innovation.",
     "cta": "Join Us",
     "ctaSecondary": "Learn More",
@@ -28,28 +28,28 @@
     "ruralRajasthan": "Rural Rajasthan",
     "communityMemberAlt": "Community member",
     "communityMember": "Community Member",
-    "goMandirBeneficiary": "Go Mandir Beneficiary",
+    "goMandirBeneficiary": "Gau Mandir Beneficiary",
     "joinMission": "Join Our Mission",
     "joinMissionDescription": "Be part of the movement to revive India's ecological and cultural heritage through sustainable practices and traditional wisdom."
   },
   "stats": {
-    "landRevived": "1000+ acres of land revived",
-    "bullsDistributed": "197 Tharparkar bulls distributed", 
+    "landRevived": "100+ acres of land revived",
+    "bullsDistributed": "197+ Tharparkar bulls distributed", 
     "womenTrained": "1000+ rural women trained",
     "waterTable": "Water table raised by 290 feet",
     "waterTableValue": "410→120ft",
     "waterTableLabel": "Water Table Revival",
-    "bullsValue": "197",
+    "bullsValue": "197+",
     "bullsLabel": "Tharparkar Bulls",
     "womenValue": "1000+",
     "womenLabel": "Women Trained",
-    "acresValue": "1000+",
+    "acresValue": "100+",
     "acresLabel": "Acres Restored"
   },
   "about": {
     "title": "Who We Are",
     "subtitle": "Guardians of Bharatiya Parampara",
-    "description": "Lakshya Paryawaran and Jankalyan Sanstha is a grassroots organization dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment. Founded to revive Bharatiya parampara through self-reliant practices, we blend traditional knowledge with sustainable innovation to serve communities and protect nature.",
+    "description": "Gau Samwardhan Ashram and Jankalyan Sanstha is a grassroots organization dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment. Founded to revive Bharatiya parampara through self-reliant practices, we blend traditional knowledge with sustainable innovation to serve communities and protect nature.",
     "vision": "Our Vision",
     "visionText": "To restore balance between human life, nature, and culture by promoting cow-centric, eco-friendly, and self-sustaining rural models.",
     "mission": "Our Mission",
@@ -93,7 +93,7 @@
     "title": "Our Initiatives",
     "subtitle": "Transforming Lives Through Traditional Wisdom",
     "goMandir": {
-      "title": "Go Mandir",
+      "title": "Gau Mandir",
       "description": "A sanctuary for native cows and a center for cultural, ecological, and economic revival. Water table raised from 410ft to 120ft, thousands of acres revived, chemical-free agriculture, women's empowerment.",
       "features": [
         "Sanctuary for 500+ indigenous cows",
@@ -286,13 +286,13 @@
     "achievements": "Key Achievements",
     "achievementsList": [
       "Water table revival: 410ft to 120ft",
-      "197 Tharparkar bulls distributed",
+      "197+ Tharparkar bulls distributed",
       "1000+ rural women trained in natural healing",
       "Thousands of acres of grazing and forest land restored",
       "Chemical-free farming model adopted by local farmers"
     ],
     "testimonials": "What People Say",
-    "testimonial1": "Our village is greener, healthier, and more self-reliant thanks to Go Mandir.",
+    "testimonial1": "Our village is greener, healthier, and more self-reliant thanks to Gau Mandir.",
     "testimonial2": "Panchgavya therapies have transformed our health and reduced medical expenses."
   },
   "blog": {
@@ -311,9 +311,9 @@
   },
   "contact": {
     "title": "Connect With Us",
-    "subtitle": "Visit Our Go Mandir Campus",
+    "subtitle": "Visit Our Gau Mandir Campus",
     "address": "Address",
-    "addressText": "Go Mandir Campus\nRural Area, Rajasthan\nIndia",
+    "addressText": "Gau Mandir Campus\nRural Area, Rajasthan\nIndia",
     "phone": "Phone",
     "email": "Email",
     "form": {
@@ -353,7 +353,7 @@
     }
   },
   "footer": {
-    "organizationName": "Lakshya Sanstha",
+    "organizationName": "Gau Samwardhan Ashram",
     "tagline": "Reviving Heritage, Nurturing Future",
     "description": "Dedicated to ecological restoration, indigenous cow conservation, natural healing, and rural empowerment through traditional wisdom and sustainable innovation.",
     "quickLinks": "Quick Links",
@@ -365,7 +365,7 @@
     "newsletterText": "Stay updated with our latest news and events",
     "emailPlaceholder": "Enter email",
     "subscribe": "Subscribe",
-    "copyright": "© 2025 Lakshya Paryawaran and Jankalyan Sanstha. All rights reserved."
+    "copyright": "© 2025 Gau Samwardhan Ashram and Jankalyan Sanstha. All rights reserved."
   },
   "courses": {
     "title": "Our Courses",
