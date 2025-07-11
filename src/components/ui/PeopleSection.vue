@@ -20,9 +20,10 @@
         >
           <div class="aspect-w-3 aspect-h-4">
             <img
-              :src="person.image"
+              :src="getImageUrl(person.image)"
               :alt="person.name"
               class="w-full h-64 object-cover object-center"
+              @error="handleImageError"
             />
           </div>
           <div class="p-6">
@@ -66,9 +67,10 @@
           <div class="flex flex-col md:flex-row gap-6">
             <div class="md:w-1/3">
               <img
-                :src="selectedPerson.image"
+                :src="getImageUrl(selectedPerson.image)"
                 :alt="selectedPerson.name"
                 class="w-full rounded-lg shadow-md"
+                @error="handleImageError"
               />
             </div>
             <div class="md:w-2/3">
@@ -131,6 +133,17 @@ interface Person {
 const people = ref<Person[]>([])
 const selectedPerson = ref<Person | null>(null)
 
+// Generic person icon as SVG data URL with gray background
+const genericPersonIcon = 'data:image/svg+xml;base64,' + btoa(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <rect width="256" height="256" fill="#f3f4f6"/>
+  <g transform="translate(128,128)">
+    <circle cx="0" cy="-20" r="32" fill="#9ca3af"/>
+    <path d="M-48 60 Q-48 20 -32 20 L32 20 Q48 20 48 60 L48 80 L-48 80 Z" fill="#9ca3af"/>
+  </g>
+</svg>
+`)
+
 const openModal = (person: Person) => {
   selectedPerson.value = person
   document.body.style.overflow = 'hidden'
@@ -141,11 +154,24 @@ const closeModal = () => {
   document.body.style.overflow = 'auto'
 }
 
+const getImageUrl = (imagePath: string): string => {
+  // Check if image exists by attempting to load it
+  return imagePath || genericPersonIcon
+}
+
+const handleImageError = (event: Event) => {
+  const img = event.target as HTMLImageElement
+  if (img.src !== genericPersonIcon) {
+    console.warn(`Failed to load image: ${img.src}`)
+    img.src = genericPersonIcon
+  }
+}
+
 const parsePeopleContent = (content: string): Person[] => {
   const people: Person[] = []
   const sections = content.split('## ').filter(section => section.trim())
   
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const lines = section.split('\n').filter(line => line.trim())
     if (lines.length === 0) return
     
@@ -154,17 +180,18 @@ const parsePeopleContent = (content: string): Person[] => {
     
     lines.forEach(line => {
       const trimmedLine = line.trim()
-      if (trimmedLine.startsWith('- **Role**:')) {
-        person.role = trimmedLine.replace('- **Role**:', '').trim()
-      } else if (trimmedLine.startsWith('- **Image**:')) {
-        person.image = trimmedLine.replace('- **Image**:', '').trim()
-      } else if (trimmedLine.startsWith('- **Summary**:')) {
-        person.summary = trimmedLine.replace('- **Summary**:', '').trim()
-      } else if (trimmedLine.startsWith('- **Bio**:')) {
-        person.bio = trimmedLine.replace('- **Bio**:', '').trim()
-      } else if (trimmedLine.startsWith('- **Contact**:')) {
-        person.contact = trimmedLine.replace('- **Contact**:', '').trim()
-      } else if (trimmedLine.startsWith('- **Achievements**:')) {
+      // Support both English and Hindi field names
+      if (trimmedLine.startsWith('- **Role**:') || trimmedLine.startsWith('- **भूमिका**:')) {
+        person.role = trimmedLine.replace(/- \*\*(Role|भूमिका)\*\*:\s*/, '').trim()
+      } else if (trimmedLine.startsWith('- **Image**:') || trimmedLine.startsWith('- **छवि**:')) {
+        person.image = trimmedLine.replace(/- \*\*(Image|छवि)\*\*:\s*/, '').trim()
+      } else if (trimmedLine.startsWith('- **Summary**:') || trimmedLine.startsWith('- **सारांश**:')) {
+        person.summary = trimmedLine.replace(/- \*\*(Summary|सारांश)\*\*:\s*/, '').trim()
+      } else if (trimmedLine.startsWith('- **Bio**:') || trimmedLine.startsWith('- **जीवनी**:')) {
+        person.bio = trimmedLine.replace(/- \*\*(Bio|जीवनी)\*\*:\s*/, '').trim()
+      } else if (trimmedLine.startsWith('- **Contact**:') || trimmedLine.startsWith('- **संपर्क**:')) {
+        person.contact = trimmedLine.replace(/- \*\*(Contact|संपर्क)\*\*:\s*/, '').trim()
+      } else if (trimmedLine.startsWith('- **Achievements**:') || trimmedLine.startsWith('- **उपलब्धियां**:')) {
         // Start collecting achievements
         const achievementIndex = lines.indexOf(line)
         const achievements: string[] = []
@@ -180,7 +207,11 @@ const parsePeopleContent = (content: string): Person[] => {
       }
     })
     
-    if (person.name && person.role && person.image && person.summary && person.bio) {
+    if (person.name && person.role && person.summary && person.bio) {
+      // Make image optional - use fallback if not provided
+      if (!person.image) {
+        person.image = ''
+      }
       people.push(person as Person)
     }
   })
@@ -196,7 +227,7 @@ onMounted(() => {
       people.value = parsePeopleContent(content.raw)
     }
   } catch (error) {
-    console.warn('People content not found or could not be loaded')
+    console.warn('People content not found or could not be loaded:', error)
   }
 })
 
