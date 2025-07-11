@@ -4,7 +4,7 @@ title: "Our Impact in Numbers"
 
 ## Transforming Lives and Land
 
-Our work at Go Mandir has created ripples of positive change across communities:
+Our work at Gau Mandir has created ripples of positive change across communities:
 
 ### Land Revival
 **100+ acres** of degraded land transformed into thriving ecosystems through natural farming and water conservation.

@@ -1,6 +1,6 @@
 ---
 title: "Reviving India's Ecological and Cultural Heritage"
-subtitle: "Gau Samwardhan Ashram and Jankalyan Sanstha (Go Mandir)"
+subtitle: "Gau Samwardhan Ashram and Jankalyan Sanstha (Gau Mandir)"
 ---
 
 Through indigenous cow conservation, natural healing, and sustainable rural development, we blend traditional Indian wisdom with sustainable innovation.

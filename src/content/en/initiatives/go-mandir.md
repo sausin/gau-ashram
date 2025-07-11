@@ -1,11 +1,11 @@
 ---
-title: "Go Mandir: A Living Laboratory"
+title: "Gau Mandir: A Living Laboratory"
 icon: "temple"
 ---
 
 ## A Sanctuary for Sacred Transformation
 
-Go Mandir is more than a shelter for indigenous cows—it's a comprehensive model for ecological restoration, cultural revival, and community empowerment. This living laboratory demonstrates how traditional wisdom can solve modern challenges.
+Gau Mandir is more than a shelter for indigenous cows—it's a comprehensive model for ecological restoration, cultural revival, and community empowerment. This living laboratory demonstrates how traditional wisdom can solve modern challenges.
 
 ### Key Achievements
 
@@ -27,7 +27,7 @@ Go Mandir is more than a shelter for indigenous cows—it's a comprehensive mode
 - Traditional crafts and skills revived
 - Leadership roles in community development
 
-### The Go Mandir Model
+### The Gau Mandir Model
 
 Our approach integrates:
 - **Goshala**: Home to native breeds like Gir and Tharparkar

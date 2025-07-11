@@ -114,35 +114,8 @@
       </div>
     </section>
 
-    <!-- Leadership Team -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-primary-800 mb-4">
-            {{ t('about.ourLeadership') }}
-          </h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            {{ t('about.leadershipDescription') }}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="member in teamMembers" :key="member.name" class="text-center">
-            <div class="relative mb-6">
-              <img
-                :src="member.image"
-                :alt="member.name"
-                class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg"
-                loading="lazy"
-              />
-            </div>
-            <h3 class="text-xl font-semibold text-primary-800 mb-2">{{ member.name }}</h3>
-            <p class="text-primary-600 mb-3">{{ member.position }}</p>
-            <p class="text-gray-600 text-sm">{{ member.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Team Section -->
+    <PeopleSection />
   </div>
 </template>
 
@@ -151,6 +124,7 @@ import { computed } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
 import ContentRenderer from '../components/ui/ContentRenderer.vue'
+import PeopleSection from '../components/ui/PeopleSection.vue'
 
 const { t } = useI18n()
 const { getContent } = useContent()
@@ -159,25 +133,4 @@ const storyContent = computed(() => getContent('about/story'))
 const missionContent = computed(() => getContent('about/mission'))
 
 const missionPoints = computed(() => t('about.missionPoints'))
-
-const teamMembers = computed(() => [
-  {
-    name: t('about.team.founder.name'),
-    position: t('about.team.founder.position'),
-    description: t('about.team.founder.description'),
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
-  },
-  {
-    name: t('about.team.priya.name'),
-    position: t('about.team.priya.position'),
-    description: t('about.team.priya.description'),
-    image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
-  },
-  {
-    name: t('about.team.ramesh.name'),
-    position: t('about.team.ramesh.position'),
-    description: t('about.team.ramesh.description'),
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop'
-  }
-])
 </script>

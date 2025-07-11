@@ -119,6 +119,25 @@ export const useContent = () => {
       return dateB - dateA // Sort descending (newest first)
     })
   }
+
+  // Get all donation sections sorted by priority
+  const getDonationSections = (locale?: string): Content[] => {
+    const targetLocale = locale || currentLocale.value
+    const donationPath = `${targetLocale}/donate/`
+    const sections: Content[] = []
+    
+    for (const [path, content] of contentCache.entries()) {
+      if (path.startsWith(donationPath)) {
+        sections.push(content)
+      }
+    }
+    
+    return sections.sort((a, b) => {
+      const priorityA = a.metadata.priority || 999
+      const priorityB = b.metadata.priority || 999
+      return priorityA - priorityB // Sort ascending (lower priority number first)
+    })
+  }
   
   // Get a blog post by slug
   const getBlogPostBySlug = (slug: string, locale?: string): Content | null => {
@@ -162,6 +181,7 @@ export const useContent = () => {
     getContentBySection,
     getBlogPosts,
     getCourses,
+    getDonationSections,
     getBlogPostBySlug,
     getBlogPostByFilename,
     getCourseByFilename,

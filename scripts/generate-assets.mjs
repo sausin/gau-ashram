@@ -8,7 +8,7 @@ const outDir = './dist';
 const configuration = {
   path: '/',
   appName: 'Gau Samwardhan Ashram and Jankalyan Sanstha',
-  appShortName: 'Go Mandir',
+  appShortName: 'Gau Mandir',
   appDescription: 'Reviving India\'s ecological and cultural heritage through indigenous cow conservation, natural healing, and sustainable rural development.',
   developerName: 'Gau Samwardhan Ashram and Jankalyan Sanstha',
   developerURL: 'https://lakshyasanstha.org',

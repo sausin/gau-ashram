@@ -257,6 +257,9 @@
       </div>
     </section>
 
+    <!-- Application Forms -->
+    <FormsSection />
+
     <!-- Admission Process -->
     <section class="py-20 bg-primary-800 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -299,6 +302,7 @@ import { h, computed, ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
 import Button from '../components/ui/Button.vue'
+import FormsSection from '../components/ui/FormsSection.vue'
 
 const { t } = useI18n()
 const { getCourses } = useContent()

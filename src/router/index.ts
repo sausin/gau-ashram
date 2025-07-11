@@ -9,6 +9,7 @@ import Volunteer from '../views/Volunteer.vue'
 import Blog from '../views/Blog.vue'
 import BlogPost from '../views/BlogPost.vue'
 import Contact from '../views/Contact.vue'
+import Donate from '../views/Donate.vue'
 
 const routes = [
   {
@@ -81,6 +82,14 @@ const routes = [
     component: BlogPost,
     meta: {
       title: 'Blog Post - Gau Samwardhan Ashram and Jankalyan Sanstha'
+    }
+  },
+  {
+    path: '/donate',
+    name: 'Donate',
+    component: Donate,
+    meta: {
+      title: 'Donate - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
   },
   {

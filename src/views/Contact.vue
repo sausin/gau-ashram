@@ -48,7 +48,8 @@
                 </div>
                 <div>
                   <h3 class="font-semibold text-primary-800 mb-1">{{ t('contact.phone') }}</h3>
-                  <p class="text-gray-600">+91 291 XXX XXXX</p>
+                  <p class="text-gray-600">Sh. Rakesh Nihal : +91-96641-62094 / +91-98294-88058</p>
+                  <p class="text-gray-600">Smt Vanita Agarwal : +91-99543-80312</p>
                   <p class="text-sm text-gray-500">Mon - Fri, 9:00 AM - 6:00 PM</p>
                 </div>
               </div>

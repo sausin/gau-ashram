@@ -46,7 +46,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'Gau Samwardhan Ashram and Jankalyan Sanstha',
-        short_name: 'Go Mandir',
+        short_name: 'Gau Mandir',
         description: 'Ecological restoration, indigenous cow conservation, natural healing, and rural empowerment',
         theme_color: '#065f46',
         background_color: '#ffffff',

@@ -7,7 +7,7 @@
           <div class="flex items-center space-x-3 mb-4">
             <img 
               src="/logo.webp" 
-              alt="Gau Samwardhan Ashram - Go Mandir"
+              alt="Gau Samwardhan Ashram - Gau Mandir"
               class="h-16 w-auto bg-white rounded-lg p-2"
             />
           </div>
@@ -101,8 +101,24 @@
         </div>
       </div>
 
-      <div class="mt-8 pt-8 border-t border-primary-800 text-center">
-        <p class="text-primary-200 text-sm">{{ t('footer.copyright') }}</p>
+      <div class="mt-8 pt-8 border-t border-primary-800">
+        <!-- Legal Information -->
+        <div class="mb-6">
+          <h4 class="text-lg font-semibold mb-3 text-center">{{ t('footer.legalInfo') }}</h4>
+          <div class="max-w-2xl mx-auto text-center space-y-1">
+            <p class="text-primary-100 font-semibold">{{ t('donate.legalDetails.organizationName') }}</p>
+            <p class="text-primary-200 text-sm">{{ t('donate.legalDetails.parentOrganization') }}</p>
+            <div class="text-primary-300 text-xs space-y-0.5">
+              <p>{{ t('donate.legalDetails.registrationDetails') }}: {{ t('donate.legalDetails.registrationNumber') }}</p>
+              <p>{{ t('donate.legalDetails.registrationAuthority') }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-center border-t border-primary-800 pt-4">
+          <p class="text-primary-200 text-sm">{{ t('footer.copyright') }}</p>
+        </div>
       </div>
     </div>
   </footer>

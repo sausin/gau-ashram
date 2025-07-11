@@ -7,7 +7,7 @@
           <router-link to="/" class="flex items-center group">
             <img 
               src="/logo.webp" 
-              alt="Gau Samwardhan Ashram - Go Mandir"
+              alt="Gau Samwardhan Ashram - Gau Mandir"
               class="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </router-link>
@@ -96,7 +96,8 @@ const navigationItems = [
   { key: 'healing', path: '/healing' },
   { key: 'education', path: '/education' },
   { key: 'volunteer', path: '/volunteer' },
-  { key: 'blog', path: '/blog' }
+  { key: 'blog', path: '/blog' },
+  { key: 'donate', path: '/donate' }
 ]
 
 const handleLanguageChange = (event: Event) => {
