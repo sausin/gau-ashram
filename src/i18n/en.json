@@ -329,8 +329,7 @@
       }
     ],
     "form": {
-      "firstName": "First Name",
-      "lastName": "Last Name",
+      "name": "Name",
       "email": "Email Address",
       "phone": "Phone Number",
       "age": "Age",
@@ -346,8 +345,7 @@
       "submitting": "Submitting...",
       "success": "Thank you! Your volunteer application has been submitted successfully. We'll contact you soon.",
       "placeholders": {
-        "firstName": "Enter your first name",
-        "lastName": "Enter your last name", 
+        "name": "Enter your full name", 
         "email": "Enter your email address",
         "phone": "Enter your phone number",
         "age": "Enter your age",
@@ -372,8 +370,7 @@
         "1 year or more"
       ],
       "validation": {
-        "firstNameRequired": "First name is required",
-        "lastNameRequired": "Last name is required",
+        "nameRequired": "Name is required",
         "emailRequired": "Email address is required",
         "emailInvalid": "Please enter a valid email address",
         "phoneRequired": "Phone number is required",
