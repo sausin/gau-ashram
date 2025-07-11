@@ -209,7 +209,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'goMandir',
     icon: HomeIcon,
-    image: 'gau-background.jpg',
+    image: 'gau-background.webp',
     features: [
       'Sanctuary for 500+ indigenous cows',
       'Water table raised from 410ft to 120ft',
@@ -221,7 +221,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'healthcare',
     icon: HeartIcon,
-    image: 'medical-camp.jpeg',
+    image: 'medical-camp.webp',
     features: [
       'Acupressure training for rural families',
       'Naturopathy workshops and consultations',
@@ -233,7 +233,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'agriculture',
     icon: SeedlingIcon,
-    image: 'plantation2.jpeg',
+    image: 'plantation2.webp',
     features: [
       'Zero-cost farming techniques',
       'Cow-based organic fertilizers',
@@ -245,7 +245,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'conservation',
     icon: ShieldIcon,
-    image: 'seed-distribution.jpeg',
+    image: 'seed-distribution.webp',
     features: [
       'Habitat restoration projects',
       'Wildlife corridor development',
@@ -257,7 +257,7 @@ const detailedInitiatives = computed(() => [
   {
     key: 'water',
     icon: DropletIcon,
-    image: 'rainwater-harvesting.jpeg',
+    image: 'rainwater-harvesting.webp',
     features: [
       'Traditional water harvesting',
       'Groundwater recharge systems',

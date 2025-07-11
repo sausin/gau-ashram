@@ -3,7 +3,7 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img
-        src="/gau-background.jpg"
+        src="/gau-background.webp"
         alt="Indigenous cows in natural setting"
         class="w-full h-full object-cover"
         loading="eager"

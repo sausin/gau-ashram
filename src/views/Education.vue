@@ -54,7 +54,7 @@
           </div>
           <div class="relative">
             <img
-              src="/panchgavya-release.jpeg"
+              src="/panchgavya-release.webp"
               alt="Traditional education and learning"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

@@ -57,7 +57,7 @@
           </div>
           <div class="relative">
             <img
-              src="/volunteer.jpg"
+              src="/volunteer.webp"
               alt="Volunteers working together"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

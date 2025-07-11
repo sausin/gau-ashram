@@ -2,7 +2,7 @@
 title: "Panchgavya One-Year Course"
 description: "Comprehensive education in Panchgavya therapy principles and practical applications"
 excerpt: "A 12-month comprehensive course covering all aspects of Panchgavya therapy - from medicine preparation to Gaushala management"
-image: "/panchgavya-release2.jpeg"
+image: "/panchgavya-release2.webp"
 duration: "12 months"
 semesters: 2
 level: "Beginner to Intermediate"

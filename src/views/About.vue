@@ -32,7 +32,7 @@
           </div>
           <div class="relative">
             <img
-              src="/about.jpg"
+              src="/about.webp"
               :alt="t('about.architectureAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

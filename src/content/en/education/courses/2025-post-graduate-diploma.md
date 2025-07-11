@@ -2,7 +2,7 @@
 title: "Post Graduate Diploma in Panchgavya"
 description: "Advanced one-year diploma program in Panchgavya applications for health, agriculture, and entrepreneurship"
 excerpt: "A comprehensive post-graduate program designed to promote education and self-reliance through scientific understanding of Panchgavya applications"
-image: "/panchgavya-release.jpeg"
+image: "/panchgavya-release.webp"
 duration: "1 year"
 semesters: 2
 level: "Post Graduate"

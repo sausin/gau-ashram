@@ -41,7 +41,7 @@
           
           <div class="relative">
             <img
-              src="/felicitation.jpeg"
+              src="/felicitation.webp"
               alt="Our impact in action"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

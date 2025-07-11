@@ -36,7 +36,7 @@
           </div>
           <div class="relative">
             <img
-              src="/panchgavya-release2.jpeg"
+              src="/panchgavya-release2.webp"
               :alt="t('home.sustainableFarmingAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

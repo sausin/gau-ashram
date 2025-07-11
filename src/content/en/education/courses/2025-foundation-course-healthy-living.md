@@ -2,7 +2,7 @@
 title: "Foundation Course of Self-Reliant Treatment for Healthy Living"
 description: "Six-Month Certificate Training Program in traditional self-reliant healing methods"
 excerpt: "A comprehensive 360-hour program teaching traditional, non-invasive self-care techniques for maintaining health and managing lifestyle disorders"
-image: "/panchgavya-release3.jpeg"
+image: "/panchgavya-release3.webp"
 duration: "6 months"
 semesters: 1
 level: "Foundation Level"
