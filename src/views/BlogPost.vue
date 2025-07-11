@@ -135,7 +135,7 @@ import Button from '../components/ui/Button.vue'
 const { t, locale } = useI18n()
 const route = useRoute()
 const router = useRouter()
-const { getBlogPostBySlug, getBlogPosts, getBlogPostByFilename } = useContent()
+const { getBlogPosts, getBlogPostByFilename } = useContent()
 
 const articleContent = ref<any>(null)
 const article = ref<any>(null)

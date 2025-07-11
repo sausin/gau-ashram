@@ -19,7 +19,7 @@ export interface ProcessedContent {
 
 export function processMarkdown(rawContent: string): ProcessedContent {
   const { content, data } = matter(rawContent)
-  const html = marked(content)
+  const html = marked(content) as string
   
   return {
     html,

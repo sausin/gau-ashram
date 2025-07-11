@@ -274,7 +274,7 @@ const AcademicCapIcon = () => h('svg', {
   })
 ])
 
-const opportunities = computed(() => t('volunteer.opportunitiesList').map((opportunity, index) => ({
+const opportunities = computed(() => (t('volunteer.opportunitiesList') as unknown as string[]).map((opportunity: string, index: number) => ({
   title: ['Cow Care', 'Natural Healing', 'Sustainable Farming', 'Rural Development', 'Education'][index],
   description: opportunity,
   duration: ['2-4 weeks', '1-3 months', '3-6 months', '1-6 months', '2-8 weeks'][index],
@@ -282,7 +282,7 @@ const opportunities = computed(() => t('volunteer.opportunitiesList').map((oppor
   icon: [HeartIcon, BookIcon, SeedlingIcon, UsersIcon, AcademicCapIcon][index]
 })))
 
-const joinSteps = computed(() => t('volunteer.joinSteps').map((step, index) => ({
+const joinSteps = computed(() => (t('volunteer.joinSteps') as unknown as string[]).map((step: string, index: number) => ({
   title: ['Apply', 'Interview', 'Orientation', 'Start'][index],
   description: step
 })))

@@ -134,7 +134,7 @@
           <Button variant="outline" @click="closeProductModal" class="flex-1">
             {{ t('common.close') }}
           </Button>
-          <Button variant="primary" @click="addToCart(selectedProduct)" class="flex-1">
+          <Button variant="primary" @click="selectedProduct && addToCart(selectedProduct)" class="flex-1">
             Add to Cart
           </Button>
         </div>
@@ -174,8 +174,21 @@ import Modal from '../components/ui/Modal.vue'
 
 const { t } = useI18n()
 
+type Product = {
+  id: number
+  name: string
+  description: string
+  price: number
+  originalPrice?: number
+  rating: number
+  image: string
+  category: string
+  badge?: string
+  features?: string[]
+}
+
 const activeCategory = ref('all')
-const selectedProduct = ref(null)
+const selectedProduct = ref<Product | null>(null)
 const showCartNotification = ref(false)
 
 const categories = [
@@ -290,7 +303,7 @@ const filteredProducts = computed(() => {
   return products.filter(product => product.category === activeCategory.value)
 })
 
-const openProductModal = (product) => {
+const openProductModal = (product: Product) => {
   selectedProduct.value = product
 }
 
@@ -298,7 +311,7 @@ const closeProductModal = () => {
   selectedProduct.value = null
 }
 
-const addToCart = (product) => {
+const addToCart = (product: Product) => {
   // Simulate adding to cart
   console.log('Added to cart:', product)
   

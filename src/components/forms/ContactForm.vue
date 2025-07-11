@@ -186,7 +186,7 @@ const inputClasses = computed(() =>
 const validateForm = () => {
   // Reset errors
   Object.keys(errors).forEach(key => {
-    errors[key] = ''
+    (errors as any)[key] = ''
   })
 
   let isValid = true
@@ -234,9 +234,9 @@ const handleSubmit = async () => {
     // Reset form
     Object.keys(form).forEach(key => {
       if (key === 'consent') {
-        form[key] = false
+        (form as any)[key] = false
       } else {
-        form[key] = ''
+        (form as any)[key] = ''
       }
     })
     

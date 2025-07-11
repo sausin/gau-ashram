@@ -233,13 +233,11 @@ import { useI18n } from '../composables/useI18n'
 import Button from '../components/ui/Button.vue'
 import Card from '../components/ui/Card.vue'
 import ContentRenderer from '../components/ui/ContentRenderer.vue'
-import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
-const { getContent } = useContent()
 
-const benefits = computed(() => t('healing.benefitsList').map((benefit, index) => ({
-  title: t('healing.benefitsTitles')[index],
+const benefits = computed(() => (t('healing.benefitsList') as unknown as string[]).map((benefit: string, index: number) => ({
+  title: (t('healing.benefitsTitles') as unknown as string[])[index],
   description: benefit
 })))
 

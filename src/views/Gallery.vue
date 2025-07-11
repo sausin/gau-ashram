@@ -135,8 +135,16 @@ import { useI18n } from '../composables/useI18n'
 
 const { t } = useI18n()
 
+type GalleryImage = {
+  src: string
+  alt: string
+  title: string
+  description: string
+  category: string
+}
+
 const activeCategory = ref('all')
-const modalImage = ref(null)
+const modalImage = ref<GalleryImage | null>(null)
 const modalIndex = ref(0)
 
 const categories = [

@@ -1,6 +1,5 @@
 import { Plugin } from 'vite'
-import fs from 'fs'
-import path from 'path'
+import { readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 
@@ -15,7 +14,7 @@ export function markdownPlugin(): Plugin {
       
       if (id.endsWith('.md')) {
         const filePath = id.split('?')[0]
-        const rawContent = fs.readFileSync(filePath, 'utf-8')
+        const rawContent = readFileSync(filePath, 'utf-8')
         const { content, data } = matter(rawContent)
         const html = marked(content)
         

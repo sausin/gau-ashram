@@ -254,7 +254,7 @@ const inputClasses = computed(() =>
 const validateForm = () => {
   // Reset errors
   Object.keys(errors).forEach(key => {
-    errors[key] = ''
+    (errors as any)[key] = ''
   })
 
   let isValid = true
@@ -282,7 +282,7 @@ const validateForm = () => {
     isValid = false
   }
 
-  if (!form.age || form.age < 18 || form.age > 80) {
+  if (!form.age || Number(form.age) < 18 || Number(form.age) > 80) {
     errors.age = 'Age must be between 18 and 80'
     isValid = false
   }
@@ -317,11 +317,11 @@ const handleSubmit = async () => {
     // Reset form
     Object.keys(form).forEach(key => {
       if (key === 'consent') {
-        form[key] = false
+        (form as any)[key] = false
       } else if (key === 'interests') {
-        form[key] = []
+        (form as any)[key] = []
       } else {
-        form[key] = ''
+        (form as any)[key] = ''
       }
     })
     

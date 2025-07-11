@@ -99,12 +99,8 @@
     <!-- Impact Section with Content -->
     <section class="py-20 bg-primary-800 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div v-if="impactContent" class="prose prose-lg prose-invert max-w-none">
-          <ContentRenderer content-path="home/impact" />
-        </div>
-        
-        <!-- Fallback to original stats if markdown not available -->
-        <div v-else>
+        <!-- Always show the styled stats display -->
+        <div>
           <div class="text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
               {{ t('impact.title') }}
@@ -143,7 +139,7 @@
             <div class="flex items-center">
               <img
                 src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-:alt="t('home.villageRepresentativeAlt')"
+                :alt="t('home.villageRepresentativeAlt')"
                 class="w-12 h-12 rounded-full mr-4"
               />
               <div>
@@ -160,7 +156,7 @@
             <div class="flex items-center">
               <img
                 src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-:alt="t('home.communityMemberAlt')"
+                :alt="t('home.communityMemberAlt')"
                 class="w-12 h-12 rounded-full mr-4"
               />
               <div>
@@ -202,16 +198,11 @@
 </template>
 
 <script setup lang="ts">
-import { h, computed } from 'vue'
+import { h } from 'vue'
 import HeroSection from '../components/ui/HeroSection.vue'
-import ContentRenderer from '../components/ui/ContentRenderer.vue'
 import { useI18n } from '../composables/useI18n'
-import { useContent } from '../composables/useContent'
 
 const { t } = useI18n()
-const { getContent } = useContent()
-
-const impactContent = computed(() => getContent('home/impact'))
 
 // Simple icon components using raw SVG
 const HomeIcon = () => h('svg', {
