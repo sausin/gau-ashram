@@ -289,16 +289,17 @@ const joinSteps = computed(() => (t('volunteer.joinSteps') as unknown as string[
   description: step
 })))
 
-const testimonials = computed(() => {
-  const testimonialsData = t('volunteer.testimonials') as unknown as Array<{name: string, role: string, quote: string}>
-  const images = [
-    'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-    'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
-    'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
-  ]
-  return testimonialsData.map((testimonial, index) => ({
-    ...testimonial,
-    image: images[index]
-  }))
-})
+// Testimonials - commented out for future use
+// const testimonials = computed(() => {
+//   const testimonialsData = t('volunteer.testimonials') as unknown as Array<{name: string, role: string, quote: string}>
+//   const images = [
+//     'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+//     'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+//     'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop'
+//   ]
+//   return testimonialsData.map((testimonial, index) => ({
+//     ...testimonial,
+//     image: images[index]
+//   }))
+// })
 </script>
