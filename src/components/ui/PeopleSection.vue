@@ -188,11 +188,12 @@ const parsePeopleContent = (content: string): Person[] => {
   return people
 }
 
-onMounted(async () => {
+onMounted(() => {
   try {
-    const content = await useContent('about/people')
-    if (content) {
-      people.value = parsePeopleContent(content)
+    const { getContent } = useContent()
+    const content = getContent('about/people')
+    if (content && content.raw) {
+      people.value = parsePeopleContent(content.raw)
     }
   } catch (error) {
     console.warn('People content not found or could not be loaded')

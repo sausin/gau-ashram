@@ -172,12 +172,30 @@
       </label>
     </div>
 
+    <!-- Turnstile CAPTCHA -->
+    <div class="space-y-3">
+      <label class="block text-sm font-medium text-gray-700">
+        {{ t('volunteer.form.captcha') }} *
+      </label>
+      <!-- Reserved space to prevent layout jump -->
+      <div class="min-h-[65px] flex items-center justify-center bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
+        <div ref="turnstileContainer" class="max-w-full flex justify-center"></div>
+        <div v-if="turnstile.isLoading" class="text-sm text-gray-500">
+          {{ t('volunteer.form.loadingCaptcha') }}
+        </div>
+      </div>
+      <p v-if="turnstile.error.value" class="text-sm text-red-600">{{ turnstile.error.value }}</p>
+      <p v-if="errors.turnstile" class="text-sm text-red-600">{{ errors.turnstile }}</p>
+    </div>
+
     <Button
       type="submit"
+      :disabled="!isFormValid || isSubmitting"
       :loading="isSubmitting"
       :loading-text="t('volunteer.form.submitting')"
       size="lg"
       class="w-full"
+      :class="{ 'opacity-50 cursor-not-allowed': !isFormValid && !isSubmitting }"
     >
       {{ t('volunteer.form.submit') }}
     </Button>
@@ -204,14 +222,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import Button from '../ui/Button.vue'
 import { useI18n } from '../../composables/useI18n'
+import { useTurnstile } from '../../composables/useTurnstile'
 
 const { t } = useI18n()
+const turnstile = useTurnstile()
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const turnstileContainer = ref<HTMLElement>()
 
 const form = reactive({
   firstName: '',
@@ -235,7 +256,8 @@ const errors = reactive({
   age: '',
   interests: '',
   duration: '',
-  motivation: ''
+  motivation: '',
+  turnstile: ''
 })
 
 const interestOptions = computed(() => {
@@ -250,6 +272,22 @@ const durationValues = ['', '1-2weeks', '1month', '2-3months', '6months', '1year
 const inputClasses = computed(() => 
   'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-300'
 )
+
+const isFormValid = computed(() => {
+  return form.firstName.trim() &&
+         form.lastName.trim() &&
+         form.email.trim() &&
+         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) &&
+         form.phone.trim() &&
+         form.age &&
+         Number(form.age) >= 18 &&
+         Number(form.age) <= 80 &&
+         form.interests.length > 0 &&
+         form.duration &&
+         form.motivation.trim() &&
+         form.consent &&
+         turnstile.token.value
+})
 
 const validateForm = () => {
   // Reset errors
@@ -302,6 +340,11 @@ const validateForm = () => {
     isValid = false
   }
 
+  if (!turnstile.token.value) {
+    errors.turnstile = t('volunteer.form.validation.captchaRequired')
+    isValid = false
+  }
+
   return isValid
 }
 
@@ -325,6 +368,9 @@ const handleSubmit = async () => {
       }
     })
     
+    // Reset Turnstile
+    turnstile.reset()
+    
     showSuccess.value = true
     
     // Hide success message after 5 seconds
@@ -338,4 +384,11 @@ const handleSubmit = async () => {
     isSubmitting.value = false
   }
 }
+
+// Initialize Turnstile when component is mounted
+onMounted(async () => {
+  if (turnstileContainer.value) {
+    await turnstile.render(turnstileContainer.value)
+  }
+})
 </script>

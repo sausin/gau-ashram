@@ -32,7 +32,7 @@
           </div>
           <div class="relative">
             <img
-              src="https://images.pexels.com/photos/8828756/pexels-photo-8828756.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              src="/about.jpg"
               :alt="t('about.architectureAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

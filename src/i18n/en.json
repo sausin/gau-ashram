@@ -340,6 +340,8 @@
       "experience": "Relevant Experience",
       "motivation": "Why do you want to volunteer with us?",
       "consent": "I agree to the terms and conditions and privacy policy",
+      "captcha": "Security Verification",
+      "loadingCaptcha": "Loading security verification...",
       "submit": "Submit Application",
       "submitting": "Submitting...",
       "success": "Thank you! Your volunteer application has been submitted successfully. We'll contact you soon.",
@@ -378,7 +380,8 @@
         "ageRange": "Age must be between 18 and 80",
         "interestsRequired": "Please select at least one area of interest",
         "durationRequired": "Please select your preferred duration",
-        "motivationRequired": "Please share your motivation for volunteering"
+        "motivationRequired": "Please share your motivation for volunteering",
+        "captchaRequired": "Please complete the security verification"
       }
     }
   },
@@ -436,12 +439,17 @@
     "addressText": "Near Bhuria Bhakhar, Moklawas, Jodhpur - 342001",
     "phone": "Phone",
     "email": "Email",
+    "map": {
+      "loading": "Loading map...",
+      "error": "Unable to load map",
+      "attribution": "Map data © OpenStreetMap contributors",
+      "openInGoogleMaps": "Open in Google Maps",
+      "openInOSM": "View on OpenStreetMap"
+    },
     "form": {
       "title": "Send us a Message",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "firstNamePlaceholder": "Enter your first name",
-      "lastNamePlaceholder": "Enter your last name",
+      "name": "Name",
+      "namePlaceholder": "Enter your full name",
       "email": "Email Address",
       "emailPlaceholder": "Enter your email address",
       "phone": "Phone Number",
@@ -451,6 +459,8 @@
       "message": "Message",
       "messagePlaceholder": "Tell us about your inquiry...",
       "consent": "I agree to the privacy policy and terms of service",
+      "captcha": "Security Verification",
+      "loadingCaptcha": "Loading security verification...",
       "submit": "Send Message",
       "sending": "Sending...",
       "successMessage": "Thank you! Your message has been sent successfully.",
@@ -463,12 +473,12 @@
         "other": "Other"
       },
       "errors": {
-        "firstNameRequired": "First name is required",
-        "lastNameRequired": "Last name is required",
+        "nameRequired": "Name is required",
         "emailRequired": "Email address is required",
         "emailInvalid": "Please enter a valid email address",
         "subjectRequired": "Please select a subject",
-        "messageRequired": "Message is required"
+        "messageRequired": "Message is required",
+        "captchaRequired": "Please complete the security verification"
       }
     }
   },

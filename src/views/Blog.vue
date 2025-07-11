@@ -166,8 +166,8 @@
       </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="py-16">
+    <!-- Newsletter Signup - Hidden for now -->
+    <!-- <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-8 text-center text-white">
           <h3 class="text-2xl font-serif font-bold mb-4">{{ t('blog.stayUpdated') }}</h3>
@@ -186,7 +186,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

@@ -14,6 +14,17 @@ description: "Meet the dedicated individuals behind our mission"
   - Pioneer in environmental awareness and plastic-free campaigns
   - Built grassroots network across villages for nature conservation
 
+## Shri Nandlal Bhati
+- **Role**: President
+- **Image**: /team/nandlal-bhati.jpg
+- **Summary**: Entrepreneur and RSS worker leading the Ashram as a thriving grassroots movement for cow protection.
+- **Bio**: An entrepreneur and dedicated RSS worker, Shri Bhati's leadership blends traditional values with modern social responsibility. As President of Gau Sanvardhan Ashram, he champions cow protection, organic farming, Panchgavya-based healing, and environmental conservation, turning the Ashram into a thriving grassroots movement.
+- **Achievements**:
+  - Current President of Gau Sanvardhan Ashram
+  - Champion of cow protection and organic farming
+  - Promotes Panchgavya-based healing practices
+  - Transformed Ashram into thriving grassroots movement
+
 ## Shri Nemichand Ji Chopda
 - **Role**: Mentor
 - **Image**: /team/nemichand-chopda.jpg
@@ -24,6 +35,18 @@ description: "Meet the dedicated individuals behind our mission"
   - Annual contributions of ₹1-1.5 crore for cow welfare
   - Supports 300-350 Gaushalas across India
   - Leading numerous welfare projects in Gujarat
+
+## Shri Rakesh Nihal
+- **Role**: Secretary
+- **Image**: /team/rakesh-nihal.jpg
+- **Summary**: Visionary educator who discovered Panchgavya therapy and developed the Ashram into a leading center for innovation.
+- **Bio**: A visionary educator and environmentalist with a Master's in Geography, Shri Nihal served as a teacher for 27 years and established Jodhpur's first Spoken English Institute. A turning point came when he healed his father-in-law using Panchgavya therapy, leading him to dedicate himself to cow preservation and natural healing. As Secretary, he has developed the Gau Sanvardhan Ashram into a leading center for cow welfare and environmental innovation, while also founding the Acharya Hasti Ahinsatmak Chikitsa Research Institute for self-reliant healthcare.
+- **Achievements**:
+  - Master's in Geography, 27 years of teaching experience
+  - Established Jodhpur's first Spoken English Institute
+  - Pioneer in Panchgavya therapy and natural healing
+  - Founded Acharya Hasti Ahinsatmak Chikitsa Research Institute
+  - Developed Ashram into leading center for cow welfare and innovation
 
 ## Mr. Ashok Choradia
 - **Role**: Honorary Patron
@@ -67,17 +90,6 @@ description: "Meet the dedicated individuals behind our mission"
   - Ensures smooth execution of diverse programs
   - Essential part of the organizational framework
 
-## Shri Nandlal Bhati
-- **Role**: President
-- **Image**: /team/nandlal-bhati.jpg
-- **Summary**: Entrepreneur and RSS worker leading the Ashram as a thriving grassroots movement for cow protection.
-- **Bio**: An entrepreneur and dedicated RSS worker, Shri Bhati's leadership blends traditional values with modern social responsibility. As President of Gau Sanvardhan Ashram, he champions cow protection, organic farming, Panchgavya-based healing, and environmental conservation, turning the Ashram into a thriving grassroots movement.
-- **Achievements**:
-  - Current President of Gau Sanvardhan Ashram
-  - Champion of cow protection and organic farming
-  - Promotes Panchgavya-based healing practices
-  - Transformed Ashram into thriving grassroots movement
-
 ## Shri Anil Lohiya
 - **Role**: Vice President
 - **Image**: /team/anil-lohiya.jpg
@@ -110,18 +122,6 @@ description: "Meet the dedicated individuals behind our mission"
   - Donated handcrafted wooden furniture to the Ashram
   - Enhanced Ashram's utility and aesthetic appeal
   - Exemplified ethical and material contribution
-
-## Shri Rakesh Nihal
-- **Role**: Secretary
-- **Image**: /team/rakesh-nihal.jpg
-- **Summary**: Visionary educator who discovered Panchgavya therapy and developed the Ashram into a leading center for innovation.
-- **Bio**: A visionary educator and environmentalist with a Master's in Geography, Shri Nihal served as a teacher for 27 years and established Jodhpur's first Spoken English Institute. A turning point came when he healed his father-in-law using Panchgavya therapy, leading him to dedicate himself to cow preservation and natural healing. As Secretary, he has developed the Gau Sanvardhan Ashram into a leading center for cow welfare and environmental innovation, while also founding the Acharya Hasti Ahinsatmak Chikitsa Research Institute for self-reliant healthcare.
-- **Achievements**:
-  - Master's in Geography, 27 years of teaching experience
-  - Established Jodhpur's first Spoken English Institute
-  - Pioneer in Panchgavya therapy and natural healing
-  - Founded Acharya Hasti Ahinsatmak Chikitsa Research Institute
-  - Developed Ashram into leading center for cow welfare and innovation
 
 ## Shri Harisharan Bansal
 - **Role**: Joint Secretary
