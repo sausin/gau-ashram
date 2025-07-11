@@ -538,7 +538,7 @@
     "upiTitle": "UPI Payment",
     "scanQR": "Scan with any UPI app",
     "upiId": "UPI ID",
-    "openUPIApp": "Pay with UPI",
+    "openUPIApp": "Donate with UPI",
     "copyUPILink": "Copy UPI Link",
     "copied": "UPI link copied to clipboard!",
     "desktopInstructions": "Please use your mobile device to scan the QR code with any UPI app.",

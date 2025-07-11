@@ -131,7 +131,7 @@
         </div>
 
         <!-- Testimonials -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-primary-700 rounded-lg p-6">
             <blockquote class="text-lg italic mb-4">
               "{{ t('impact.testimonial1') }}"
@@ -165,7 +165,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 
