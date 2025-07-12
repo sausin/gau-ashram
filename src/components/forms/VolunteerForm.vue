@@ -166,20 +166,20 @@
     </div>
 
     <!-- Turnstile CAPTCHA -->
-    <div class="space-y-3">
-      <label class="block text-sm font-medium text-gray-700">
-        {{ t('volunteer.form.captcha') }} *
-      </label>
-      <!-- Reserved space to prevent layout jump -->
-      <div class="min-h-[65px] flex items-center justify-center bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-        <div v-show="!turnstile.isLoading" ref="turnstileContainer" class="max-w-full flex justify-center"></div>
-        <div v-show="turnstile.isLoading" class="text-sm text-gray-500">
-          {{ t('volunteer.form.loadingCaptcha') }}
-        </div>
+      <div class="space-y-3">
+        <label class="block text-sm font-medium text-gray-700">
+          {{ t('volunteer.form.captcha') }} *
+        </label>
+        <TurnstileWidget
+          v-if="turnstileSiteKey"
+          :site-key="turnstileSiteKey"
+          @success="(token) => turnstileToken = token"
+          @error="(error) => turnstileError = error"
+          @expired="() => turnstileToken = null"
+        />
+        <p v-if="turnstileError" class="text-sm text-red-600">{{ turnstileError }}</p>
+        <p v-if="errors.turnstile" class="text-sm text-red-600">{{ errors.turnstile }}</p>
       </div>
-      <p v-if="turnstile.error" class="text-sm text-red-600">{{ turnstile.error }}</p>
-      <p v-if="errors.turnstile" class="text-sm text-red-600">{{ errors.turnstile }}</p>
-    </div>
 
     <Button
       type="submit"
@@ -240,13 +240,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted, nextTick } from 'vue'
 import Button from '../ui/Button.vue'
 import { useI18n } from '../../composables/useI18n'
-import { useTurnstile } from '../../composables/useTurnstile'
+import TurnstileWidget from '../ui/TurnstileWidget.vue'
 
 const { t } = useI18n()
-const turnstile = useTurnstile()
+
+const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY
+const turnstileToken = ref<string | null>(null)
+const turnstileError = ref<string | null>(null)
 
 const isSubmitting = ref(false)
 const showModal = ref(false)
@@ -303,7 +306,7 @@ const isFormValid = computed(() => {
          form.duration &&
          form.motivation.trim() &&
          form.consent &&
-         turnstile.token.value
+         turnstileToken.value
 })
 
 const validateForm = () => {
@@ -352,13 +355,15 @@ const validateForm = () => {
     isValid = false
   }
 
-  if (!turnstile.token.value) {
+  if (!turnstileToken.value) {
     errors.turnstile = t('volunteer.form.validation.captchaRequired')
     isValid = false
   }
 
   return isValid
 }
+
+const turnstileWidget = ref<InstanceType<typeof TurnstileWidget> | null>(null)
 
 const handleSubmit = async () => {
   if (!validateForm()) return
@@ -382,7 +387,7 @@ const handleSubmit = async () => {
         duration: form.duration,
         experience: form.experience,
         motivation: form.motivation,
-        turnstileToken: turnstile.token.value
+        turnstileToken: turnstileToken.value
       })
     })
 
@@ -399,7 +404,7 @@ const handleSubmit = async () => {
       })
       
       // Reset Turnstile
-      turnstile.reset()
+      turnstileWidget.value?.reset()
       
       submitSuccess.value = true
       showModal.value = true
@@ -429,6 +434,7 @@ const closeModal = () => {
 
 // Initialize Turnstile when component is mounted
 onMounted(async () => {
+  await nextTick()
   if (turnstileContainer.value) {
     await turnstile.render(turnstileContainer.value)
   }
