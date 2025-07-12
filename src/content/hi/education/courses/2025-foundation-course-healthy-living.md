@@ -8,7 +8,7 @@ semesters: 1
 level: "आधारभूत स्तर"
 type: "प्रमाणपत्र कार्यक्रम"
 instructor: 
-  name: "डॉ. पारंपरिक चिकित्सा विशेषज्ञ"
+  name: "राकेश निहाल"
   title: "स्वावलंबी चिकित्सा विशेषज्ञ"
   image: "/rakesh.jpg"
 startDate: "2025-03-01"

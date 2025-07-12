@@ -8,7 +8,7 @@ semesters: 2
 level: "स्नातकोत्तर"
 type: "डिप्लोमा कार्यक्रम"
 instructor: 
-  name: "डॉ. पंचगव्य अनुसंधान टीम"
+  name: "राकेश निहाल"
   title: "उन्नत पंचगव्य विशेषज्ञ"
   image: "/rakesh.jpg"
 startDate: "2025-07-01"

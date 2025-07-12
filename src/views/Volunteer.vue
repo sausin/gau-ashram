@@ -102,7 +102,7 @@
                   <span class="font-medium">{{ opportunity.commitment }}</span>
                 </div>
               </div>
-              <Button variant="primary" size="sm" class="w-full">
+              <Button variant="primary" size="sm" class="w-full" @click="applyForOpportunity(opportunity.title)">
                 {{ t('volunteer.applyNow') }}
               </Button>
             </div>
@@ -136,7 +136,7 @@
     </section>
 
     <!-- Volunteer Application Form -->
-    <section class="py-20 bg-primary-800 text-white">
+    <section ref="formSection" class="py-20 bg-primary-800 text-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
@@ -148,7 +148,7 @@
         </div>
 
         <div class="bg-white rounded-xl p-8">
-          <VolunteerForm />
+          <VolunteerForm ref="volunteerForm" />
         </div>
       </div>
     </section>
@@ -191,13 +191,16 @@
 </template>
 
 <script setup lang="ts">
-import { h, computed } from 'vue'
+import { h, computed, ref } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import Button from '../components/ui/Button.vue'
 import Card from '../components/ui/Card.vue'
 import VolunteerForm from '../components/forms/VolunteerForm.vue'
 
 const { t } = useI18n()
+
+const formSection = ref<HTMLElement>()
+const volunteerForm = ref<InstanceType<typeof VolunteerForm>>()
 
 // Icon components
 const HeartIcon = () => h('svg', {
@@ -276,18 +279,76 @@ const AcademicCapIcon = () => h('svg', {
   })
 ])
 
-const opportunities = computed(() => (t('volunteer.opportunitiesList') as unknown as string[]).map((opportunity: string, index: number) => ({
-  title: (t('volunteer.opportunityTitles') as unknown as string[])[index],
-  description: opportunity,
-  duration: (t('volunteer.durations') as unknown as string[])[index],
-  commitment: (t('volunteer.commitments') as unknown as string[])[index],
-  icon: [HeartIcon, BookIcon, SeedlingIcon, UsersIcon, AcademicCapIcon][index]
-})))
+const opportunities = computed(() => {
+  const opportunitiesList = t('volunteer.opportunitiesList')
+  const opportunityTitles = t('volunteer.opportunityTitles')
+  const durations = t('volunteer.durations')
+  const commitments = t('volunteer.commitments')
+  
+  if (!Array.isArray(opportunitiesList)) {
+    console.error('volunteer.opportunitiesList is not an array:', opportunitiesList)
+    return []
+  }
+  
+  return opportunitiesList.map((opportunity: any, index: number) => ({
+    title: Array.isArray(opportunityTitles) ? opportunityTitles[index] : '',
+    description: opportunity,
+    duration: Array.isArray(durations) ? durations[index] : '',
+    commitment: Array.isArray(commitments) ? commitments[index] : '',
+    icon: [HeartIcon, BookIcon, SeedlingIcon, UsersIcon, AcademicCapIcon][index]
+  }))
+})
 
-const joinSteps = computed(() => (t('volunteer.joinSteps') as unknown as string[]).map((step: string, index: number) => ({
-  title: (t('volunteer.joinStepTitles') as unknown as string[])[index],
-  description: step
-})))
+const joinSteps = computed(() => {
+  const joinStepsList = t('volunteer.joinSteps')
+  const joinStepTitles = t('volunteer.joinStepTitles')
+  
+  if (!Array.isArray(joinStepsList)) {
+    console.error('volunteer.joinSteps is not an array:', joinStepsList)
+    return []
+  }
+  
+  return joinStepsList.map((step: any, index: number) => ({
+    title: Array.isArray(joinStepTitles) ? joinStepTitles[index] : '',
+    description: step
+  }))
+})
+
+// Map opportunity titles to interest values
+const opportunityToInterest: Record<string, string> = {
+  'Cow Care & Sanctuary Work': 'cow-care',
+  'Educational Programs': 'education',
+  'Organic Farming': 'farming',
+  'Natural Healing Therapies': 'healing',
+  'Construction Projects': 'construction',
+  'गौ सेवा एवं अभयारण्य कार्य': 'cow-care',
+  'शैक्षणिक कार्यक्रम': 'education',
+  'जैविक खेती': 'farming',
+  'प्राकृतिक चिकित्सा': 'healing',
+  'निर्माण परियोजनाएं': 'construction'
+}
+
+const applyForOpportunity = (title: string) => {
+  // Scroll to form
+  if (formSection.value) {
+    formSection.value.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+  
+  // Select the corresponding interest checkbox after a short delay to ensure form is visible
+  setTimeout(() => {
+    const interestValue = opportunityToInterest[title]
+    if (interestValue && volunteerForm.value) {
+      // Access the form component's form data
+      const formInstance = volunteerForm.value as any
+      if (formInstance.form && formInstance.form.interests) {
+        // Check if interest is not already selected
+        if (!formInstance.form.interests.includes(interestValue)) {
+          formInstance.form.interests.push(interestValue)
+        }
+      }
+    }
+  }, 500)
+}
 
 // Testimonials - commented out for future use
 // const testimonials = computed(() => {

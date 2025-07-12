@@ -8,7 +8,7 @@ semesters: 1
 level: "Foundation Level"
 type: "Certificate Program"
 instructor: 
-  name: "Dr. Traditional Healing Expert"
+  name: "Rakesh Nihal"
   title: "Self-Reliant Treatment Specialist"
   image: "/rakesh.jpg"
 startDate: "2025-03-01"

@@ -98,11 +98,13 @@ export function useTurnstile() {
       widgetId.value = window.turnstile.render(element, {
         sitekey: siteKey,
         callback: (receivedToken: string) => {
+          console.log('Turnstile token received:', receivedToken)
           token.value = receivedToken
           error.value = null
           isLoading.value = false // Widget is ready
         },
         'error-callback': () => {
+          console.error('Turnstile error callback triggered')
           error.value = 'Turnstile verification failed'
           token.value = null
           isLoading.value = false // Widget finished loading (with error)
@@ -115,12 +117,21 @@ export function useTurnstile() {
         size: isMobile ? 'compact' : 'normal'
       })
       
-      // Also set a timeout to hide loading after reasonable time
-      setTimeout(() => {
-        if (isLoading.value) {
+      console.log('Turnstile widget rendered with ID:', widgetId.value)
+      
+      // For test key, immediately set loading to false as the widget doesn't always trigger callback
+      if (siteKey === '1x00000000000000000000AA') {
+        setTimeout(() => {
           isLoading.value = false
-        }
-      }, 5000)
+        }, 100)
+      } else {
+        // Also set a timeout to hide loading after reasonable time for real keys
+        setTimeout(() => {
+          if (isLoading.value) {
+            isLoading.value = false
+          }
+        }, 5000)
+      }
       
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'Unknown error'

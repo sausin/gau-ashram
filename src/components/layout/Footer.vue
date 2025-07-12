@@ -137,7 +137,7 @@
         
         <!-- Copyright -->
         <div class="text-center border-t border-primary-800 pt-4">
-          <p class="text-primary-200 text-sm">{{ t('footer.copyright') }}</p>
+          <p class="text-primary-200 text-sm">© {{ currentYear }} {{ t('footer.copyrightText') || 'Gau Samwardhan Ashram. All rights reserved.' }}</p>
         </div>
       </div>
     </div>
@@ -145,7 +145,10 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '../../composables/useI18n'
 
 const { t } = useI18n()
+
+const currentYear = computed(() => new Date().getFullYear())
 </script>

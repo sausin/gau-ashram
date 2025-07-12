@@ -106,12 +106,12 @@
         </label>
         <!-- Reserved space to prevent layout jump -->
         <div class="min-h-[65px] flex items-center justify-center bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-          <div ref="turnstileContainer" class="max-w-full flex justify-center"></div>
-          <div v-if="turnstile.isLoading" class="text-sm text-gray-500">
+          <div v-show="!turnstile.isLoading" ref="turnstileContainer" class="max-w-full flex justify-center"></div>
+          <div v-show="turnstile.isLoading" class="text-sm text-gray-500">
             {{ t('contact.form.loadingCaptcha') }}
           </div>
         </div>
-        <p v-if="turnstile.error.value" class="text-sm text-red-600">{{ turnstile.error.value }}</p>
+        <p v-if="turnstile.error" class="text-sm text-red-600">{{ turnstile.error }}</p>
         <p v-if="errors.turnstile" class="text-sm text-red-600">{{ errors.turnstile }}</p>
       </div>
 

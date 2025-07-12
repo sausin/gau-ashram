@@ -8,7 +8,7 @@ semesters: 2
 level: "Post Graduate"
 type: "Diploma Program"
 instructor: 
-  name: "Dr. Panchgavya Research Team"
+  name: "Rakesh Nihal"
   title: "Advanced Panchgavya Specialists"
   image: "/rakesh.jpg"
 startDate: "2025-07-01"
