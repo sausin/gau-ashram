@@ -1,14 +1,19 @@
 <template>
-  <header class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
+  <header class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 header-container">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16 header-content">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <router-link to="/" class="flex items-center group">
             <img 
               src="/logo.webp" 
               alt="Gau Samwardhan Ashram - Gau Mandir"
-              class="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+              class="h-12 w-auto group-hover:scale-105 transition-transform duration-300 logo-image"
+              width="120"
+              height="48"
+              style="aspect-ratio: 120/48; object-fit: contain;"
+              loading="eager"
+              decoding="sync"
             />
           </router-link>
         </div>

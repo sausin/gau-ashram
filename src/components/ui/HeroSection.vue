@@ -8,9 +8,12 @@
         sizes="100vw"
         alt="Indigenous cows in natural setting"
         class="w-full h-full object-cover"
+        width="1024"
+        height="768"
+        style="aspect-ratio: 4/3; object-fit: cover;"
         loading="eager"
         fetchpriority="high"
-        decoding="async"
+        decoding="sync"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
     </div>

@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     meta: {
       title: 'Gau Samwardhan Ashram and Jankalyan Sanstha - Reviving India\'s Heritage'
     }
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
       title: 'About Us - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/initiatives',
     name: 'Initiatives',
-    component: () => import('../views/About.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
       title: 'Our Initiatives - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -108,6 +108,18 @@ router.beforeEach((to, _, next) => {
     document.title = to.meta.title as string
   }
   next()
+})
+
+// Prefetch commonly visited routes when on home page
+router.afterEach((to) => {
+  if (to.name === 'Home') {
+    // Prefetch likely next pages
+    setTimeout(() => {
+      import(/* webpackChunkName: "about" */ '../views/About.vue')
+      import(/* webpackChunkName: "volunteer" */ '../views/Volunteer.vue')
+      import(/* webpackChunkName: "donate" */ '../views/Donate.vue')
+    }, 2000)
+  }
 })
 
 export default router

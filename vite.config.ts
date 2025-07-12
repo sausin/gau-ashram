@@ -41,38 +41,33 @@ export default defineConfig({
       hostname: 'https://gauasharam.org',
       generateRobotsTxt: false
     })
-    // VitePWA temporarily disabled due to dependency issues
-    // VitePWA({ 
-    //   registerType: 'autoUpdate',
-    //   workbox: {
-    //     globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}']
-    //   },
-    //   includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
-    //   manifest: {
-    //     name: 'Gau Samwardhan Ashram and Jankalyan Sanstha',
-    //     short_name: 'Gau Mandir',
-    //     description: 'Ecological restoration, indigenous cow conservation, natural healing, and rural empowerment',
-    //     theme_color: '#065f46',
-    //     background_color: '#ffffff',
-    //     display: 'standalone',
-    //     icons: [
-    //       {
-    //         src: 'logo.webp',
-    //         sizes: '811x245',
-    //         type: 'image/webp'
-    //       },
-    //       {
-    //         src: 'pwa-192x192.png',
-    //         sizes: '192x192',
-    //         type: 'image/png'
-    //       },
-    //       {
-    //         src: 'pwa-512x512.png', 
-    //         sizes: '512x512',
-    //         type: 'image/png'
-    //       }
-    //     ]
-    //   }
-    // })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor libraries into separate chunks
+          'vue-vendor': ['vue', 'vue-router'],
+          'ui-vendor': ['@headlessui/vue', '@heroicons/vue/24/outline'],
+          'utils': ['leaflet', 'qrcode']
+        }
+      }
+    },
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Reduce chunk size warning limit
+    chunkSizeWarningLimit: 500,
+    // Enable minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['vue', 'vue-router', '@headlessui/vue']
+  }
 })
