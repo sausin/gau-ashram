@@ -3,11 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps<{
   siteKey: string;
-  theme?: 'light' | 'dark' | 'auto';
   size?: 'normal' | 'compact';
   language?: string;
 }>();
@@ -50,7 +49,7 @@ const renderWidget = async () => {
   try {
     widgetId = window.turnstile.render(turnstileRef.value, {
       sitekey: props.siteKey,
-      theme: props.theme || 'auto',
+      theme: 'light', // Always use light theme
       size: props.size || 'normal',
       language: props.language,
       callback: (token: string) => {
@@ -102,13 +101,6 @@ onUnmounted(() => {
   }
 });
 
-watch(() => props.theme, () => {
-  if (widgetId && window.turnstile) {
-    window.turnstile.remove(widgetId);
-    renderWidget();
-  }
-});
-
 defineExpose({
   reset,
   getResponse
@@ -116,7 +108,7 @@ defineExpose({
 
 declare global {
   interface Window {
-    onTurnstileLoad: () => void;
+    onTurnstileLoad?: () => void;
     turnstile: {
       render: (element: HTMLElement, options: any) => string;
       reset: (widgetId: string) => void;
@@ -132,6 +124,11 @@ declare global {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 65px; /* Prevent layout shift */
+  min-height: 65px;
+  width: 100%;
+  background-color: #f9fafb; /* bg-gray-50 */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow: hidden;
 }
 </style>

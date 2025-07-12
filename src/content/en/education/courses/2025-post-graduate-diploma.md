@@ -14,6 +14,7 @@ instructor:
 startDate: "2025-07-01"
 category: "Advanced Studies"
 tags: ["panchgavya", "post-graduate", "agriculture", "health", "entrepreneurship"]
+pdf: "/syllabus/2025-diploma.pdf"
 ---
 
 # Post Graduate Diploma in Panchgavya

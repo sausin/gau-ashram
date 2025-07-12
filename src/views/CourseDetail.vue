@@ -129,7 +129,20 @@
               </div>
 
               <!-- Enroll Button -->
-              <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold mt-6 transition-colors duration-300">
+              <a 
+                v-if="course.pdf"
+                :href="course.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full flex items-center justify-center bg-secondary-600 hover:bg-secondary-700 text-white py-3 px-6 rounded-lg font-semibold mt-6 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+                </svg>
+                {{ t('courses.downloadSyllabus') }}
+              </a>
+
+              <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold mt-4 transition-colors duration-300">
                 {{ t('courses.enrollNow') }}
               </button>
             </div>
@@ -187,7 +200,12 @@ const course = computed(() => {
     tags: courseData.metadata.tags || [],
     instructor: typeof courseData.metadata.instructor === 'string' 
       ? { name: courseData.metadata.instructor, title: '', image: '' }
-      : courseData.metadata.instructor || { name: 'Instructor', title: '', image: '' },
+      : { 
+          name: courseData.metadata.instructor?.name || 'Instructor',
+          title: courseData.metadata.instructor?.title || '',
+          image: courseData.metadata.instructor?.image || ''
+        },
+    pdf: courseData.metadata.pdf || null,
     content: courseData.html || ''
   }
 })

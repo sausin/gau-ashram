@@ -106,6 +106,7 @@
         </label>
         <TurnstileWidget
           v-if="turnstileSiteKey"
+          ref="turnstileWidget"
           :site-key="turnstileSiteKey"
           @success="(token) => turnstileToken = token"
           @error="(error) => turnstileError = error"
@@ -175,7 +176,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted, nextTick } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { useI18n } from '../../composables/useI18n'
 import Button from '../ui/Button.vue'
 import TurnstileWidget from '../ui/TurnstileWidget.vue'
@@ -190,7 +191,6 @@ const isSubmitting = ref(false)
 const showModal = ref(false)
 const submitSuccess = ref(false)
 const submitError = ref('')
-const turnstileContainer = ref<HTMLElement>()
 
 const form = reactive({
   name: '',
@@ -334,11 +334,4 @@ const closeModal = () => {
   submitError.value = ''
 }
 
-// Initialize Turnstile when component is mounted
-onMounted(async () => {
-  await nextTick()
-  if (turnstileContainer.value) {
-    await turnstile.render(turnstileContainer.value)
-  }
-})
 </script>

@@ -172,6 +172,7 @@
         </label>
         <TurnstileWidget
           v-if="turnstileSiteKey"
+          ref="turnstileWidget"
           :site-key="turnstileSiteKey"
           @success="(token) => turnstileToken = token"
           @error="(error) => turnstileError = error"
@@ -240,7 +241,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted, nextTick } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import Button from '../ui/Button.vue'
 import { useI18n } from '../../composables/useI18n'
 import TurnstileWidget from '../ui/TurnstileWidget.vue'
@@ -255,7 +256,6 @@ const isSubmitting = ref(false)
 const showModal = ref(false)
 const submitSuccess = ref(false)
 const submitError = ref('')
-const turnstileContainer = ref<HTMLElement>()
 
 const form = reactive({
   name: '',
@@ -282,12 +282,22 @@ const errors = reactive({
 })
 
 const interestOptions = computed(() => {
-  const labels = t('volunteer.form.interestOptions') as unknown as string[]
+  const labels = t('volunteer.form.interestOptions')
   const values = ['cow-care', 'healing', 'farming', 'education', 'construction', 'administration']
-  return labels.map((label, index) => ({ value: values[index], label }))
+  
+  // Check if labels is an array
+  if (Array.isArray(labels)) {
+    return labels.map((label, index) => ({ value: values[index], label }))
+  }
+  
+  // Fallback if translation is not found or not an array
+  return values.map(value => ({ value, label: value }))
 })
 
-const durationOptions = computed(() => t('volunteer.form.durationOptions') as unknown as string[])
+const durationOptions = computed(() => {
+  const options = t('volunteer.form.durationOptions')
+  return Array.isArray(options) ? options : []
+})
 const durationValues = ['', '1-2weeks', '1month', '2-3months', '6months', '1year']
 
 const inputClasses = computed(() => 
@@ -432,13 +442,6 @@ const closeModal = () => {
   submitError.value = ''
 }
 
-// Initialize Turnstile when component is mounted
-onMounted(async () => {
-  await nextTick()
-  if (turnstileContainer.value) {
-    await turnstile.render(turnstileContainer.value)
-  }
-})
 
 // Expose form data to parent component
 defineExpose({

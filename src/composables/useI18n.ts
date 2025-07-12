@@ -26,7 +26,7 @@ export const useI18n = () => {
     document.documentElement.lang = locale
   }
 
-  const t = (key: string): string => {
+  const t = (key: string): any => {
     const keys = key.split('.')
     let result: any = messages[currentLocale.value]
     
@@ -38,7 +38,8 @@ export const useI18n = () => {
       }
     }
     
-    return result || key
+    // Return the result as-is (could be string, array, or object)
+    return result !== undefined ? result : key
   }
 
   const locale = computed(() => currentLocale.value)

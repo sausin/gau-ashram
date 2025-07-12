@@ -14,6 +14,7 @@ instructor:
 startDate: "2025-07-01"
 category: "Health Therapy"
 tags: ["panchgavya", "therapy", "gaushala", "ayurveda"]
+pdf: "/syllabus/2025-panchgavya.pdf"
 ---
 
 # Panchgavya One-Year Course

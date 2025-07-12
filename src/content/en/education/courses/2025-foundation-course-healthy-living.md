@@ -14,6 +14,7 @@ instructor:
 startDate: "2025-03-01"
 category: "Health & Wellness"
 tags: ["natural-healing", "self-reliant", "traditional-medicine", "wellness"]
+pdf: "/syllabus/2025-foundation.pdf"
 ---
 
 # Foundation Course of Self-Reliant Treatment for Healthy Living
