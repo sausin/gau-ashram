@@ -5,7 +5,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shrimati Leelawati Nihal
 - **Role**: Founder & The Green Warrior
-- **Image**: /team/leelawati-nihal.jpg
+- **Image**: /team/leelawati-nihal.webp
 - **Summary**: Environmental crusader who planted 81,000+ trees and founded the Sanstha in 2004 with unwavering dedication.
 - **Bio**: A true environmental crusader, Smt. Leelawati Nihal began her journey in 1994, riding her Luna moped to plant trees and spread awareness about cleanliness and the dangers of plastic. Over the years, she has planted more than 81,000 trees, earning recognition from several esteemed institutions. In 2004, she founded Lakshya Paryavaran and Jankalyan Sanstha with a vision of cow protection, rural upliftment, and environmental stewardship. With no resources but unwavering resolve, she traveled from village to village, building trust and reconnecting people with nature. Today, the Sanstha stands as a testament to her faith, dedication, and spirit of selfless service.
 - **Achievements**:
@@ -16,7 +16,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Nandlal Bhati
 - **Role**: President
-- **Image**: /team/nandlal-bhati.jpg
+- **Image**: /team/nandlal-bhati.webp
 - **Summary**: Entrepreneur and RSS worker leading the Ashram as a thriving grassroots movement for cow protection.
 - **Bio**: An entrepreneur and dedicated RSS worker, Shri Bhati's leadership blends traditional values with modern social responsibility. As President of Gau Sanvardhan Ashram, he champions cow protection, organic farming, Panchgavya-based healing, and environmental conservation, turning the Ashram into a thriving grassroots movement.
 - **Achievements**:
@@ -27,7 +27,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Nemichand Ji Chopda
 - **Role**: Mentor
-- **Image**: /team/nemichand-chopda.jpg
+- **Image**: /team/nemichand-chopda.webp
 - **Summary**: Distinguished philanthropist and former National President supporting 300+ Gaushalas across India.
 - **Bio**: A distinguished entrepreneur and philanthropist from Pali, Rajasthan, Shri Chopda has been a pillar of support for the Sanstha. As former National President of the National Jain Conference, Delhi, he has led with integrity and vision. His contributions, amounting to ₹1–1.5 crore annually, support over 300–350 Gaushalas across India, and numerous welfare projects in Gujarat reflect his far-reaching social commitment.
 - **Achievements**:
@@ -38,7 +38,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Rakesh Nihal
 - **Role**: Secretary
-- **Image**: /team/rakesh-nihal.jpg
+- **Image**: /team/rakesh-nihal.webp
 - **Summary**: Visionary educator who discovered Panchgavya therapy and developed the Ashram into a leading center for innovation.
 - **Bio**: A visionary educator and environmentalist with a Master's in Geography, Shri Nihal served as a teacher for 27 years and established Jodhpur's first Spoken English Institute. A turning point came when he healed his father-in-law using Panchgavya therapy, leading him to dedicate himself to cow preservation and natural healing. As Secretary, he has developed the Gau Sanvardhan Ashram into a leading center for cow welfare and environmental innovation, while also founding the Acharya Hasti Ahinsatmak Chikitsa Research Institute for self-reliant healthcare.
 - **Achievements**:
@@ -50,7 +50,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Mr. Ashok Choradia
 - **Role**: Honorary Patron
-- **Image**: /team/ashok-choradia.jpg
+- **Image**: /team/ashok-choradia.webp
 - **Summary**: Continuing his father's legacy, he has significantly supported infrastructure development at the Ashram.
 - **Bio**: Continuing the legacy of his father, the late Shri Chanchalmal Ji Choradia, Mr. Ashok Choradia has significantly supported the development of Gau Sanvardhan Ashram, Moklawas. Under his guidance, vital infrastructure projects have been realized, including training halls and residential facilities. His unwavering support exemplifies true social service and community dedication.
 - **Achievements**:
@@ -61,7 +61,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Narpat Singh Ji
 - **Role**: Patron
-- **Image**: /team/narpat-singh.jpg
+- **Image**: /team/narpat-singh.webp
 - **Summary**: Committed supporter whose quiet strength and faith have reinforced the foundation of the Sanstha.
 - **Bio**: A committed supporter and patron whose quiet strength and faith have reinforced the foundation of the Sanstha. His steadfast dedication and unwavering support have been instrumental in maintaining the organization's core values and mission.
 - **Achievements**:
@@ -71,7 +71,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Naresh Ji Joshi
 - **Role**: Coordinator & Former President
-- **Image**: /team/naresh-joshi.jpg
+- **Image**: /team/naresh-joshi.webp
 - **Summary**: Devoted social worker and skilled organizer leading initiatives in cow welfare and environmental protection.
 - **Bio**: A devoted social worker and skilled organizer, Shri Joshi has long been active in social and political spheres. As Coordinator and former President of the Sanstha, he has played a pivotal role in initiatives for cow welfare, environmental protection, water conservation, and rural development. His leadership, grounded in service and national values, continues to inspire many.
 - **Achievements**:
@@ -82,7 +82,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Ramesh Sharma
 - **Role**: Joint Coordinator
-- **Image**: /team/ramesh-sharma.jpg
+- **Image**: /team/ramesh-sharma.webp
 - **Summary**: Essential organizational coordinator ensuring smooth execution of the Sanstha's diverse activities.
 - **Bio**: An essential part of the organizational framework, Shri Sharma supports coordination and ensures smooth execution of the Sanstha's diverse activities. His methodical approach and attention to detail have been crucial in managing the organization's multiple initiatives and programs.
 - **Achievements**:
@@ -92,7 +92,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Anil Lohiya
 - **Role**: Vice President
-- **Image**: /team/anil-lohiya.jpg
+- **Image**: /team/anil-lohiya.webp
 - **Summary**: Environmentalist and entrepreneur who paused his business during COVID-19 to continue environmental work.
 - **Bio**: An environmentalist and entrepreneur from Jodhpur, Shri Lohiya has been deeply involved in tree plantation and cow welfare efforts, even pausing his business during the COVID-19 pandemic to continue his environmental work. His transparent and honest approach has inspired greater community participation and trust in the Sanstha's mission.
 - **Achievements**:
@@ -103,7 +103,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Jitendra Jain
 - **Role**: Treasurer
-- **Image**: /team/jitendra-jain.jpg
+- **Image**: /team/jitendra-jain.webp
 - **Summary**: Owner of Arihant Electronics and steadfast supporter providing vital financial stewardship since inception.
 - **Bio**: Owner of Arihant Electronics, Jodhpur, Shri Jain has been a steadfast supporter since the Sanstha's inception. As Treasurer, he has played a vital role in financial stewardship and social outreach, encouraging the public to contribute in meaningful ways. His compassion and commitment form one of the Sanstha's strongest pillars.
 - **Achievements**:
@@ -114,7 +114,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Deepak Jain
 - **Role**: Joint Treasurer
-- **Image**: /team/deepak-jain.jpg
+- **Image**: /team/deepak-jain.webp
 - **Summary**: Respected entrepreneur contributing ethically and materially, including handcrafted wooden furniture for the Ashram.
 - **Bio**: A respected entrepreneur and member of the Jain community, Shri Jain contributes both ethically and materially. His donation of handcrafted wooden furniture has enhanced the Ashram's utility and aesthetic appeal, reflecting his devotion and refined sense of service.
 - **Achievements**:
@@ -125,7 +125,7 @@ description: "Meet the dedicated individuals behind our mission"
 
 ## Shri Harisharan Bansal
 - **Role**: Joint Secretary
-- **Image**: /team/harisharan-bansal.jpg
+- **Image**: /team/harisharan-bansal.webp
 - **Summary**: Prominent businessman providing agricultural equipment and financial support for Ashram development.
 - **Bio**: A prominent businessman from Jodhpur, Shri Bansal has contributed generously by providing agricultural equipment and financial support for the Ashram's development. His continued association and practical assistance have been instrumental in furthering the Sanstha's mission.
 - **Achievements**:

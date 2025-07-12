@@ -18,13 +18,13 @@
           class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
           @click="openModal(person)"
         >
-          <div class="aspect-w-3 aspect-h-4">
+          <div class="aspect-[3/4] overflow-hidden">
             <img
               :src="getImageUrl(person.image, 'original')"
               :srcset="getImageUrl(person.image, 'srcset')"
               sizes="(max-width: 768px) 480px, 800px"
               :alt="person.name"
-              class="w-full h-64 object-cover object-center"
+              class="w-full h-full object-cover object-center"
               @error="handleImageError"
             />
           </div>
@@ -116,12 +116,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 import { useI18n } from '../../composables/useI18n'
 import { useContent } from '../../composables/useContent'
 
 const { t } = useI18n()
+const { getContent } = useContent()
 
 interface Person {
   name: string
@@ -133,7 +134,6 @@ interface Person {
   contact?: string
 }
 
-const people = ref<Person[]>([])
 const selectedPerson = ref<Person | null>(null)
 
 // Generic person icon as SVG data URL with gray background
@@ -236,15 +236,17 @@ const parsePeopleContent = (content: string): Person[] => {
   return people
 }
 
-onMounted(() => {
+// Load people content reactively using computed (follows same pattern as courses)
+const people = computed(() => {
   try {
-    const { getContent } = useContent()
     const content = getContent('about/people')
     if (content && content.raw) {
-      people.value = parsePeopleContent(content.raw)
+      return parsePeopleContent(content.raw)
     }
+    return []
   } catch (error) {
     console.warn('People content not found or could not be loaded:', error)
+    return []
   }
 })
 

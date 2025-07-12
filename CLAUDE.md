@@ -106,6 +106,31 @@ Page content in markdown...
 
 **CRITICAL**: This is a bilingual website with English and Hindi translations. When adding or editing any translation keys in `/src/i18n/en.json`, you MUST also update the corresponding Hindi translations in `/src/i18n/hi.json`. The Hindi translations should always be kept in complete parity with the English translations to maintain the bilingual functionality of the website.
 
+### Reactive Content Translation Pattern
+
+**IMPORTANT**: When creating components that load markdown content from `/src/content/{locale}/` directories, ALWAYS use computed properties to ensure content updates automatically when the language changes. Follow this pattern:
+
+```typescript
+// ✅ CORRECT - Use computed property for reactive content
+const content = computed(() => {
+  const result = getContent('path/to/content')
+  return result ? processContent(result) : []
+})
+
+// ❌ INCORRECT - Loading content only once in onMounted
+onMounted(() => {
+  const result = getContent('path/to/content') // Won't update on language change
+  someRef.value = processContent(result)
+})
+```
+
+**Examples in codebase:**
+- ✅ `Education.vue` - uses `computed(() => getCourses())` for reactive courses
+- ✅ `Blog.vue` - uses `computed(() => getBlogPosts())` for reactive blog posts  
+- ✅ `PeopleSection.vue` - uses `computed(() => getContent('about/people'))` for reactive people content
+
+This pattern ensures that when users switch languages, the content automatically updates to show the correct translation without requiring page reload or manual content refresh.
+
 ### Course Implementation
 
 The courses system follows the same pattern as blogs for consistency:
