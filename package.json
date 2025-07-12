@@ -4,8 +4,9 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build && node scripts/generate-assets.mjs",
+    "dev": "node scripts/process-images.mjs && vite",
+    "dev:images": "node scripts/process-images.mjs",
+    "build": "node scripts/process-images.mjs --build && vue-tsc -b && vite build && node scripts/generate-assets.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "marked": "^12.0.2",
     "postcss": "^8.4.31",
+    "sharp": "^0.33.2",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.5.3",
     "vite": "^5.4.2",

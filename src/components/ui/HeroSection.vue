@@ -3,10 +3,13 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <img
-        src="/gau-background.webp"
+        src="/gau-background_large.webp"
+        srcset="/gau-background_small.webp 480w, /gau-background_medium.webp 800w, /gau-background_large.webp 1024w"
+        sizes="100vw"
         alt="Indigenous cows in natural setting"
         class="w-full h-full object-cover"
         loading="eager"
+        fetchpriority="high"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
     </div>

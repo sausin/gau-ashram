@@ -32,3 +32,11 @@ dist-ssr
 /public/manifest.webmanifest
 /public/sw.js
 /public/workbox-*.js
+
+# Generated responsive images (dev only)
+/public/*_small.webp
+/public/*_medium.webp
+/public/*_large.webp
+/public/team/*_small.webp
+/public/team/*_medium.webp
+/public/team/*_large.webp

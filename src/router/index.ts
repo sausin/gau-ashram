@@ -1,21 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Initiatives from '../views/Initiatives.vue'
-import Healing from '../views/Healing.vue'
-import Education from '../views/Education.vue'
-import CourseDetail from '../views/CourseDetail.vue'
-import Volunteer from '../views/Volunteer.vue'
-import Blog from '../views/Blog.vue'
-import BlogPost from '../views/BlogPost.vue'
-import Contact from '../views/Contact.vue'
-import Donate from '../views/Donate.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
     meta: {
       title: 'Gau Samwardhan Ashram and Jankalyan Sanstha - Reviving India\'s Heritage'
     }
@@ -23,7 +12,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: About,
+    component: () => import('../views/About.vue'),
     meta: {
       title: 'About Us - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -31,7 +20,7 @@ const routes = [
   {
     path: '/initiatives',
     name: 'Initiatives',
-    component: Initiatives,
+    component: () => import('../views/About.vue'),
     meta: {
       title: 'Our Initiatives - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -39,7 +28,7 @@ const routes = [
   {
     path: '/healing',
     name: 'Healing',
-    component: Healing,
+    component: () => import('../views/Healing.vue'),
     meta: {
       title: 'Natural Healing - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -47,7 +36,7 @@ const routes = [
   {
     path: '/education',
     name: 'Education',
-    component: Education,
+    component: () => import('../views/Education.vue'),
     meta: {
       title: 'Education & Courses - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -55,7 +44,7 @@ const routes = [
   {
     path: '/education/courses/:slug',
     name: 'CourseDetail',
-    component: CourseDetail,
+    component: () => import('../views/CourseDetail.vue'),
     meta: {
       title: 'Course Details - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -63,7 +52,7 @@ const routes = [
   {
     path: '/volunteer',
     name: 'Volunteer',
-    component: Volunteer,
+    component: () => import('../views/Volunteer.vue'),
     meta: {
       title: 'Volunteer - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -71,7 +60,7 @@ const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    component: Blog,
+    component: () => import('../views/Blog.vue'),
     meta: {
       title: 'Blog - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -79,7 +68,7 @@ const routes = [
   {
     path: '/blog/:slug',
     name: 'BlogPost',
-    component: BlogPost,
+    component: () => import('../views/BlogPost.vue'),
     meta: {
       title: 'Blog Post - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -87,7 +76,7 @@ const routes = [
   {
     path: '/donate',
     name: 'Donate',
-    component: Donate,
+    component: () => import('../views/Donate.vue'),
     meta: {
       title: 'Donate - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }
@@ -95,7 +84,7 @@ const routes = [
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact,
+    component: () => import('../views/Contact.vue'),
     meta: {
       title: 'Contact Us - Gau Samwardhan Ashram and Jankalyan Sanstha'
     }

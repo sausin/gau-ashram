@@ -2,7 +2,7 @@ import { favicons } from 'favicons';
 import fs from 'fs';
 import path from 'path';
 
-const source = './public/vite.svg';
+const source = './public/logo_short.png';
 const outDir = './dist';
 
 const configuration = {
@@ -24,17 +24,19 @@ const configuration = {
   icons: {
     android: true,
     appleIcon: true,
-    appleStartup: true,
+    appleStartup: false, // Disable huge startup images
     coast: false,
     favicons: true,
     firefox: false,
-    windows: true,
+    windows: false, // Disable Windows tiles to save space
     yandex: false,
   },
 };
 
 (async () => {
   try {
+    // Generate favicons (image processing already done by process-images.mjs)
+    console.log('Generating favicons...');
     const response = await favicons(source, configuration);
 
     fs.mkdirSync(outDir, { recursive: true });

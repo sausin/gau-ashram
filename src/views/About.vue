@@ -32,7 +32,9 @@
           </div>
           <div class="relative">
             <img
-              src="/about.webp"
+              src="/about_large.webp"
+              srcset="/about_small.webp 480w, /about_medium.webp 800w, /about_large.webp 1024w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               :alt="t('about.architectureAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

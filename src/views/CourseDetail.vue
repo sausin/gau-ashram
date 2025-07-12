@@ -128,19 +128,21 @@
                 </div>
               </div>
 
-              <!-- Enroll Button -->
-              <a 
+              <!-- Download Syllabus Button -->
+              <button 
                 v-if="course.pdf"
-                :href="course.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full flex items-center justify-center bg-secondary-600 hover:bg-secondary-700 text-white py-3 px-6 rounded-lg font-semibold mt-6 transition-colors duration-300"
+                @click="downloadSyllabus"
+                class="w-full flex items-center justify-center bg-secondary-600 hover:bg-secondary-700 text-white py-3 px-6 rounded-lg font-semibold mt-6 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                :disabled="isDownloading"
               >
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <svg v-if="!isDownloading" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
                 </svg>
-                {{ t('courses.downloadSyllabus') }}
-              </a>
+                <svg v-else class="w-5 h-5 mr-2 animate-spin" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" />
+                </svg>
+                {{ isDownloading ? 'Downloading...' : t('courses.downloadSyllabus') }}
+              </button>
 
               <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold mt-4 transition-colors duration-300">
                 {{ t('courses.enrollNow') }}
@@ -171,7 +173,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
@@ -212,4 +214,51 @@ const course = computed(() => {
 
 // Get the course content HTML
 const courseContent = computed(() => course.value?.content || '')
+
+// Download functionality
+const isDownloading = ref(false)
+
+const downloadSyllabus = async () => {
+  if (!course.value?.pdf || isDownloading.value) return
+  
+  try {
+    isDownloading.value = true
+    
+    // Fetch the file
+    const response = await fetch(course.value.pdf)
+    
+    if (!response.ok) {
+      throw new Error(`Failed to download file: ${response.statusText}`)
+    }
+    
+    // Get the blob
+    const blob = await response.blob()
+    
+    // Create a temporary URL for the blob
+    const url = window.URL.createObjectURL(blob)
+    
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a')
+    link.href = url
+    
+    // Extract filename from the PDF path or use a default name
+    const filename = course.value.pdf.split('/').pop() || `${course.value.title}-syllabus.pdf`
+    link.download = filename
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    
+    // Clean up the blob URL
+    window.URL.revokeObjectURL(url)
+    
+  } catch (error) {
+    console.error('Download failed:', error)
+    // Fallback: open in new tab if download fails
+    window.open(course.value.pdf, '_blank', 'noopener,noreferrer')
+  } finally {
+    isDownloading.value = false
+  }
+}
 </script>

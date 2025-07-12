@@ -57,7 +57,9 @@
           </div>
           <div class="relative">
             <img
-              src="/volunteer.webp"
+              src="/volunteer_large.webp"
+              srcset="/volunteer_small.webp 480w, /volunteer_medium.webp 800w, /volunteer_large.webp 1024w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Volunteers working together"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"

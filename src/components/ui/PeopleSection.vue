@@ -20,7 +20,9 @@
         >
           <div class="aspect-w-3 aspect-h-4">
             <img
-              :src="getImageUrl(person.image)"
+              :src="getImageUrl(person.image, 'original')"
+              :srcset="getImageUrl(person.image, 'srcset')"
+              sizes="(max-width: 768px) 480px, 800px"
               :alt="person.name"
               class="w-full h-64 object-cover object-center"
               @error="handleImageError"
@@ -67,10 +69,11 @@
           <div class="flex flex-col md:flex-row gap-6">
             <div class="md:w-1/3">
               <img
-                :src="getImageUrl(selectedPerson.image)"
+                :src="getImageUrl(selectedPerson.image, 'original')"
+                :srcset="getImageUrl(selectedPerson.image, 'srcset')"
+                sizes="(max-width: 768px) 480px, 800px"
                 :alt="selectedPerson.name"
                 class="w-full rounded-lg shadow-md"
-                @error="handleImageError"
               />
             </div>
             <div class="md:w-2/3">
@@ -154,9 +157,23 @@ const closeModal = () => {
   document.body.style.overflow = 'auto'
 }
 
-const getImageUrl = (imagePath: string): string => {
-  // Check if image exists by attempting to load it
-  return imagePath || genericPersonIcon
+const getImageUrl = (imagePath: string, type: 'original' | 'srcset'): string => {
+  if (!imagePath) {
+    return genericPersonIcon;
+  }
+
+  const baseName = imagePath.substring(0, imagePath.lastIndexOf('.'));
+  const ext = '.webp'; // Assuming all processed images are webp
+
+  if (type === 'srcset') {
+    return [
+      `${baseName}_small${ext} 480w`,
+      `${baseName}_medium${ext} 800w`,
+      `${baseName}_large${ext} 1024w`,
+    ].join(', ');
+  } else {
+    return `${baseName}${ext}`; // Return the original .webp version
+  }
 }
 
 const handleImageError = (event: Event) => {
