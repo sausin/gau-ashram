@@ -11,7 +11,6 @@ export default defineConfig({
     vue(), 
     markdownPlugin(),
     viteImagemin({
-      disable: true,
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false,

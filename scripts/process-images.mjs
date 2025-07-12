@@ -21,8 +21,8 @@ const CRITICAL_IMAGES = [
 ];
 
 const PUBLIC_DIR = './public';
-// Output to public during dev, dist during build
-const OUTPUT_DIR = process.env.NODE_ENV === 'production' || process.argv.includes('--build') ? './dist' : './public';
+// Always output to public - let Vite handle copying to dist during build
+const OUTPUT_DIR = './public';
 
 async function processImage(imagePath) {
   const { dir, name, ext } = path.parse(imagePath);
