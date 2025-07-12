@@ -230,7 +230,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, h, onMounted, computed } from 'vue'
+import { ref, h, onMounted, computed, nextTick } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import { useContent } from '../composables/useContent'
 import QRCode from 'qrcode'
@@ -413,7 +413,9 @@ const openUPIApp = () => {
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
+  // Wait for next tick to ensure DOM is fully rendered before reading clientWidth
+  await nextTick()
   generateQRCode()
 })
 </script>

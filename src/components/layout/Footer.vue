@@ -1,14 +1,20 @@
 <template>
-  <footer class="bg-primary-900 text-white">
+  <footer class="bg-primary-900 text-white min-h-[400px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Logo & Description -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-4">
             <img 
-              src="/logo.webp" 
+              src="/logo_medium.webp" 
+              srcset="/logo_small.webp 480w, /logo_medium.webp 800w, /logo_large.webp 1024w"
+              sizes="(max-width: 768px) 120px, 159px"
               alt="Gau Samwardhan Ashram - Gau Mandir"
               class="h-16 w-auto bg-white rounded-lg p-2"
+              width="120"
+              height="64"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <p class="text-primary-100 leading-relaxed mb-6 max-w-md">

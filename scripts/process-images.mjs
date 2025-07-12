@@ -17,7 +17,9 @@ const CRITICAL_IMAGES = [
   'plantation.webp',
   'plantation2.webp',
   'plantation3.webp',
-  'gsa-garden.webp'
+  'gsa-garden.webp',
+  'panchgavya-release2.webp',
+  'logo.webp'
 ];
 
 const PUBLIC_DIR = './public';
@@ -47,7 +49,7 @@ async function processImage(imagePath) {
             withoutEnlargement: true
           })
           .webp({ 
-            quality: 65,
+            quality: 60,
             effort: 6 // Higher effort for better compression
           })
           .toFile(outputPath);
@@ -65,7 +67,7 @@ async function processImage(imagePath) {
     try {
       await sharp(imagePath)
         .webp({ 
-          quality: 65,
+          quality: 60,
           effort: 6
         })
         .toFile(originalWebpPath);

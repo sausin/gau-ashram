@@ -36,10 +36,13 @@
           </div>
           <div class="relative">
             <img
-              src="/panchgavya-release2.webp"
+              src="/panchgavya-release2_large.webp"
+              srcset="/panchgavya-release2_small.webp 480w, /panchgavya-release2_medium.webp 800w, /panchgavya-release2_large.webp 1024w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               :alt="t('home.sustainableFarmingAlt')"
               class="rounded-lg shadow-2xl w-full"
               loading="lazy"
+              decoding="async"
             />
             <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-primary-500 rounded-full flex items-center justify-center shadow-xl">
               <span class="text-white font-bold text-2xl">{{ t('home.yearsOfService') }}</span>

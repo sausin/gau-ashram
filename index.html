@@ -34,10 +34,24 @@
     <!-- Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Preload LCP image with responsive sizes -->
+    <link rel="preload" as="image" href="/gau-background_large.webp" imagesrcset="/gau-background_small.webp 480w, /gau-background_medium.webp 800w, /gau-background_large.webp 1024w" imagesizes="100vw" fetchpriority="high">
 
-    <!-- Asynchronously load Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap"></noscript>
+    <!-- Load Google Fonts with font-display: swap to prevent layout shifts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap">
+    
+    <!-- Add font-display CSS to prevent FOIT (Flash of Invisible Text) -->
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Playfair Display';
+        font-display: swap;
+      }
+    </style>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
