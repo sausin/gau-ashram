@@ -246,7 +246,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div v-for="approach in learningApproaches" :key="approach.title" class="text-center">
+          <div v-for="approach in learningApproaches" :key="approach.key" class="text-center">
             <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <component :is="approach.icon" class="w-8 h-8 text-primary-600" />
             </div>
@@ -273,7 +273,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div v-for="(step, index) in admissionSteps" :key="step.title" class="text-center">
+          <div v-for="(step, index) in admissionSteps" :key="step.key" class="text-center">
             <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span class="text-2xl font-bold">{{ index + 1 }}</span>
             </div>
