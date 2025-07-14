@@ -214,7 +214,7 @@
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Application Submitted Successfully!</h3>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ t('volunteer.form.successTitle') }}</h3>
           <p class="text-gray-600 mb-6">{{ t('volunteer.form.success') }}</p>
         </div>
 
@@ -225,8 +225,8 @@
               <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
             </svg>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Application Failed to Submit</h3>
-          <p class="text-gray-600 mb-6">{{ submitError || 'There was an error submitting your application. Please try again.' }}</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ t('volunteer.form.errorTitle') }}</h3>
+          <p class="text-gray-600 mb-6">{{ submitError || t('volunteer.form.errorMessage') }}</p>
         </div>
 
         <button

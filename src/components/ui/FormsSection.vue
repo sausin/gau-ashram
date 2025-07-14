@@ -22,6 +22,8 @@
             <div class="aspect-w-3 aspect-h-4 bg-white m-4 rounded-lg overflow-hidden shadow-md">
               <img
                 :src="form.image"
+                :srcset="form.srcset"
+                sizes="(max-width: 768px) 480px, 800px"
                 :alt="form.title"
                 class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
@@ -104,6 +106,8 @@
           <div class="bg-white rounded-lg shadow-md max-w-full mx-auto">
             <img
               :src="selectedForm.image"
+              :srcset="selectedForm.srcset"
+              sizes="100vw"
               :alt="selectedForm.title"
               class="w-full h-auto object-contain"
             />
@@ -126,6 +130,7 @@ interface Form {
   title: string
   description: string
   image: string
+  srcset: string
   filename: string
 }
 
@@ -134,22 +139,25 @@ const forms: Form[] = [
     id: 'foundation-course',
     title: t('education.forms.foundationCourse.title'),
     description: t('education.forms.foundationCourse.description'),
-    image: '/form-foundation-course.png',
-    filename: 'form-foundation-course.png'
+    image: '/form-foundation-course.webp',
+    srcset: '/form-foundation-course_small.webp 480w, /form-foundation-course_large.webp 1024w',
+    filename: 'form-foundation-course.webp'
   },
   {
     id: 'one-year',
     title: t('education.forms.oneYear.title'),
     description: t('education.forms.oneYear.description'),
-    image: '/form-1-year.png',
-    filename: 'form-1-year.png'
+    image: '/form-1-year.webp',
+    srcset: '/form-1-year_small.webp 480w, /form-1-year_large.webp 1024w',
+    filename: 'form-1-year.webp'
   },
   {
     id: 'pg-diploma',
     title: t('education.forms.pgDiploma.title'),
     description: t('education.forms.pgDiploma.description'),
-    image: '/form-2-year-pg-diploma.png',
-    filename: 'form-2-year-pg-diploma.png'
+    image: '/form-2-year-pg-diploma.webp',
+    srcset: '/form-2-year-pg-diploma_small.webp 480w, /form-2-year-pg-diploma_large.webp 1024w',
+    filename: 'form-2-year-pg-diploma.webp'
   }
 ]
 

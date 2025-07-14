@@ -343,6 +343,9 @@
       "loadingCaptcha": "Loading security verification...",
       "submit": "Submit Application",
       "submitting": "Submitting...",
+      "successTitle": "Application Submitted Successfully!",
+      "errorTitle": "Application Failed to Submit",
+      "errorMessage": "There was an error submitting your application. Please try again.",
       "success": "Thank you! Your volunteer application has been submitted successfully. We'll contact you soon.",
       "placeholders": {
         "name": "Enter your full name", 
@@ -586,7 +589,9 @@
     "overview": "Overview",
     "curriculum": "Curriculum",
     "prerequisites": "Prerequisites",
-    "certification": "Certification"
+    "certification": "Certification",
+    "category": "Category",
+    "downloading": "Downloading..."
   },
   "common": {
     "close": "Close",
@@ -596,5 +601,86 @@
     "learnMore": "Learn More",
     "viewAll": "View All",
     "getStarted": "Get Started"
+  },
+  "education": {
+    "title": "Traditional Knowledge Education",
+    "subtitle": "Comprehensive learning programs in traditional wisdom and natural healing",
+    "collaboration": "Academic Collaboration",
+    "collaborationText": "Learn from certified programs developed in partnership with renowned institutions",
+    "partnership": {
+      "title": "University Partnership",
+      "university": "Dr. Sarvapalli Radhakrishnan Rajasthan Ayurved University"
+    },
+    "features": {
+      "curriculum": "Certified course curriculum",
+      "recognition": "Academic recognition",
+      "research": "Research opportunities"
+    },
+    "approach": {
+      "title": "Our Learning Approach",
+      "subtitle": "Combining traditional wisdom with modern teaching methodologies",
+      "methods": {
+        "practice": {
+          "title": "Hands-on Practice",
+          "description": "Direct experience with traditional methods and techniques"
+        },
+        "observation": {
+          "title": "Observation",
+          "description": "Learning through careful observation of natural processes"
+        },
+        "community": {
+          "title": "Community Learning",
+          "description": "Collaborative learning with peers and experienced practitioners"
+        },
+        "mentorship": {
+          "title": "Mentorship",
+          "description": "Guidance from experienced teachers and traditional healers"
+        }
+      }
+    },
+    "admission": {
+      "title": "Admission Process",
+      "subtitle": "Simple steps to begin your journey in traditional knowledge",
+      "startApplication": "Start Application",
+      "steps": {
+        "application": {
+          "title": "Application",
+          "description": "Submit online application form with required documents"
+        },
+        "interview": {
+          "title": "Interview",
+          "description": "Personal interview to assess motivation and commitment"
+        },
+        "orientation": {
+          "title": "Orientation",
+          "description": "Attend orientation program to understand course structure"
+        },
+        "enrollment": {
+          "title": "Enrollment",
+          "description": "Complete enrollment process and begin your learning journey"
+        }
+      }
+    },
+    "forms": {
+      "title": "Application Forms",
+      "subtitle": "Download and submit your application forms to begin your educational journey",
+      "preview": "Preview",
+      "download": "Download",
+      "foundationCourse": {
+        "title": "Foundation Course Application",
+        "description": "6-month foundational program in traditional healing and cow-based therapy"
+      },
+      "oneYear": {
+        "title": "One Year Diploma Application",
+        "description": "Comprehensive 1-year diploma program in natural healing and Panchgavya therapy"
+      },
+      "pgDiploma": {
+        "title": "Post Graduate Diploma Application",
+        "description": "Advanced 2-year post-graduate diploma in traditional medicine and research"
+      }
+    }
+  },
+  "programs": {
+    "downloadBrochure": "Download Brochure"
   }
 }

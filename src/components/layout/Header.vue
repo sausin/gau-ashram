@@ -69,7 +69,7 @@
         leave-from-class="transform translate-y-0 opacity-100"
         leave-to-class="transform -translate-y-full opacity-0"
       >
-        <div v-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200">
+        <div v-show="mobileMenuOpen" ref="mobileMenu" class="md:hidden bg-white border-t border-gray-200">
           <div class="px-2 pt-2 pb-3 space-y-1">
             <router-link
               v-for="item in navigationItems"
@@ -89,12 +89,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useI18n } from '../../composables/useI18n'
 
 const { t, locale, setLocale } = useI18n()
 const mobileMenuOpen = ref(false)
+const mobileMenu = ref<HTMLElement | null>(null)
 
 const navigationItems = [
   { key: 'initiatives', path: '/initiatives' },
@@ -109,4 +110,28 @@ const handleLanguageChange = (event: Event) => {
   const target = event.target as HTMLSelectElement
   setLocale(target.value)
 }
+
+// Close mobile menu when clicking outside
+const handleClickOutside = (event: Event) => {
+  const target = event.target as Element
+  const header = target.closest('header')
+  
+  // Don't close if clicking within the header or on the menu button
+  if (header || target.closest('[aria-label="Toggle mobile menu"]')) {
+    return
+  }
+  
+  // Close menu if clicking outside
+  if (mobileMenuOpen.value) {
+    mobileMenuOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside, true)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside, true)
+})
 </script>

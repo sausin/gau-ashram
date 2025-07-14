@@ -26,28 +26,28 @@
               {{ t('education.collaborationText') }}
             </p>
             <div class="bg-primary-50 rounded-lg p-6">
-              <h3 class="text-xl font-semibold text-primary-800 mb-4">University Partnership</h3>
+              <h3 class="text-xl font-semibold text-primary-800 mb-4">{{ t('education.partnership.title') }}</h3>
               <p class="text-gray-700 mb-4">
-                Dr. Sarvapalli Radhakrishnan Rajasthan Ayurved University
+                {{ t('education.partnership.university') }}
               </p>
               <ul class="space-y-2">
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Certified course curriculum</span>
+                  <span class="text-gray-700">{{ t('education.features.curriculum') }}</span>
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Academic recognition</span>
+                  <span class="text-gray-700">{{ t('education.features.recognition') }}</span>
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="text-gray-700">Research opportunities</span>
+                  <span class="text-gray-700">{{ t('education.features.research') }}</span>
                 </li>
               </ul>
             </div>
@@ -238,10 +238,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-primary-800 mb-4">
-            Our Learning Approach
+            {{ t('education.approach.title') }}
           </h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Combining traditional wisdom with modern teaching methodologies
+            {{ t('education.approach.subtitle') }}
           </p>
         </div>
 
@@ -250,8 +250,8 @@
             <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <component :is="approach.icon" class="w-8 h-8 text-primary-600" />
             </div>
-            <h3 class="text-lg font-semibold text-primary-800 mb-3">{{ approach.title }}</h3>
-            <p class="text-gray-600 text-sm">{{ approach.description }}</p>
+            <h3 class="text-lg font-semibold text-primary-800 mb-3">{{ t(`education.approach.methods.${approach.key}.title`) }}</h3>
+            <p class="text-gray-600 text-sm">{{ t(`education.approach.methods.${approach.key}.description`) }}</p>
           </div>
         </div>
       </div>
@@ -265,10 +265,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
-            Admission Process
+            {{ t('education.admission.title') }}
           </h2>
           <p class="text-xl text-primary-100 max-w-2xl mx-auto">
-            Simple steps to begin your journey in traditional knowledge
+            {{ t('education.admission.subtitle') }}
           </p>
         </div>
 
@@ -277,8 +277,8 @@
             <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span class="text-2xl font-bold">{{ index + 1 }}</span>
             </div>
-            <h3 class="text-lg font-semibold mb-3">{{ step.title }}</h3>
-            <p class="text-primary-100 text-sm">{{ step.description }}</p>
+            <h3 class="text-lg font-semibold mb-3">{{ t(`education.admission.steps.${step.key}.title`) }}</h3>
+            <p class="text-primary-100 text-sm">{{ t(`education.admission.steps.${step.key}.description`) }}</p>
           </div>
         </div>
 
@@ -289,7 +289,7 @@
             class="bg-white text-primary-700 hover:bg-primary-50 border-white"
             @click="$router.push('/contact')"
           >
-            Start Application
+            {{ t('education.admission.startApplication') }}
           </Button>
         </div>
       </div>
@@ -453,43 +453,35 @@ onUnmounted(() => {
 
 const learningApproaches = [
   {
-    title: 'Hands-on Practice',
-    description: 'Direct experience with traditional methods and techniques',
+    key: 'practice',
     icon: HandIcon
   },
   {
-    title: 'Observation',
-    description: 'Learning through careful observation of natural processes',
+    key: 'observation',
     icon: EyeIcon
   },
   {
-    title: 'Community Learning',
-    description: 'Collaborative learning with peers and experienced practitioners',
+    key: 'community',
     icon: UsersIcon
   },
   {
-    title: 'Mentorship',
-    description: 'Guidance from experienced teachers and traditional healers',
+    key: 'mentorship',
     icon: BookIcon
   }
 ]
 
 const admissionSteps = [
   {
-    title: 'Application',
-    description: 'Submit online application form with required documents'
+    key: 'application'
   },
   {
-    title: 'Interview',
-    description: 'Personal interview to assess motivation and commitment'
+    key: 'interview'
   },
   {
-    title: 'Orientation',
-    description: 'Attend orientation program to understand course structure'
+    key: 'orientation'
   },
   {
-    title: 'Enrollment',
-    description: 'Complete enrollment process and begin your learning journey'
+    key: 'enrollment'
   }
 ]
 </script>

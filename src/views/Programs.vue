@@ -42,7 +42,7 @@
                 </li>
               </ul>
               <button class="mt-8 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                Learn More
+                {{ t('common.learnMore') }}
               </button>
             </div>
             <div :class="{ 'lg:col-start-1 lg:row-start-1': index % 2 === 1 }">
@@ -92,7 +92,7 @@
             href="#"
             class="border-2 border-white text-white hover:bg-white hover:text-secondary-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
           >
-            Download Brochure
+            {{ t('programs.downloadBrochure') }}
           </a>
         </div>
       </div>
