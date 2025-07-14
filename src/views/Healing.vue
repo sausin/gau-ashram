@@ -216,9 +216,16 @@
                   <span class="font-medium">{{ program.level }}</span>
                 </div>
               </div>
-              <Button variant="primary" size="sm" class="w-full">
-{{ t('healing.enrollNow') }}
-              </Button>
+              <a
+                href="https://forms.gle/KPYidS12b5VumNRn6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block w-full"
+              >
+                <Button variant="primary" size="sm" class="w-full">
+                  {{ t('healing.enrollNow') }}
+                </Button>
+              </a>
             </div>
           </Card>
         </div>

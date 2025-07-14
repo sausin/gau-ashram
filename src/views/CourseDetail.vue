@@ -144,9 +144,16 @@
                 {{ isDownloading ? t('courses.downloading') : t('courses.downloadSyllabus') }}
               </button>
 
-              <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold mt-4 transition-colors duration-300">
-                {{ t('courses.enrollNow') }}
-              </button>
+              <a
+                href="https://forms.gle/KPYidS12b5VumNRn6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block w-full mt-4"
+              >
+                <button class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300">
+                  {{ t('courses.enrollNow') }}
+                </button>
+              </a>
             </div>
           </div>
         </div>
