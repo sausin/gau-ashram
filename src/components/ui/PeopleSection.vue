@@ -181,6 +181,8 @@ const handleImageError = (event: Event) => {
   if (img.src !== genericPersonIcon) {
     console.warn(`Failed to load image: ${img.src}`)
     img.src = genericPersonIcon
+    // Also clear srcset to prevent conflicts
+    img.srcset = ''
   }
 }
 

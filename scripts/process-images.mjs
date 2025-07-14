@@ -19,7 +19,20 @@ const CRITICAL_IMAGES = [
   'plantation3.webp',
   'gsa-garden.webp',
   'panchgavya-release2.webp',
-  'logo.webp'
+  'logo.webp',
+  // Team member images
+  'leelawati-nihal.webp',
+  'nandlal-bhati.webp',
+  // 'nemichand-chopda.webp', // TODO: Add when image is available
+  'rakesh-nihal.webp',
+  // 'ashok-choradia.webp', // TODO: Add when image is available
+  // 'narpat-singh.webp', // TODO: Add when image is available
+  'naresh-joshi.webp',
+  // 'ramesh-sharma.webp', // TODO: Add when image is available
+  'anil-lohiya.webp',
+  'jitendra-jain.webp',
+  'deepak-jain.webp',
+  'harisharan-bansal.webp'
 ];
 
 const PUBLIC_DIR = './public';
