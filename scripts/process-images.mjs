@@ -20,6 +20,10 @@ const CRITICAL_IMAGES = [
   'gsa-garden.webp',
   'panchgavya-release2.webp',
   'logo.webp',
+  // Form images
+  'form-foundation-course.webp',
+  'form-1-year.webp',
+  'form-2-year-pg-diploma.webp',
   // Team member images
   'leelawati-nihal.webp',
   'nandlal-bhati.webp',
